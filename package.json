@@ -1,0 +1,17 @@
+{
+"name": "cookie-puncher-game",
+"version": "11.0.0",
+"description": "Cookie Puncher with Online Leaderboard",
+"main": "server.js",
+"scripts": {
+"start": "node server.js"
+},
+"dependencies": {
+"cors": "^2.8.5",
+"express": "^4.19.2",
+"sqlite3": "^5.1.7"
+},
+"engines": {
+"node": ">=18.0.0"
+}
+}
