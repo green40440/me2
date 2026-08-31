@@ -6,7 +6,7 @@
   <title>Cookie Puncher — cookiepuncher.fun</title>
   <meta name="description" content="Cookie Puncher — click cookies, buy upgrades, and build a cookie empire.">
   <style>
-    /* --- SKIN DEFINITIONS --- */
+    /* --- BASE SKIN DEFINITIONS --- */
     :root{
       --bg1: #0b1020; --bg2: #151a30;
       --accent1: #ffc857; --accent2:#ff9e57;
@@ -18,274 +18,106 @@
       --tab-bg: #151a30;
     }
 
-    body.skin-Midnight {
-      --bg1: #1a1a1a; --bg2: #2d2d2d;
-      --accent1: #95d4d4; --accent2:#66b2b2;
-      --muted:#c0c0c0;
-      --glass: rgba(0,0,0,0.2);
-      --site-shadow: 0 10px 40px rgba(0,0,0,0.9);
-      --cookie-color: linear-gradient(180deg,#e0e0e0,#b0b0b0);
-      --cookie-shadow: 0 10px 30px rgba(0,0,0,0.7);
-      --tab-bg: #2d2d2d;
-    }
-    .skin-Midnight #superCookie {
-      background: radial-gradient(circle, #00ffff, #0066ff);
-      box-shadow: 0 0 25px 8px rgba(0,255,255,0.5);
-    }
+    body.skin-Midnight { --bg1: #1a1a1a; --bg2: #2d2d2d; --accent1: #95d4d4; --accent2:#66b2b2; --muted:#c0c0c0; --glass: rgba(0,0,0,0.2); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg,#e0e0e0,#b0b0b0); --cookie-shadow: 0 10px 30px rgba(0,0,0,0.7); --tab-bg: #2d2d2d; }
+    body.skin-Forest { --bg1: #1E3A24; --bg2: #2B5433; --accent1: #A4D46C; --accent2:#6CA443; --muted:#C8DBC5; --glass: rgba(0,0,0,0.15); --site-shadow: 0 10px 40px rgba(30,58,36,0.6); --cookie-color: linear-gradient(180deg,#E7CF9C, #C3A675); --cookie-shadow: 0 10px 30px rgba(30,58,36,0.8); --tab-bg: #2B5433; }
+    body.skin-Lava { --bg1: #180505; --bg2: #380808; --accent1: #FF4500; --accent2:#FF8C00; --muted:#ffc0cb; --glass: rgba(255, 69, 0, 0.1); --site-shadow: 0 10px 40px rgba(255,69,0,0.3); --cookie-color: linear-gradient(180deg,#303030,#101010); --cookie-shadow: 0 10px 30px rgba(255,69,0,0.45); --tab-bg: #380808; }
+    body.skin-Ocean { --bg1: #0A3D62; --bg2: #165E87; --accent1: #6EBFB9; --accent2:#4AA49D; --muted:#B0E0E6; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(10,61,98,0.7); --cookie-color: linear-gradient(180deg, #FFD700, #FFA500); --cookie-shadow: 0 10px 30px rgba(0,0,0,0.6); --tab-bg: #165E87; }
+    body.skin-Gold { --bg1: #3D3D3A; --bg2: #5B5B58; --accent1: #FFD700; --accent2:#DAA520; --muted:#EEDD82; --glass: rgba(255,215,0,0.1); --site-shadow: 0 10px 40px rgba(255,215,0,0.3); --cookie-color: linear-gradient(180deg,#DAA520, #B8860B); --cookie-shadow: 0 10px 30px rgba(255,215,0,0.5); --tab-bg: #5B5B58; }
+    body.skin-Retro { --bg1: #1B263B; --bg2: #2B3A5A; --accent1: #FF69B4; --accent2:#FF1493; --muted:#00FFFF; --glass: rgba(255,105,180,0.1); --site-shadow: 0 10px 40px rgba(0,0,0,0.8); --cookie-color: linear-gradient(180deg,#FFD700, #FF6347); --cookie-shadow: 0 10px 30px rgba(255,105,180,0.5); --tab-bg: #2B3A5A; }
+    body.skin-Contrast { --bg1: #000000; --bg2: #111111; --accent1: #39FF14; --accent2:#00CC00; --muted:#FFFFFF; --glass: rgba(57, 255, 20, 0.08); --site-shadow: 0 10px 40px rgba(57, 255, 20, 0.3); --cookie-color: linear-gradient(180deg, #FFFFFF, #E0E0E0); --cookie-shadow: 0 10px 30px rgba(57, 255, 20, 0.5); --tab-bg: #111111; }
+    body.skin-Candy { --bg1: #F08080; --bg2: #FFB6C1; --accent1: #40E0D0; --accent2:#00CED1; --muted:#8A2BE2; --glass: rgba(255, 255, 255, 0.5); --site-shadow: 0 10px 40px rgba(255, 182, 193, 0.8); --cookie-color: linear-gradient(180deg, #FFA07A, #FF7F50); --cookie-shadow: 0 10px 30px rgba(255, 99, 71, 0.6); --tab-bg: #FFB6C1; color: #333; }
+    body.skin-Space { --bg1: #000033; --bg2: #191970; --accent1: #FFCC00; --accent2:#FF9933; --muted:#A9A9A9; --glass: rgba(255, 255, 255, 0.05); --site-shadow: 0 10px 40px rgba(0, 0, 51, 0.9); --cookie-color: radial-gradient(circle, #FFFFFF, #B0C4DE); --cookie-shadow: 0 10px 30px rgba(255, 204, 0, 0.6); --tab-bg: #191970; }
+    body.skin-Autumn { --bg1: #4B0000; --bg2: #800000; --accent1: #FF8C00; --accent2:#FFA500; --muted:#F5DEB3; --glass: rgba(255, 140, 0, 0.1); --site-shadow: 0 10px 40px rgba(75, 0, 0, 0.9); --cookie-color: linear-gradient(180deg, #CD853F, #A0522D); --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.5); --tab-bg: #800000; }
+    body.skin-Vaporwave { --bg1: #2B0E4D; --bg2: #411B65; --accent1: #FF00FF; --accent2:#00FFFF; --muted:#F4B4B4; --glass: rgba(255, 0, 255, 0.1); --site-shadow: 0 10px 40px rgba(255, 0, 255, 0.6); --cookie-color: linear-gradient(180deg, #00FFFF, #00DDDD); --cookie-shadow: 0 10px 30px rgba(0, 255, 255, 0.5); --tab-bg: #411B65; }
+    body.skin-Jungle { --bg1: #004D40; --bg2: #00796B; --accent1: #FFEB3B; --accent2:#FBC02D; --muted:#A5D6A7; --glass: rgba(255, 255, 255, 0.08); --site-shadow: 0 10px 40px rgba(0, 77, 64, 0.8); --cookie-color: linear-gradient(180deg, #4CAF50, #388E3C); --cookie-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); --tab-bg: #00796B; }
+    body.skin-Monochrome { --bg1: #000000; --bg2: #333333; --accent1: #FFFFFF; --accent2:#DDDDDD; --muted:#888888; --glass: rgba(255, 255, 255, 0.05); --site-shadow: 0 10px 40px rgba(255, 255, 255, 0.1); --cookie-color: linear-gradient(180deg, #AAAAAA, #666666); --cookie-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); --tab-bg: #333333; }
+    body.skin-Valentine { --bg1: #880000; --bg2: #CC0000; --accent1: #FFC0CB; --accent2:#FF69B4; --muted:#F0F0F0; --glass: rgba(255, 192, 203, 0.15); --site-shadow: 0 10px 40px rgba(204, 0, 0, 0.8); --cookie-color: radial-gradient(circle, #FFFFFF, #FFC0CB); --cookie-shadow: 0 10px 30px rgba(255, 105, 180, 0.5); --tab-bg: #CC0000; }
+    body.skin-Ice { --bg1: #004466; --bg2: #3377AA; --accent1: #98FBFB; --accent2:#CCFFFF; --muted:#E0FFFF; --glass: rgba(204, 255, 255, 0.2); --site-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); --cookie-color: linear-gradient(180deg, #FFFFFF, #ADD8E6); --cookie-shadow: 0 10px 30px rgba(152, 251, 251, 0.8); --tab-bg: #3377AA; }
+    body.skin-LaserGrid { --bg1: #000000; --bg2: #0A001A; --accent1: #FF33FF; --accent2:#33FFFF; --muted:#39FF14; --glass: rgba(51, 255, 255, 0.1); --site-shadow: 0 10px 40px rgba(255, 51, 255, 0.7); --cookie-color: linear-gradient(45deg, #FF33FF, #33FFFF); --cookie-shadow: 0 10px 30px rgba(255, 51, 255, 0.8); --tab-bg: #0A001A; }
+    body.skin-Toxic { --bg1: #101000; --bg2: #303000; --accent1: #CCFF00; --accent2:#99FF00; --muted:#FF6600; --glass: rgba(204, 255, 0, 0.1); --site-shadow: 0 10px 40px rgba(153, 255, 0, 0.6); --cookie-color: radial-gradient(circle, #00FF00, #00CC00); --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7); --tab-bg: #303000; }
+    body.skin-Electric { --bg1: #00002A; --bg2: #00004F; --accent1: #FFFF33; --accent2:#FFCC00; --muted:#33CCFF; --glass: rgba(255, 255, 51, 0.1); --site-shadow: 0 10px 40px rgba(255, 250, 50, 0.7); --cookie-color: linear-gradient(180deg, #33CCFF, #0099FF); --cookie-shadow: 0 10px 30px rgba(255, 250, 50, 0.6); --tab-bg: #00004F; }
+    body.skin-Hacker { --bg1: #000000; --bg2: #001A00; --accent1: #00FF00; --accent2:#33FF33; --muted:#00AA00; --glass: rgba(0, 255, 0, 0.08); --site-shadow: 0 10px 40px rgba(0, 255, 0, 0.5); --cookie-color: linear-gradient(180deg, #FFFFFF, #DDDDDD); --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7); --tab-bg: #001A00; }
+    body.skin-Firestorm { --bg1: #1A0000; --bg2: #330000; --accent1: #FF4500; --accent2:#FFEA00; --muted:#FF00FF; --glass: rgba(255, 69, 0, 0.15); --site-shadow: 0 10px 40px rgba(255, 69, 0, 0.8); --cookie-color: radial-gradient(circle, #FF8C00, #FF3D00); --cookie-shadow: 0 10px 30px rgba(255, 69, 0, 0.9); --tab-bg: #330000; }
+    body.skin-DeepPink { --bg1: #100020; --bg2: #25004A; --accent1: #FF1493; --accent2:#EA00FF; --muted:#00FFFF; --glass: rgba(255, 20, 147, 0.15); --site-shadow: 0 10px 40px rgba(234, 0, 255, 0.7); --cookie-color: linear-gradient(180deg, #FF1493, #FF44CC); --cookie-shadow: 0 10px 30px rgba(255, 20, 147, 0.8); --tab-bg: #25004A; }
+    body.skin-SubZero { --bg1: #001A33; --bg2: #003366; --accent1: #0FF0FC; --accent2:#7FFFD4; --muted:#FFFFFF; --glass: rgba(127, 255, 212, 0.15); --site-shadow: 0 10px 40px rgba(0, 240, 252, 0.7); --cookie-color: radial-gradient(circle, #FFFFFF, #ADD8E6); --cookie-shadow: 0 10px 30px rgba(0, 240, 252, 0.8); --tab-bg: #003366; }
+    body.skin-Glitch { --bg1: #000000; --bg2: #000000; --accent1: #FF00FF; --accent2:#00FFFF; --muted:#39FF14; --glass: rgba(255, 0, 255, 0.08); --site-shadow: 0 10px 40px rgba(0, 255, 255, 0.6); --cookie-color: linear-gradient(180deg, #FF0000, #00FF00); --cookie-shadow: 0 10px 30px rgba(255, 0, 0, 0.7), -5px -5px 15px rgba(0, 255, 255, 0.7); --tab-bg: #111111; }
+    body.skin-ToxicWaste { --bg1: #000D00; --bg2: #002500; --accent1: #CCFF00; --accent2:#FF8C00; --muted:#FFFFFF; --glass: rgba(204, 255, 0, 0.15); --site-shadow: 0 10px 40px rgba(204, 255, 0, 0.8); --cookie-color: radial-gradient(circle, #39FF14, #00AA00); --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.7); --tab-bg: #002500; }
 
-    body.skin-Forest {
-      --bg1: #1E3A24; --bg2: #2B5433;
-      --accent1: #A4D46C; --accent2:#6CA443;
-      --muted:#C8DBC5;
-      --glass: rgba(0,0,0,0.15);
-      --site-shadow: 0 10px 40px rgba(30,58,36,0.6);
-      --cookie-color: linear-gradient(180deg,#E7CF9C, #C3A675);
-      --cookie-shadow: 0 10px 30px rgba(30,58,36,0.8);
-      --tab-bg: #2B5433;
-    }
-
-    body.skin-Lava {
-      --bg1: #180505; --bg2: #380808;
-      --accent1: #FF4500; --accent2:#FF8C00;
-      --muted:#ffc0cb;
-      --glass: rgba(255, 69, 0, 0.1);
-      --site-shadow: 0 10px 40px rgba(255,69,0,0.3);
-      --cookie-color: linear-gradient(180deg,#303030,#101010);
-      --cookie-shadow: 0 10px 30px rgba(255,69,0,0.45);
-      --tab-bg: #380808;
-    }
-
-    body.skin-Ocean {
-      --bg1: #0A3D62; --bg2: #165E87;
-      --accent1: #6EBFB9; --accent2:#4AA49D;
-      --muted:#B0E0E6;
-      --glass: rgba(255,255,255,0.1);
-      --site-shadow: 0 10px 40px rgba(10,61,98,0.7);
-      --cookie-color: linear-gradient(180deg, #FFD700, #FFA500);
-      --cookie-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      --tab-bg: #165E87;
-    }
-
-    body.skin-Gold {
-      --bg1: #3D3D3A; --bg2: #5B5B58;
-      --accent1: #FFD700; --accent2:#DAA520;
-      --muted:#EEDD82;
-      --glass: rgba(255,215,0,0.1);
-      --site-shadow: 0 10px 40px rgba(255,215,0,0.3);
-      --cookie-color: linear-gradient(180deg,#DAA520, #B8860B);
-      --cookie-shadow: 0 10px 30px rgba(255,215,0,0.5);
-      --tab-bg: #5B5B58;
-    }
-
-    body.skin-Retro {
-      --bg1: #1B263B; --bg2: #2B3A5A;
-      --accent1: #FF69B4; --accent2:#FF1493;
-      --muted:#00FFFF;
-      --glass: rgba(255,105,180,0.1);
-      --site-shadow: 0 10px 40px rgba(0,0,0,0.8);
-      --cookie-color: linear-gradient(180deg,#FFD700, #FF6347);
-      --cookie-shadow: 0 10px 30px rgba(255,105,180,0.5);
-      --tab-bg: #2B3A5A;
-    }
-
-    body.skin-Contrast {
-      --bg1: #000000; --bg2: #111111;
-      --accent1: #39FF14; --accent2:#00CC00;
-      --muted:#FFFFFF;
-      --glass: rgba(57, 255, 20, 0.08);
-      --site-shadow: 0 10px 40px rgba(57, 255, 20, 0.3);
-      --cookie-color: linear-gradient(180deg, #FFFFFF, #E0E0E0);
-      --cookie-shadow: 0 10px 30px rgba(57, 255, 20, 0.5);
-      --tab-bg: #111111;
-    }
-
-    body.skin-Candy {
-      --bg1: #F08080; --bg2: #FFB6C1;
-      --accent1: #40E0D0; --accent2:#00CED1;
-      --muted:#8A2BE2;
-      --glass: rgba(255, 255, 255, 0.5);
-      --site-shadow: 0 10px 40px rgba(255, 182, 193, 0.8);
-      --cookie-color: linear-gradient(180deg, #FFA07A, #FF7F50);
-      --cookie-shadow: 0 10px 30px rgba(255, 99, 71, 0.6);
-      --tab-bg: #FFB6C1;
-      color: #333;
-    }
-
-    body.skin-Space {
-      --bg1: #000033; --bg2: #191970;
-      --accent1: #FFCC00; --accent2:#FF9933;
-      --muted:#A9A9A9;
-      --glass: rgba(255, 255, 255, 0.05);
-      --site-shadow: 0 10px 40px rgba(0, 0, 51, 0.9);
-      --cookie-color: radial-gradient(circle, #FFFFFF, #B0C4DE);
-      --cookie-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
-      --tab-bg: #191970;
-    }
-
-    body.skin-Autumn {
-      --bg1: #4B0000; --bg2: #800000;
-      --accent1: #FF8C00; --accent2:#FFA500;
-      --muted:#F5DEB3;
-      --glass: rgba(255, 140, 0, 0.1);
-      --site-shadow: 0 10px 40px rgba(75, 0, 0, 0.9);
-      --cookie-color: linear-gradient(180deg, #CD853F, #A0522D);
-      --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
-      --tab-bg: #800000;
-    }
-
-    body.skin-Vaporwave {
-      --bg1: #2B0E4D; --bg2: #411B65;
-      --accent1: #FF00FF; --accent2:#00FFFF;
-      --muted:#F4B4B4;
-      --glass: rgba(255, 0, 255, 0.1);
-      --site-shadow: 0 10px 40px rgba(255, 0, 255, 0.6);
-      --cookie-color: linear-gradient(180deg, #00FFFF, #00DDDD);
-      --cookie-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
-      --tab-bg: #411B65;
-    }
-
-    body.skin-Jungle {
-      --bg1: #004D40; --bg2: #00796B;
-      --accent1: #FFEB3B; --accent2:#FBC02D;
-      --muted:#A5D6A7;
-      --glass: rgba(255, 255, 255, 0.08);
-      --site-shadow: 0 10px 40px rgba(0, 77, 64, 0.8);
-      --cookie-color: linear-gradient(180deg, #4CAF50, #388E3C);
-      --cookie-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      --tab-bg: #00796B;
-    }
-    
-    body.skin-Monochrome {
-      --bg1: #000000; --bg2: #333333;
-      --accent1: #FFFFFF; --accent2:#DDDDDD;
-      --muted:#888888;
-      --glass: rgba(255, 255, 255, 0.05);
-      --site-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
-      --cookie-color: linear-gradient(180deg, #AAAAAA, #666666);
-      --cookie-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-      --tab-bg: #333333;
-    }
-
-    body.skin-Valentine {
-      --bg1: #880000; --bg2: #CC0000;
-      --accent1: #FFC0CB; --accent2:#FF69B4;
-      --muted:#F0F0F0;
-      --glass: rgba(255, 192, 203, 0.15);
-      --site-shadow: 0 10px 40px rgba(204, 0, 0, 0.8);
-      --cookie-color: radial-gradient(circle, #FFFFFF, #FFC0CB);
-      --cookie-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
-      --tab-bg: #CC0000;
-    }
-
-    body.skin-Ice {
-      --bg1: #004466; --bg2: #3377AA;
-      --accent1: #98FBFB; --accent2:#CCFFFF;
-      --muted:#E0FFFF;
-      --glass: rgba(204, 255, 255, 0.2);
-      --site-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      --cookie-color: linear-gradient(180deg, #FFFFFF, #ADD8E6);
-      --cookie-shadow: 0 10px 30px rgba(152, 251, 251, 0.8);
-      --tab-bg: #3377AA;
-    }
-    
-    body.skin-LaserGrid {
-      --bg1: #000000; --bg2: #0A001A;
-      --accent1: #FF33FF; --accent2:#33FFFF;
-      --muted:#39FF14;
-      --glass: rgba(51, 255, 255, 0.1);
-      --site-shadow: 0 10px 40px rgba(255, 51, 255, 0.7);
-      --cookie-color: linear-gradient(45deg, #FF33FF, #33FFFF);
-      --cookie-shadow: 0 10px 30px rgba(255, 51, 255, 0.8);
-      --tab-bg: #0A001A;
-    }
-
-    body.skin-Toxic {
-      --bg1: #101000; --bg2: #303000;
-      --accent1: #CCFF00; --accent2:#99FF00;
-      --muted:#FF6600;
-      --glass: rgba(204, 255, 0, 0.1);
-      --site-shadow: 0 10px 40px rgba(153, 255, 0, 0.6);
-      --cookie-color: radial-gradient(circle, #00FF00, #00CC00);
-      --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7);
-      --tab-bg: #303000;
-    }
-
-    body.skin-Electric {
-      --bg1: #00002A; --bg2: #00004F;
-      --accent1: #FFFF33; --accent2:#FFCC00;
-      --muted:#33CCFF;
-      --glass: rgba(255, 255, 51, 0.1);
-      --site-shadow: 0 10px 40px rgba(255, 250, 50, 0.7);
-      --cookie-color: linear-gradient(180deg, #33CCFF, #0099FF);
-      --cookie-shadow: 0 10px 30px rgba(255, 250, 50, 0.6);
-      --tab-bg: #00004F;
-    }
-
-    body.skin-Hacker {
-      --bg1: #000000; --bg2: #001A00;
-      --accent1: #00FF00; --accent2:#33FF33;
-      --muted:#00AA00;
-      --glass: rgba(0, 255, 0, 0.08);
-      --site-shadow: 0 10px 40px rgba(0, 255, 0, 0.5);
-      --cookie-color: linear-gradient(180deg, #FFFFFF, #DDDDDD);
-      --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7);
-      --tab-bg: #001A00;
-    }
-
-    body.skin-Firestorm {
-      --bg1: #1A0000; --bg2: #330000;
-      --accent1: #FF4500; --accent2:#FFEA00;
-      --muted:#FF00FF;
-      --glass: rgba(255, 69, 0, 0.15);
-      --site-shadow: 0 10px 40px rgba(255, 69, 0, 0.8);
-      --cookie-color: radial-gradient(circle, #FF8C00, #FF3D00);
-      --cookie-shadow: 0 10px 30px rgba(255, 69, 0, 0.9);
-      --tab-bg: #330000;
-    }
-
-    body.skin-DeepPink {
-      --bg1: #100020; --bg2: #25004A;
-      --accent1: #FF1493; --accent2:#EA00FF;
-      --muted:#00FFFF;
-      --glass: rgba(255, 20, 147, 0.15);
-      --site-shadow: 0 10px 40px rgba(234, 0, 255, 0.7);
-      --cookie-color: linear-gradient(180deg, #FF1493, #FF44CC);
-      --cookie-shadow: 0 10px 30px rgba(255, 20, 147, 0.8);
-      --tab-bg: #25004A;
-    }
-
-    body.skin-SubZero {
-      --bg1: #001A33; --bg2: #003366;
-      --accent1: #0FF0FC; --accent2:#7FFFD4;
-      --muted:#FFFFFF;
-      --glass: rgba(127, 255, 212, 0.15);
-      --site-shadow: 0 10px 40px rgba(0, 240, 252, 0.7);
-      --cookie-color: radial-gradient(circle, #FFFFFF, #ADD8E6);
-      --cookie-shadow: 0 10px 30px rgba(0, 240, 252, 0.8);
-      --tab-bg: #003366;
-    }
-
-    body.skin-Glitch {
-      --bg1: #000000; --bg2: #000000;
-      --accent1: #FF00FF; --accent2:#00FFFF;
-      --muted:#39FF14;
-      --glass: rgba(255, 0, 255, 0.08);
-      --site-shadow: 0 10px 40px rgba(0, 255, 255, 0.6);
-      --cookie-color: linear-gradient(180deg, #FF0000, #00FF00);
-      --cookie-shadow: 0 10px 30px rgba(255, 0, 0, 0.7), -5px -5px 15px rgba(0, 255, 255, 0.7);
-      --tab-bg: #111111;
-    }
-
-    body.skin-ToxicWaste {
-      --bg1: #000D00; --bg2: #002500;
-      --accent1: #CCFF00; --accent2:#FF8C00;
-      --muted:#FFFFFF;
-      --glass: rgba(204, 255, 0, 0.15);
-      --site-shadow: 0 10px 40px rgba(204, 255, 0, 0.8);
-      --cookie-color: radial-gradient(circle, #39FF14, #00AA00);
-      --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.7);
-      --tab-bg: #002500;
-    }
+    /* --- SKINS 26 TO 100 --- */
+    body.skin-Cyberpunk { --bg1: #12002b; --bg2: #280048; --accent1: #f30067; --accent2: #00f0ff; --muted: #ffe600; --glass: rgba(243,0,103,0.1); --site-shadow: 0 10px 40px rgba(243,0,103,0.5); --cookie-color: linear-gradient(180deg, #f30067, #ffe600); --cookie-shadow: 0 10px 30px rgba(0,240,255,0.6); --tab-bg: #280048; }
+    body.skin-Sunset { --bg1: #2d0b32; --bg2: #51123c; --accent1: #ff7b54; --accent2: #ffb26b; --muted: #ffd56b; --glass: rgba(255,123,84,0.1); --site-shadow: 0 10px 40px rgba(255,123,84,0.4); --cookie-color: linear-gradient(180deg, #ff7b54, #ffb26b); --cookie-shadow: 0 10px 30px rgba(255,213,107,0.5); --tab-bg: #51123c; }
+    body.skin-Emerald { --bg1: #022c22; --bg2: #064e3b; --accent1: #34d399; --accent2: #10b981; --muted: #a7f3d0; --glass: rgba(52,211,153,0.1); --site-shadow: 0 10px 40px rgba(16,185,129,0.5); --cookie-color: linear-gradient(180deg, #34d399, #059669); --cookie-shadow: 0 10px 30px rgba(52,211,153,0.6); --tab-bg: #064e3b; }
+    body.skin-Ruby { --bg1: #280509; --bg2: #4c0519; --accent1: #fb7185; --accent2: #f43f5e; --muted: #fecdd3; --glass: rgba(251,113,133,0.1); --site-shadow: 0 10px 40px rgba(244,63,94,0.5); --cookie-color: linear-gradient(180deg, #f43f5e, #be123c); --cookie-shadow: 0 10px 30px rgba(251,113,133,0.6); --tab-bg: #4c0519; }
+    body.skin-Sapphire { --bg1: #0b192c; --bg2: #1e3e62; --accent1: #38bdf8; --accent2: #0284c7; --muted: #bae6fd; --glass: rgba(56,189,248,0.1); --site-shadow: 0 10px 40px rgba(2,132,199,0.5); --cookie-color: linear-gradient(180deg, #38bdf8, #1d4ed8); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.6); --tab-bg: #1e3e62; }
+    body.skin-Amethyst { --bg1: #1a0b2e; --bg2: #3b154c; --accent1: #c084fc; --accent2: #9333ea; --muted: #e9d5ff; --glass: rgba(192,132,252,0.1); --site-shadow: 0 10px 40px rgba(147,51,234,0.5); --cookie-color: linear-gradient(180deg, #c084fc, #7e22ce); --cookie-shadow: 0 10px 30px rgba(192,132,252,0.6); --tab-bg: #3b154c; }
+    body.skin-NeonCity { --bg1: #080811; --bg2: #121324; --accent1: #00ffcc; --accent2: #ff007f; --muted: #ffff00; --glass: rgba(0,255,204,0.1); --site-shadow: 0 10px 40px rgba(255,0,127,0.5); --cookie-color: linear-gradient(180deg, #00ffcc, #ff007f); --cookie-shadow: 0 10px 30px rgba(0,255,204,0.7); --tab-bg: #121324; }
+    body.skin-Matrix { --bg1: #020b02; --bg2: #051a05; --accent1: #00ff41; --accent2: #008f11; --muted: #00FF66; --glass: rgba(0,255,65,0.08); --site-shadow: 0 10px 40px rgba(0,255,65,0.4); --cookie-color: linear-gradient(180deg, #00ff41, #003b00); --cookie-shadow: 0 10px 30px rgba(0,255,65,0.6); --tab-bg: #051a05; }
+    body.skin-Sakura { --bg1: #2a1b24; --bg2: #4a2e3d; --accent1: #fbcfe8; --accent2: #f472b6; --muted: #fdf2f8; --glass: rgba(251,207,232,0.15); --site-shadow: 0 10px 40px rgba(244,114,182,0.4); --cookie-color: linear-gradient(180deg, #fbcfe8, #db2777); --cookie-shadow: 0 10px 30px rgba(251,207,232,0.5); --tab-bg: #4a2e3d; }
+    body.skin-Desert { --bg1: #2c1a0e; --bg2: #4a2c17; --accent1: #f59e0b; --accent2: #d97706; --muted: #fef3c7; --glass: rgba(245,158,11,0.1); --site-shadow: 0 10px 40px rgba(217,119,6,0.5); --cookie-color: linear-gradient(180deg, #f59e0b, #b45309); --cookie-shadow: 0 10px 30px rgba(245,158,11,0.5); --tab-bg: #4a2c17; }
+    body.skin-NorthernLights { --bg1: #05131d; --bg2: #0b2b3c; --accent1: #38ef7d; --accent2: #11998e; --muted: #80f9ff; --glass: rgba(56,239,125,0.1); --site-shadow: 0 10px 40px rgba(17,153,142,0.6); --cookie-color: linear-gradient(180deg, #38ef7d, #11998e); --cookie-shadow: 0 10px 30px rgba(128,249,255,0.6); --tab-bg: #0b2b3c; }
+    body.skin-Galaxy { --bg1: #0b001a; --bg2: #1f0038; --accent1: #e0aaff; --accent2: #c77dff; --muted: #7b2cbf; --glass: rgba(224,170,255,0.1); --site-shadow: 0 10px 40px rgba(199,125,255,0.5); --cookie-color: radial-gradient(circle, #e0aaff, #3c096c); --cookie-shadow: 0 10px 30px rgba(224,170,255,0.7); --tab-bg: #1f0038; }
+    body.skin-SolarFlare { --bg1: #330800; --bg2: #5c1100; --accent1: #ff4800; --accent2: #ff7b00; --muted: #ffae00; --glass: rgba(255,72,0,0.15); --site-shadow: 0 10px 40px rgba(255,123,0,0.6); --cookie-color: linear-gradient(180deg, #ffae00, #ff4800); --cookie-shadow: 0 10px 30px rgba(255,72,0,0.8); --tab-bg: #5c1100; }
+    body.skin-Supernova { --bg1: #1a0033; --bg2: #330066; --accent1: #ff00aa; --accent2: #00d4ff; --muted: #ffff00; --glass: rgba(255,0,170,0.15); --site-shadow: 0 10px 40px rgba(0,212,255,0.7); --cookie-color: radial-gradient(circle, #ffff00, #ff00aa); --cookie-shadow: 0 10px 30px rgba(0,212,255,0.8); --tab-bg: #330066; }
+    body.skin-DeepOcean { --bg1: #000c1d; --bg2: #001f3f; --accent1: #00b4d8; --accent2: #0077b6; --muted: #90e0ef; --glass: rgba(0,180,216,0.1); --site-shadow: 0 10px 40px rgba(0,119,182,0.6); --cookie-color: linear-gradient(180deg, #00b4d8, #03045e); --cookie-shadow: 0 10px 30px rgba(144,224,239,0.5); --tab-bg: #001f3f; }
+    body.skin-CoralReef { --bg1: #1a2e3b; --bg2: #264653; --accent1: #2a9d8f; --accent2: #e76f51; --muted: #f4a261; --glass: rgba(231,111,81,0.12); --site-shadow: 0 10px 40px rgba(42,157,143,0.5); --cookie-color: linear-gradient(180deg, #e76f51, #f4a261); --cookie-shadow: 0 10px 30px rgba(42,157,143,0.6); --tab-bg: #264653; }
+    body.skin-MintFresh { --bg1: #0a2e28; --bg2: #134e42; --accent1: #a8fbd3; --accent2: #45dfb1; --muted: #e8fdf5; --glass: rgba(168,251,211,0.15); --site-shadow: 0 10px 40px rgba(69,223,177,0.5); --cookie-color: linear-gradient(180deg, #a8fbd3, #119970); --cookie-shadow: 0 10px 30px rgba(168,251,211,0.6); --tab-bg: #134e42; }
+    body.skin-Bubblegum { --bg1: #381028; --bg2: #5c1d43; --accent1: #ff85a1; --accent2: #ff3377; --muted: #fbb1bd; --glass: rgba(255,133,161,0.15); --site-shadow: 0 10px 40px rgba(255,51,119,0.5); --cookie-color: linear-gradient(180deg, #ff85a1, #f72585); --cookie-shadow: 0 10px 30px rgba(255,133,161,0.7); --tab-bg: #5c1d43; }
+    body.skin-Chocolate { --bg1: #1c0d02; --bg2: #361a05; --accent1: #d4a373; --accent2: #a9714b; --muted: #faedcd; --glass: rgba(212,163,115,0.1); --site-shadow: 0 10px 40px rgba(169,113,75,0.6); --cookie-color: linear-gradient(180deg, #8b5e34, #432818); --cookie-shadow: 0 10px 30px rgba(212,163,115,0.5); --tab-bg: #361a05; }
+    body.skin-Strawberry { --bg1: #2b040a; --bg2: #4a0913; --accent1: #ff4d6d; --accent2: #c9184a; --muted: #ffb3c1; --glass: rgba(255,77,109,0.12); --site-shadow: 0 10px 40px rgba(201,24,74,0.6); --cookie-color: linear-gradient(180deg, #ff4d6d, #800f2f); --cookie-shadow: 0 10px 30px rgba(255,179,193,0.6); --tab-bg: #4a0913; }
+    body.skin-Lemonade { --bg1: #2e2802; --bg2: #4e4405; --accent1: #ffe600; --accent2: #f7b801; --muted: #fff9a6; --glass: rgba(255,230,0,0.12); --site-shadow: 0 10px 40px rgba(247,184,1,0.5); --cookie-color: linear-gradient(180deg, #ffe600, #f7b801); --cookie-shadow: 0 10px 30px rgba(255,230,0,0.6); --tab-bg: #4e4405; }
+    body.skin-PumpkinSpice { --bg1: #2b1102; --bg2: #471d05; --accent1: #f97316; --accent2: #ea580c; --muted: #ffedd5; --glass: rgba(249,115,22,0.12); --site-shadow: 0 10px 40px rgba(234,88,12,0.5); --cookie-color: linear-gradient(180deg, #f97316, #9a3412); --cookie-shadow: 0 10px 30px rgba(249,115,22,0.6); --tab-bg: #471d05; }
+    body.skin-WinterFrost { --bg1: #0f172a; --bg2: #1e293b; --accent1: #38bdf8; --accent2: #e0f2fe; --muted: #94a3b8; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(224,242,254,0.4); --cookie-color: linear-gradient(180deg, #e0f2fe, #7dd3fc); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.7); --tab-bg: #1e293b; }
+    body.skin-SpringBloom { --bg1: #1c2618; --bg2: #2e3e28; --accent1: #86efac; --accent2: #f472b6; --muted: #fef08a; --glass: rgba(134,239,172,0.12); --site-shadow: 0 10px 40px rgba(244,114,182,0.5); --cookie-color: linear-gradient(180deg, #86efac, #22c55e); --cookie-shadow: 0 10px 30px rgba(244,114,182,0.6); --tab-bg: #2e3e28; }
+    body.skin-SummerHeat { --bg1: #360c02; --bg2: #5c1705; --accent1: #ff5400; --accent2: #ff0054; --muted: #ffbd00; --glass: rgba(255,84,0,0.15); --site-shadow: 0 10px 40px rgba(255,0,84,0.6); --cookie-color: linear-gradient(180deg, #ffbd00, #ff0054); --cookie-shadow: 0 10px 30px rgba(255,84,0,0.7); --tab-bg: #5c1705; }
+    body.skin-MidnightRose { --bg1: #170312; --bg2: #2e0825; --accent1: #e63946; --accent2: #ff70a6; --muted: #f8edeb; --glass: rgba(230,57,70,0.12); --site-shadow: 0 10px 40px rgba(255,112,166,0.5); --cookie-color: linear-gradient(180deg, #e63946, #70161e); --cookie-shadow: 0 10px 30px rgba(255,112,166,0.6); --tab-bg: #2e0825; }
+    body.skin-GoldenHour { --bg1: #291800; --bg2: #4a2d00; --accent1: #ffb703; --accent2: #fb8500; --muted: #ffe8a1; --glass: rgba(255,183,3,0.15); --site-shadow: 0 10px 40px rgba(251,133,0,0.6); --cookie-color: linear-gradient(180deg, #ffb703, #d47a00); --cookie-shadow: 0 10px 30px rgba(255,183,3,0.7); --tab-bg: #4a2d00; }
+    body.skin-CosmicDust { --bg1: #120924; --bg2: #21123d; --accent1: #f72585; --accent2: #4cc9f0; --muted: #b5179e; --glass: rgba(76,201,240,0.12); --site-shadow: 0 10px 40px rgba(247,37,133,0.6); --cookie-color: radial-gradient(circle, #4cc9f0, #7209b7); --cookie-shadow: 0 10px 30px rgba(247,37,133,0.7); --tab-bg: #21123d; }
+    body.skin-Starlight { --bg1: #090d16; --bg2: #121a2d; --accent1: #ffffff; --accent2: #cbd5e1; --muted: #94a3b8; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(255,255,255,0.4); --cookie-color: radial-gradient(circle, #ffffff, #64748b); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.8); --tab-bg: #121a2d; }
+    body.skin-Obsidian { --bg1: #050505; --bg2: #141414; --accent1: #a3a3a3; --accent2: #525252; --muted: #e5e5e5; --glass: rgba(255,255,255,0.05); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg, #404040, #171717); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.2); --tab-bg: #141414; }
+    body.skin-Pearl { --bg1: #1e2229; --bg2: #303642; --accent1: #f1f5f9; --accent2: #cbd5e1; --muted: #f8fafc; --glass: rgba(241,245,249,0.15); --site-shadow: 0 10px 40px rgba(241,245,249,0.3); --cookie-color: radial-gradient(circle, #ffffff, #cbd5e1); --cookie-shadow: 0 10px 30px rgba(241,245,249,0.7); --tab-bg: #303642; }
+    body.skin-Copper { --bg1: #241108; --bg2: #3d1f11; --accent1: #d97706; --accent2: #b45309; --muted: #fcd34d; --glass: rgba(217,119,6,0.12); --site-shadow: 0 10px 40px rgba(180,83,9,0.6); --cookie-color: linear-gradient(180deg, #d97706, #78350f); --cookie-shadow: 0 10px 30px rgba(217,119,6,0.6); --tab-bg: #3d1f11; }
+    body.skin-Bronze { --bg1: #1f150a; --bg2: #382715; --accent1: #cd7f32; --accent2: #a0522d; --muted: #f5de33; --glass: rgba(205,127,50,0.12); --site-shadow: 0 10px 40px rgba(160,82,45,0.6); --cookie-color: linear-gradient(180deg, #cd7f32, #6e3b19); --cookie-shadow: 0 10px 30px rgba(205,127,50,0.6); --tab-bg: #382715; }
+    body.skin-Titanium { --bg1: #15191d; --bg2: #262c33; --accent1: #94a3b8; --accent2: #64748b; --muted: #e2e8f0; --glass: rgba(148,163,184,0.12); --site-shadow: 0 10px 40px rgba(100,116,139,0.5); --cookie-color: linear-gradient(180deg, #cbd5e1, #475569); --cookie-shadow: 0 10px 30px rgba(148,163,184,0.5); --tab-bg: #262c33; }
+    body.skin-Plasma { --bg1: #1b002b; --bg2: #360054; --accent1: #ff0055; --accent2: #7700ff; --muted: #00ffff; --glass: rgba(255,0,85,0.15); --site-shadow: 0 10px 40px rgba(119,0,255,0.7); --cookie-color: radial-gradient(circle, #ff0055, #360054); --cookie-shadow: 0 10px 30px rgba(0,255,255,0.8); --tab-bg: #360054; }
+    body.skin-Radioactivity { --bg1: #141c00; --bg2: #273800; --accent1: #a3e635; --accent2: #65a30d; --muted: #facc15; --glass: rgba(163,230,53,0.15); --site-shadow: 0 10px 40px rgba(163,230,53,0.7); --cookie-color: radial-gradient(circle, #a3e635, #3f6212); --cookie-shadow: 0 10px 30px rgba(163,230,53,0.8); --tab-bg: #273800; }
+    body.skin-AcidRain { --bg1: #061f06; --bg2: #0e3b0e; --accent1: #22c55e; --accent2: #84cc16; --muted: #a7f3d0; --glass: rgba(34,197,94,0.12); --site-shadow: 0 10px 40px rgba(132,204,22,0.6); --cookie-color: linear-gradient(180deg, #84cc16, #14532d); --cookie-shadow: 0 10px 30px rgba(34,197,94,0.7); --tab-bg: #0e3b0e; }
+    body.skin-Bioluminescence { --bg1: #02121d; --bg2: #05263b; --accent1: #06b6d4; --accent2: #10b981; --muted: #a5f3fc; --glass: rgba(6,182,212,0.15); --site-shadow: 0 10px 40px rgba(16,185,129,0.7); --cookie-color: radial-gradient(circle, #06b6d4, #047857); --cookie-shadow: 0 10px 30px rgba(6,182,212,0.8); --tab-bg: #05263b; }
+    body.skin-DeepTrench { --bg1: #010811; --bg2: #031326; --accent1: #0284c7; --accent2: #1e3a8a; --muted: #7dd3fc; --glass: rgba(2,132,199,0.1); --site-shadow: 0 10px 40px rgba(30,58,138,0.7); --cookie-color: linear-gradient(180deg, #0284c7, #0f172a); --cookie-shadow: 0 10px 30px rgba(125,211,252,0.5); --tab-bg: #031326; }
+    body.skin-Glacier { --bg1: #0b1f28; --bg2: #153847; --accent1: #67e8f9; --accent2: #a5f3fc; --muted: #cffaff; --glass: rgba(103,232,249,0.15); --site-shadow: 0 10px 40px rgba(165,243,252,0.6); --cookie-color: linear-gradient(180deg, #cffaff, #0891b2); --cookie-shadow: 0 10px 30px rgba(103,232,249,0.8); --tab-bg: #153847; }
+    body.skin-Volcano { --bg1: #1f0502; --bg2: #3d0a04; --accent1: #ef4444; --accent2: #b91c1c; --muted: #fca5a5; --glass: rgba(239,68,68,0.15); --site-shadow: 0 10px 40px rgba(185,28,28,0.7); --cookie-color: linear-gradient(180deg, #ef4444, #450a0a); --cookie-shadow: 0 10px 30px rgba(239,68,68,0.8); --tab-bg: #3d0a04; }
+    body.skin-Overgrowth { --bg1: #0e1f0a; --bg2: #1b3814; --accent1: #4ade80; --accent2: #15803d; --muted: #bbf7d0; --glass: rgba(74,222,128,0.12); --site-shadow: 0 10px 40px rgba(21,128,61,0.6); --cookie-color: linear-gradient(180deg, #4ade80, #14532d); --cookie-shadow: 0 10px 30px rgba(74,222,128,0.6); --tab-bg: #1b3814; }
+    body.skin-Twilight { --bg1: #110d21; --bg2: #221a42; --accent1: #a855f7; --accent2: #ec4899; --muted: #e9d5ff; --glass: rgba(168,85,247,0.12); --site-shadow: 0 10px 40px rgba(236,72,153,0.6); --cookie-color: linear-gradient(180deg, #a855f7, #831843); --cookie-shadow: 0 10px 30px rgba(168,85,247,0.7); --tab-bg: #221a42; }
+    body.skin-Daybreak { --bg1: #1c1917; --bg2: #292524; --accent1: #fdba74; --accent2: #f472b6; --muted: #ffedd5; --glass: rgba(253,186,116,0.12); --site-shadow: 0 10px 40px rgba(244,114,182,0.5); --cookie-color: linear-gradient(180deg, #fdba74, #ea580c); --cookie-shadow: 0 10px 30px rgba(253,186,116,0.6); --tab-bg: #292524; }
+    body.skin-Eclipse { --bg1: #05050a; --bg2: #0f0f1c; --accent1: #fbbf24; --accent2: #475569; --muted: #fef3c7; --glass: rgba(251,191,36,0.1); --site-shadow: 0 10px 40px rgba(251,191,36,0.4); --cookie-color: radial-gradient(circle, #0f0f1c, #fbbf24); --cookie-shadow: 0 10px 30px rgba(251,191,36,0.7); --tab-bg: #0f0f1c; }
+    body.skin-Nebula { --bg1: #18002e; --bg2: #31005c; --accent1: #ff77e9; --accent2: #77e9ff; --muted: #e3aeff; --glass: rgba(255,119,233,0.15); --site-shadow: 0 10px 40px rgba(119,233,255,0.7); --cookie-color: radial-gradient(circle, #ff77e9, #31005c); --cookie-shadow: 0 10px 30px rgba(119,233,255,0.8); --tab-bg: #31005c; }
+    body.skin-BlackHole { --bg1: #000000; --bg2: #080808; --accent1: #a855f7; --accent2: #3b82f6; --muted: #ffffff; --glass: rgba(168,85,247,0.08); --site-shadow: 0 10px 40px rgba(168,85,247,0.5); --cookie-color: radial-gradient(circle, #000000, #a855f7); --cookie-shadow: 0 10px 30px rgba(59,130,246,0.8); --tab-bg: #080808; }
+    body.skin-WarpSpeed { --bg1: #020617; --bg2: #0f172a; --accent1: #38bdf8; --accent2: #818cf8; --muted: #e0f2fe; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(129,140,248,0.6); --cookie-color: linear-gradient(180deg, #38bdf8, #312e81); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.8); --tab-bg: #0f172a; }
+    body.skin-Quantum { --bg1: #0a1128; --bg2: #1c2541; --accent1: #00f5d4; --accent2: #7b2cbf; --muted: #80ffdb; --glass: rgba(0,245,212,0.12); --site-shadow: 0 10px 40px rgba(123,44,191,0.6); --cookie-color: linear-gradient(180deg, #00f5d4, #5a189a); --cookie-shadow: 0 10px 30px rgba(0,245,212,0.7); --tab-bg: #1c2541; }
+    body.skin-Synthwave { --bg1: #1a0022; --bg2: #2e003e; --accent1: #ff007f; --accent2: #240046; --muted: #ff9e00; --glass: rgba(255,0,127,0.15); --site-shadow: 0 10px 40px rgba(255,0,127,0.7); --cookie-color: linear-gradient(180deg, #ff9e00, #ff007f); --cookie-shadow: 0 10px 30px rgba(255,0,127,0.8); --tab-bg: #2e003e; }
+    body.skin-Outrun { --bg1: #0d001a; --bg2: #1a0033; --accent1: #ff0055; --accent2: #00f0ff; --muted: #ffee00; --glass: rgba(255,0,85,0.15); --site-shadow: 0 10px 40px rgba(0,240,255,0.7); --cookie-color: linear-gradient(180deg, #ffee00, #ff0055); --cookie-shadow: 0 10px 30px rgba(0,240,255,0.8); --tab-bg: #1a0033; }
+    body.skin-Arcade { --bg1: #121212; --bg2: #1e1e1e; --accent1: #00ff66; --accent2: #ff0033; --muted: #ffff00; --glass: rgba(0,255,102,0.1); --site-shadow: 0 10px 40px rgba(255,0,51,0.5); --cookie-color: linear-gradient(180deg, #ffff00, #ff0033); --cookie-shadow: 0 10px 30px rgba(0,255,102,0.7); --tab-bg: #1e1e1e; }
+    body.skin-PixelArt { --bg1: #181425; --bg2: #262135; --accent1: #ff0044; --accent2: #00e756; --muted: #29adff; --glass: rgba(255,0,68,0.1); --site-shadow: 0 10px 40px rgba(0,231,86,0.5); --cookie-color: linear-gradient(180deg, #ffcc00, #ff0044); --cookie-shadow: 0 10px 30px rgba(41,173,255,0.7); --tab-bg: #262135; }
+    body.skin-Gameboy { --bg1: #0f380f; --bg2: #306230; --accent1: #9bbc0f; --accent2: #8bac0f; --muted: #e0f8d0; --glass: rgba(155,188,15,0.15); --site-shadow: 0 10px 40px rgba(15,56,15,0.8); --cookie-color: linear-gradient(180deg, #9bbc0f, #306230); --cookie-shadow: 0 10px 30px rgba(139,172,15,0.7); --tab-bg: #306230; }
+    body.skin-Blueprint { --bg1: #002b49; --bg2: #003f6b; --accent1: #ffffff; --accent2: #66b2ff; --muted: #b3d9ff; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(0,43,73,0.8); --cookie-color: linear-gradient(180deg, #ffffff, #66b2ff); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.7); --tab-bg: #003f6b; }
+    body.skin-Chalkboard { --bg1: #1a2421; --bg2: #283632; --accent1: #ffffff; --accent2: #a3e635; --muted: #fef08a; --glass: rgba(255,255,255,0.08); --site-shadow: 0 10px 40px rgba(0,0,0,0.8); --cookie-color: linear-gradient(180deg, #ffffff, #d1d5db); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.5); --tab-bg: #283632; }
+    body.skin-Newspaper { --bg1: #121212; --bg2: #242424; --accent1: #e5e5e5; --accent2: #a3a3a3; --muted: #ffffff; --glass: rgba(255,255,255,0.05); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg, #ffffff, #737373); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.3); --tab-bg: #242424; }
+    body.skin-Sepia { --bg1: #2b1f17; --bg2: #423125; --accent1: #d4a373; --accent2: #bc8a5f; --muted: #f4a261; --glass: rgba(212,163,115,0.1); --site-shadow: 0 10px 40px rgba(66,49,37,0.8); --cookie-color: linear-gradient(180deg, #d4a373, #8a5a36); --cookie-shadow: 0 10px 30px rgba(212,163,115,0.5); --tab-bg: #423125; }
+    body.skin-Vintage { --bg1: #2b261f; --bg2: #423b30; --accent1: #e9c46a; --accent2: #e76f51; --muted: #2a9d8f; --glass: rgba(233,196,106,0.1); --site-shadow: 0 10px 40px rgba(0,0,0,0.7); --cookie-color: linear-gradient(180deg, #e9c46a, #e76f51); --cookie-shadow: 0 10px 30px rgba(233,196,106,0.6); --tab-bg: #423b30; }
+    body.skin-RoyalPurple { --bg1: #1f0a2e; --bg2: #361250; --accent1: #e0aaff; --accent2: #ffb703; --muted: #c77dff; --glass: rgba(224,170,255,0.12); --site-shadow: 0 10px 40px rgba(255,183,3,0.5); --cookie-color: linear-gradient(180deg, #ffb703, #9d4edd); --cookie-shadow: 0 10px 30px rgba(224,170,255,0.7); --tab-bg: #361250; }
+    body.skin-CrimsonRed { --bg1: #2b0000; --bg2: #4a0000; --accent1: #ff3333; --accent2: #ff6666; --muted: #ff9999; --glass: rgba(255,51,51,0.15); --site-shadow: 0 10px 40px rgba(255,0,0,0.6); --cookie-color: linear-gradient(180deg, #ff3333, #800000); --cookie-shadow: 0 10px 30px rgba(255,102,102,0.7); --tab-bg: #4a0000; }
+    body.skin-MidnightBlue { --bg1: #030a16; --bg2: #08162a; --accent1: #38bdf8; --accent2: #818cf8; --muted: #c7d2fe; --glass: rgba(56,189,248,0.1); --site-shadow: 0 10px 40px rgba(8,22,42,0.8); --cookie-color: linear-gradient(180deg, #38bdf8, #1e3a8a); --cookie-shadow: 0 10px 30px rgba(129,140,248,0.6); --tab-bg: #08162a; }
+    body.skin-ForestPine { --bg1: #0a1c12; --bg2: #143020; --accent1: #4ade80; --accent2: #22c55e; --muted: #a7f3d0; --glass: rgba(74,222,128,0.1); --site-shadow: 0 10px 40px rgba(20,48,32,0.8); --cookie-color: linear-gradient(180deg, #4ade80, #14532d); --cookie-shadow: 0 10px 30px rgba(74,222,128,0.6); --tab-bg: #143020; }
+    body.skin-Sunburst { --bg1: #331a00; --bg2: #572d00; --accent1: #ffaa00; --accent2: #ff5500; --muted: #ffea00; --glass: rgba(255,170,0,0.15); --site-shadow: 0 10px 40px rgba(255,85,0,0.6); --cookie-color: linear-gradient(180deg, #ffea00, #ff5500); --cookie-shadow: 0 10px 30px rgba(255,170,0,0.8); --tab-bg: #572d00; }
+    body.skin-Tropical { --bg1: #032b2b; --bg2: #064747; --accent1: #00fff2; --accent2: #ff00a0; --muted: #ffee00; --glass: rgba(0,255,242,0.12); --site-shadow: 0 10px 40px rgba(255,0,160,0.6); --cookie-color: linear-gradient(180deg, #ffee00, #ff00a0); --cookie-shadow: 0 10px 30px rgba(0,255,242,0.7); --tab-bg: #064747; }
+    body.skin-Safari { --bg1: #2b220d; --bg2: #453716; --accent1: #eab308; --accent2: #ca8a04; --muted: #fef08a; --glass: rgba(234,179,8,0.12); --site-shadow: 0 10px 40px rgba(69,55,22,0.8); --cookie-color: linear-gradient(180deg, #eab308, #854d0e); --cookie-shadow: 0 10px 30px rgba(234,179,8,0.6); --tab-bg: #453716; }
+    body.skin-Tundra { --bg1: #0f1c24; --bg2: #1b2e3c; --accent1: #a5f3fc; --accent2: #38bdf8; --muted: #e0f2fe; --glass: rgba(165,243,252,0.12); --site-shadow: 0 10px 40px rgba(27,46,60,0.8); --cookie-color: linear-gradient(180deg, #e0f2fe, #0284c7); --cookie-shadow: 0 10px 30px rgba(165,243,252,0.7); --tab-bg: #1b2e3c; }
+    body.skin-Steampunk { --bg1: #21150b; --bg2: #382413; --accent1: #f59e0b; --accent2: #b45309; --muted: #d97706; --glass: rgba(245,158,11,0.12); --site-shadow: 0 10px 40px rgba(56,36,19,0.8); --cookie-color: linear-gradient(180deg, #f59e0b, #78350f); --cookie-shadow: 0 10px 30px rgba(245,158,11,0.6); --tab-bg: #382413; }
+    body.skin-NeonLime { --bg1: #0d1a00; --bg2: #1a3300; --accent1: #84cc16; --accent2: #a3e635; --muted: #d9f99d; --glass: rgba(163,230,53,0.15); --site-shadow: 0 10px 40px rgba(132,204,22,0.7); --cookie-color: linear-gradient(180deg, #a3e635, #4d7c0f); --cookie-shadow: 0 10px 30px rgba(163,230,53,0.8); --tab-bg: #1a3300; }
+    body.skin-HotViolet { --bg1: #24002e; --bg2: #420054; --accent1: #d946ef; --accent2: #c026d3; --muted: #f5d0fe; --glass: rgba(217,70,239,0.15); --site-shadow: 0 10px 40px rgba(192,38,211,0.7); --cookie-color: linear-gradient(180deg, #f5d0fe, #a21caf); --cookie-shadow: 0 10px 30px rgba(217,70,239,0.8); --tab-bg: #420054; }
+    body.skin-CyberYellow { --bg1: #1a1800; --bg2: #333000; --accent1: #facc15; --accent2: #eab308; --muted: #fef08a; --glass: rgba(250,204,21,0.15); --site-shadow: 0 10px 40px rgba(234,179,8,0.7); --cookie-color: linear-gradient(180deg, #fef08a, #ca8a04); --cookie-shadow: 0 10px 30px rgba(250,204,21,0.8); --tab-bg: #333000; }
+    body.skin-FrozenBerry { --bg1: #180924; --bg2: #2d1242; --accent1: #38bdf8; --accent2: #f43f5e; --muted: #e0e7ff; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(244,63,94,0.6); --cookie-color: linear-gradient(180deg, #38bdf8, #be123c); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.7); --tab-bg: #2d1242; }
+    body.skin-PeachFuzz { --bg1: #2e1713; --bg2: #4a2821; --accent1: #ffabab; --accent2: #ffdaaf; --muted: #fff0f0; --glass: rgba(255,171,171,0.15); --site-shadow: 0 10px 40px rgba(255,218,175,0.5); --cookie-color: linear-gradient(180deg, #ffdaaf, #e07a5f); --cookie-shadow: 0 10px 30px rgba(255,171,171,0.6); --tab-bg: #4a2821; }
+    body.skin-InfiniteVoid { --bg1: #000000; --bg2: #05050a; --accent1: #818cf8; --accent2: #c084fc; --muted: #ffffff; --glass: rgba(129,140,248,0.08); --site-shadow: 0 10px 40px rgba(192,132,252,0.6); --cookie-color: radial-gradient(circle, #ffffff, #1e1b4b); --cookie-shadow: 0 10px 30px rgba(129,140,248,0.9); --tab-bg: #05050a; }
 
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
@@ -535,7 +367,7 @@
       
       <div style="margin-top:14px">
         <h3 class="section-title">How to play and new skins</h3>
-        <p style="margin:6px 0;color:var(--muted)">Click the cookie to get cookies. Buy items in the shop to increase cookies per second (CPS). Watch out for the Super Cookie — it gives 50% off for 30 seconds, and find the best look for your bakery. new update, climb to the top of the leader board</p>
+        <p style="margin:6px 0;color:var(--muted)">Click the cookie to get cookies. Buy items in the shop to increase cookies per second (CPS). Watch out for the Super Cookie — it gives 50% off for 30 seconds, and find the best look for your bakery</p>
       </div>
     </main>
 
@@ -551,7 +383,7 @@
       <div id="skinsTab" class="tab-content" data-tab-content="skins">
         <div class="skins-container">
           <h3 class="section-title">🎨 Skins</h3>
-          <p style="color:var(--muted); margin-bottom: 15px;">Change the look of your bakery! (Total: 25 Skins)</p>
+          <p style="color:var(--muted); margin-bottom: 15px;">Change the look of your bakery! (Total: 100 Skins)</p>
           <div class="skin-selector" id="skinSelector">
             </div>
         </div>
@@ -675,6 +507,80 @@
       { name: "Sub Zero", className: "skin-SubZero" },
       { name: "Glitch", className: "skin-Glitch" },
       { name: "Toxic Waste", className: "skin-ToxicWaste" },
+      { name: "Cyberpunk", className: "skin-Cyberpunk" },
+      { name: "Sunset", className: "skin-Sunset" },
+      { name: "Emerald", className: "skin-Emerald" },
+      { name: "Ruby", className: "skin-Ruby" },
+      { name: "Sapphire", className: "skin-Sapphire" },
+      { name: "Amethyst", className: "skin-Amethyst" },
+      { name: "Neon City", className: "skin-NeonCity" },
+      { name: "Matrix", className: "skin-Matrix" },
+      { name: "Sakura", className: "skin-Sakura" },
+      { name: "Desert", className: "skin-Desert" },
+      { name: "Northern Lights", className: "skin-NorthernLights" },
+      { name: "Galaxy", className: "skin-Galaxy" },
+      { name: "Solar Flare", className: "skin-SolarFlare" },
+      { name: "Supernova", className: "skin-Supernova" },
+      { name: "Deep Ocean", className: "skin-DeepOcean" },
+      { name: "Coral Reef", className: "skin-CoralReef" },
+      { name: "Mint Fresh", className: "skin-MintFresh" },
+      { name: "Bubblegum", className: "skin-Bubblegum" },
+      { name: "Chocolate", className: "skin-Chocolate" },
+      { name: "Strawberry", className: "skin-Strawberry" },
+      { name: "Lemonade", className: "skin-Lemonade" },
+      { name: "Pumpkin Spice", className: "skin-PumpkinSpice" },
+      { name: "Winter Frost", className: "skin-WinterFrost" },
+      { name: "Spring Bloom", className: "skin-SpringBloom" },
+      { name: "Summer Heat", className: "skin-SummerHeat" },
+      { name: "Midnight Rose", className: "skin-MidnightRose" },
+      { name: "Golden Hour", className: "skin-GoldenHour" },
+      { name: "Cosmic Dust", className: "skin-CosmicDust" },
+      { name: "Starlight", className: "skin-Starlight" },
+      { name: "Obsidian", className: "skin-Obsidian" },
+      { name: "Pearl", className: "skin-Pearl" },
+      { name: "Copper", className: "skin-Copper" },
+      { name: "Bronze", className: "skin-Bronze" },
+      { name: "Titanium", className: "skin-Titanium" },
+      { name: "Plasma", className: "skin-Plasma" },
+      { name: "Radioactivity", className: "skin-Radioactivity" },
+      { name: "Acid Rain", className: "skin-AcidRain" },
+      { name: "Bioluminescence", className: "skin-Bioluminescence" },
+      { name: "Deep Trench", className: "skin-DeepTrench" },
+      { name: "Glacier", className: "skin-Glacier" },
+      { name: "Volcano", className: "skin-Volcano" },
+      { name: "Overgrowth", className: "skin-Overgrowth" },
+      { name: "Twilight", className: "skin-Twilight" },
+      { name: "Daybreak", className: "skin-Daybreak" },
+      { name: "Eclipse", className: "skin-Eclipse" },
+      { name: "Nebula", className: "skin-Nebula" },
+      { name: "Black Hole", className: "skin-BlackHole" },
+      { name: "Warp Speed", className: "skin-WarpSpeed" },
+      { name: "Quantum", className: "skin-Quantum" },
+      { name: "Synthwave", className: "skin-Synthwave" },
+      { name: "Outrun", className: "skin-Outrun" },
+      { name: "Arcade", className: "skin-Arcade" },
+      { name: "Pixel Art", className: "skin-PixelArt" },
+      { name: "Gameboy", className: "skin-Gameboy" },
+      { name: "Blueprint", className: "skin-Blueprint" },
+      { name: "Chalkboard", className: "skin-Chalkboard" },
+      { name: "Newspaper", className: "skin-Newspaper" },
+      { name: "Sepia", className: "skin-Sepia" },
+      { name: "Vintage", className: "skin-Vintage" },
+      { name: "Royal Purple", className: "skin-RoyalPurple" },
+      { name: "Crimson Red", className: "skin-CrimsonRed" },
+      { name: "Midnight Blue", className: "skin-MidnightBlue" },
+      { name: "Forest Pine", className: "skin-ForestPine" },
+      { name: "Sunburst", className: "skin-Sunburst" },
+      { name: "Tropical", className: "skin-Tropical" },
+      { name: "Safari", className: "skin-Safari" },
+      { name: "Tundra", className: "skin-Tundra" },
+      { name: "Steampunk", className: "skin-Steampunk" },
+      { name: "Neon Lime", className: "skin-NeonLime" },
+      { name: "Hot Violet", className: "skin-HotViolet" },
+      { name: "Cyber Yellow", className: "skin-CyberYellow" },
+      { name: "Frozen Berry", className: "skin-FrozenBerry" },
+      { name: "Peach Fuzz", className: "skin-PeachFuzz" },
+      { name: "Infinite Void", className: "skin-InfiniteVoid" }
     ];
 
     function formatNumber(n){
@@ -963,7 +869,6 @@
           this.updateUI();
         },1000);
 
-        // Auto-sync score to online leaderboard every 60 seconds
         setInterval(() => {
           this.syncOnlineScore(false);
         }, 60000);
