@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Puncher — cookiepuncher.fun</title>
+  <meta name="description" content="Cookie Puncher — click cookies, buy upgrades, and build a cookie empire.">
+  <style>
+    /* --- SKIN DEFINITIONS --- */
+    :root{
+      --bg1: #0b1020; --bg2: #151a30;
+      --accent1: #ffc857; --accent2:#ff9e57;
+      --muted:#a0aec0;
+      --glass: rgba(255,255,255,0.04);
+      --site-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      --cookie-color: linear-gradient(180deg,var(--accent1),var(--accent2));
+      --cookie-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      --tab-bg: #151a30;
+    }
+
+    body.skin-Midnight {
+      --bg1: #1a1a1a; --bg2: #2d2d2d;
+      --accent1: #95d4d4; --accent2:#66b2b2;
+      --muted:#c0c0c0;
+      --glass: rgba(0,0,0,0.2);
+      --site-shadow: 0 10px 40px rgba(0,0,0,0.9);
+      --cookie-color: linear-gradient(180deg,#e0e0e0,#b0b0b0);
+      --cookie-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      --tab-bg: #2d2d2d;
+    }
+    .skin-Midnight #superCookie {
+      background: radial-gradient(circle, #00ffff, #0066ff);
+      box-shadow: 0 0 25px 8px rgba(0,255,255,0.5);
+    }
+
+    body.skin-Forest {
+      --bg1: #1E3A24; --bg2: #2B5433;
+      --accent1: #A4D46C; --accent2:#6CA443;
+      --muted:#C8DBC5;
+      --glass: rgba(0,0,0,0.15);
+      --site-shadow: 0 10px 40px rgba(30,58,36,0.6);
+      --cookie-color: linear-gradient(180deg,#E7CF9C, #C3A675);
+      --cookie-shadow: 0 10px 30px rgba(30,58,36,0.8);
+      --tab-bg: #2B5433;
+    }
+
+    body.skin-Lava {
+      --bg1: #180505; --bg2: #380808;
+      --accent1: #FF4500; --accent2:#FF8C00;
+      --muted:#ffc0cb;
+      --glass: rgba(255, 69, 0, 0.1);
+      --site-shadow: 0 10px 40px rgba(255,69,0,0.3);
+      --cookie-color: linear-gradient(180deg,#303030,#101010);
+      --cookie-shadow: 0 10px 30px rgba(255,69,0,0.45);
+      --tab-bg: #380808;
+    }
+
+    body.skin-Ocean {
+      --bg1: #0A3D62; --bg2: #165E87;
+      --accent1: #6EBFB9; --accent2:#4AA49D;
+      --muted:#B0E0E6;
+      --glass: rgba(255,255,255,0.1);
+      --site-shadow: 0 10px 40px rgba(10,61,98,0.7);
+      --cookie-color: linear-gradient(180deg, #FFD700, #FFA500);
+      --cookie-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --tab-bg: #165E87;
+    }
+
+    body.skin-Gold {
+      --bg1: #3D3D3A; --bg2: #5B5B58;
+      --accent1: #FFD700; --accent2:#DAA520;
+      --muted:#EEDD82;
+      --glass: rgba(255,215,0,0.1);
+      --site-shadow: 0 10px 40px rgba(255,215,0,0.3);
+      --cookie-color: linear-gradient(180deg,#DAA520, #B8860B);
+      --cookie-shadow: 0 10px 30px rgba(255,215,0,0.5);
+      --tab-bg: #5B5B58;
+    }
+
+    body.skin-Retro {
+      --bg1: #1B263B; --bg2: #2B3A5A;
+      --accent1: #FF69B4; --accent2:#FF1493;
+      --muted:#00FFFF;
+      --glass: rgba(255,105,180,0.1);
+      --site-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      --cookie-color: linear-gradient(180deg,#FFD700, #FF6347);
+      --cookie-shadow: 0 10px 30px rgba(255,105,180,0.5);
+      --tab-bg: #2B3A5A;
+    }
+
+    body.skin-Contrast {
+      --bg1: #000000; --bg2: #111111;
+      --accent1: #39FF14; --accent2:#00CC00;
+      --muted:#FFFFFF;
+      --glass: rgba(57, 255, 20, 0.08);
+      --site-shadow: 0 10px 40px rgba(57, 255, 20, 0.3);
+      --cookie-color: linear-gradient(180deg, #FFFFFF, #E0E0E0);
+      --cookie-shadow: 0 10px 30px rgba(57, 255, 20, 0.5);
+      --tab-bg: #111111;
+    }
+
+    body.skin-Candy {
+      --bg1: #F08080; --bg2: #FFB6C1;
+      --accent1: #40E0D0; --accent2:#00CED1;
+      --muted:#8A2BE2;
+      --glass: rgba(255, 255, 255, 0.5);
+      --site-shadow: 0 10px 40px rgba(255, 182, 193, 0.8);
+      --cookie-color: linear-gradient(180deg, #FFA07A, #FF7F50);
+      --cookie-shadow: 0 10px 30px rgba(255, 99, 71, 0.6);
+      --tab-bg: #FFB6C1;
+      color: #333;
+    }
+
+    body.skin-Space {
+      --bg1: #000033; --bg2: #191970;
+      --accent1: #FFCC00; --accent2:#FF9933;
+      --muted:#A9A9A9;
+      --glass: rgba(255, 255, 255, 0.05);
+      --site-shadow: 0 10px 40px rgba(0, 0, 51, 0.9);
+      --cookie-color: radial-gradient(circle, #FFFFFF, #B0C4DE);
+      --cookie-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
+      --tab-bg: #191970;
+    }
+
+    body.skin-Autumn {
+      --bg1: #4B0000; --bg2: #800000;
+      --accent1: #FF8C00; --accent2:#FFA500;
+      --muted:#F5DEB3;
+      --glass: rgba(255, 140, 0, 0.1);
+      --site-shadow: 0 10px 40px rgba(75, 0, 0, 0.9);
+      --cookie-color: linear-gradient(180deg, #CD853F, #A0522D);
+      --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
+      --tab-bg: #800000;
+    }
+
+    body.skin-Vaporwave {
+      --bg1: #2B0E4D; --bg2: #411B65;
+      --accent1: #FF00FF; --accent2:#00FFFF;
+      --muted:#F4B4B4;
+      --glass: rgba(255, 0, 255, 0.1);
+      --site-shadow: 0 10px 40px rgba(255, 0, 255, 0.6);
+      --cookie-color: linear-gradient(180deg, #00FFFF, #00DDDD);
+      --cookie-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
+      --tab-bg: #411B65;
+    }
+
+    body.skin-Jungle {
+      --bg1: #004D40; --bg2: #00796B;
+      --accent1: #FFEB3B; --accent2:#FBC02D;
+      --muted:#A5D6A7;
+      --glass: rgba(255, 255, 255, 0.08);
+      --site-shadow: 0 10px 40px rgba(0, 77, 64, 0.8);
+      --cookie-color: linear-gradient(180deg, #4CAF50, #388E3C);
+      --cookie-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --tab-bg: #00796B;
+    }
+    
+    body.skin-Monochrome {
+      --bg1: #000000; --bg2: #333333;
+      --accent1: #FFFFFF; --accent2:#DDDDDD;
+      --muted:#888888;
+      --glass: rgba(255, 255, 255, 0.05);
+      --site-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+      --cookie-color: linear-gradient(180deg, #AAAAAA, #666666);
+      --cookie-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+      --tab-bg: #333333;
+    }
+
+    body.skin-Valentine {
+      --bg1: #880000; --bg2: #CC0000;
+      --accent1: #FFC0CB; --accent2:#FF69B4;
+      --muted:#F0F0F0;
+      --glass: rgba(255, 192, 203, 0.15);
+      --site-shadow: 0 10px 40px rgba(204, 0, 0, 0.8);
+      --cookie-color: radial-gradient(circle, #FFFFFF, #FFC0CB);
+      --cookie-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+      --tab-bg: #CC0000;
+    }
+
+    body.skin-Ice {
+      --bg1: #004466; --bg2: #3377AA;
+      --accent1: #98FBFB; --accent2:#CCFFFF;
+      --muted:#E0FFFF;
+      --glass: rgba(204, 255, 255, 0.2);
+      --site-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      --cookie-color: linear-gradient(180deg, #FFFFFF, #ADD8E6);
+      --cookie-shadow: 0 10px 30px rgba(152, 251, 251, 0.8);
+      --tab-bg: #3377AA;
+    }
+    
+    body.skin-LaserGrid {
+      --bg1: #000000; --bg2: #0A001A;
+      --accent1: #FF33FF; --accent2:#33FFFF;
+      --muted:#39FF14;
+      --glass: rgba(51, 255, 255, 0.1);
+      --site-shadow: 0 10px 40px rgba(255, 51, 255, 0.7);
+      --cookie-color: linear-gradient(45deg, #FF33FF, #33FFFF);
+      --cookie-shadow: 0 10px 30px rgba(255, 51, 255, 0.8);
+      --tab-bg: #0A001A;
+    }
+
+    body.skin-Toxic {
+      --bg1: #101000; --bg2: #303000;
+      --accent1: #CCFF00; --accent2:#99FF00;
+      --muted:#FF6600;
+      --glass: rgba(204, 255, 0, 0.1);
+      --site-shadow: 0 10px 40px rgba(153, 255, 0, 0.6);
+      --cookie-color: radial-gradient(circle, #00FF00, #00CC00);
+      --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7);
+      --tab-bg: #303000;
+    }
+
+    body.skin-Electric {
+      --bg1: #00002A; --bg2: #00004F;
+      --accent1: #FFFF33; --accent2:#FFCC00;
+      --muted:#33CCFF;
+      --glass: rgba(255, 255, 51, 0.1);
+      --site-shadow: 0 10px 40px rgba(255, 250, 50, 0.7);
+      --cookie-color: linear-gradient(180deg, #33CCFF, #0099FF);
+      --cookie-shadow: 0 10px 30px rgba(255, 250, 50, 0.6);
+      --tab-bg: #00004F;
+    }
+
+    body.skin-Hacker {
+      --bg1: #000000; --bg2: #001A00;
+      --accent1: #00FF00; --accent2:#33FF33;
+      --muted:#00AA00;
+      --glass: rgba(0, 255, 0, 0.08);
+      --site-shadow: 0 10px 40px rgba(0, 255, 0, 0.5);
+      --cookie-color: linear-gradient(180deg, #FFFFFF, #DDDDDD);
+      --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7);
+      --tab-bg: #001A00;
+    }
+
+    body.skin-Firestorm {
+      --bg1: #1A0000; --bg2: #330000;
+      --accent1: #FF4500; --accent2:#FFEA00;
+      --muted:#FF00FF;
+      --glass: rgba(255, 69, 0, 0.15);
+      --site-shadow: 0 10px 40px rgba(255, 69, 0, 0.8);
+      --cookie-color: radial-gradient(circle, #FF8C00, #FF3D00);
+      --cookie-shadow: 0 10px 30px rgba(255, 69, 0, 0.9);
+      --tab-bg: #330000;
+    }
+
+    body.skin-DeepPink {
+      --bg1: #100020; --bg2: #25004A;
+      --accent1: #FF1493; --accent2:#EA00FF;
+      --muted:#00FFFF;
+      --glass: rgba(255, 20, 147, 0.15);
+      --site-shadow: 0 10px 40px rgba(234, 0, 255, 0.7);
+      --cookie-color: linear-gradient(180deg, #FF1493, #FF44CC);
+      --cookie-shadow: 0 10px 30px rgba(255, 20, 147, 0.8);
+      --tab-bg: #25004A;
+    }
+
+    body.skin-SubZero {
+      --bg1: #001A33; --bg2: #003366;
+      --accent1: #0FF0FC; --accent2:#7FFFD4;
+      --muted:#FFFFFF;
+      --glass: rgba(127, 255, 212, 0.15);
+      --site-shadow: 0 10px 40px rgba(0, 240, 252, 0.7);
+      --cookie-color: radial-gradient(circle, #FFFFFF, #ADD8E6);
+      --cookie-shadow: 0 10px 30px rgba(0, 240, 252, 0.8);
+      --tab-bg: #003366;
+    }
+
+    body.skin-Glitch {
+      --bg1: #000000; --bg2: #000000;
+      --accent1: #FF00FF; --accent2:#00FFFF;
+      --muted:#39FF14;
+      --glass: rgba(255, 0, 255, 0.08);
+      --site-shadow: 0 10px 40px rgba(0, 255, 255, 0.6);
+      --cookie-color: linear-gradient(180deg, #FF0000, #00FF00);
+      --cookie-shadow: 0 10px 30px rgba(255, 0, 0, 0.7), -5px -5px 15px rgba(0, 255, 255, 0.7);
+      --tab-bg: #111111;
+    }
+
+    body.skin-ToxicWaste {
+      --bg1: #000D00; --bg2: #002500;
+      --accent1: #CCFF00; --accent2:#FF8C00;
+      --muted:#FFFFFF;
+      --glass: rgba(204, 255, 0, 0.15);
+      --site-shadow: 0 10px 40px rgba(204, 255, 0, 0.8);
+      --cookie-color: radial-gradient(circle, #39FF14, #00AA00);
+      --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.7);
+      --tab-bg: #002500;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+    body{
+      background: linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
+      color:#fff; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      padding:24px;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    .site{
+      width:100%; 
+      max-width:1100px; 
+      border-radius:14px; 
+      padding:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow:var(--site-shadow);
+      grid-template-columns: 1fr; 
+      gap:18px; 
+      align-items:start;
+      padding-bottom: 90px;
+    }
+    header{grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:28px; color:#000; font-weight:700; box-shadow:0 6px 18px rgba(255,160,40,0.08)}
+    h1{margin:0;font-size:1.35rem;color:var(--accent1)}
+    p.lead{margin:0;color:var(--muted)}
+    .left{padding:14px;background:var(--glass); border-radius:12px; min-height:420px; width: 100%;}
+    #cookieButton{
+      width:220px;height:220px;border-radius:50%;border:none;
+      background:var(--cookie-color);
+      font-size:3.6rem;cursor:pointer;
+      box-shadow:var(--cookie-shadow);
+      display:block;margin:14px auto;transition:transform .08s
+    }
+    #cookieButton:active{transform:scale(.92)}
+    #superCookie{
+      display:none;width:120px;height:120px;border-radius:50%;border:none;
+      background:radial-gradient(circle, #ff00ff, #ff9900);
+      font-size:2.4rem;cursor:pointer;
+      box-shadow:0 0 25px 8px rgba(255,0,255,0.5);
+      margin:10px auto;animation:glow 1s infinite alternate;
+    }
+    @keyframes glow{from{box-shadow:0 0 10px #ff00ff;}to{box-shadow:0 0 25px #ff9900;}}
+    
+    .stats{text-align:center}
+    .stats .big{font-size:1.25rem;margin-top:8px}
+    .cps{color:var(--muted);font-size:.95rem}
+    .discount-timer{color:var(--accent2);font-weight:700;margin-top:6px;font-size:.95rem;}
+    
+    .right{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100vw;
+        height: 70px;
+        padding: 0;
+        background: var(--tab-bg);
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        border-radius: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.5s ease;
+    }
+
+    #tabOverlay {
+        position: fixed;
+        bottom: 70px;
+        left: 0;
+        right: 0;
+        background: var(--tab-bg);
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding: 15px;
+        max-height: 80vh;
+        overflow-y: auto;
+        display: none;
+        z-index: 999;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+        transition: background 0.5s ease;
+    }
+    #tabOverlay.active {
+        display: block;
+    }
+
+    .tabs-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+    }
+    .tab-button {
+        background: transparent;
+        border: none;
+        padding: 8px 15px;
+        color: var(--muted);
+        cursor: pointer;
+        font-weight: 600;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 3px solid transparent;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        font-size: 0.85rem;
+    }
+    .tab-button.active {
+        color: var(--accent1);
+        border-bottom: 3px solid var(--accent1);
+    }
+    
+    .tab-content {
+        display: none;
+        padding-top: 10px;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    
+    .shop{display:flex;flex-direction:column;gap:10px}
+    .shop-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(0,0,0,0.18);cursor:pointer;transition:transform .15s;}
+    .shop-item:hover{transform:translateY(-3px)}
+    .affordable{outline:2px solid rgba(255,255,255,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
+    
+    footer{grid-column:1/-1;text-align:center;color:var(--muted);font-size:.85rem;margin-top:6px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    .btn{background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 10px;cursor:pointer;border:none;color:#fff; transition: background 0.2s}
+    .btn:hover {background:rgba(255,255,255,0.1)}
+    
+    .skins-container { text-align: center; padding: 10px; }
+    .skin-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 12px; }
+    .skin-btn {
+      padding: 8px 15px;
+      border: 2px solid transparent;
+      background: var(--glass);
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .skin-btn:hover {
+        border-color: rgba(255,255,255,0.2);
+    }
+    .skin-btn.active {
+      border-color: var(--accent1);
+      color: var(--accent1);
+      font-weight: bold;
+      transform: scale(1.05);
+    }
+
+    .section-title{font-size:.95rem;color:var(--accent1);margin:0 0 8px}
+
+    .leaderboard-container {
+      padding: 10px;
+    }
+    .player-name-box {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+      background: rgba(0,0,0,0.2);
+      padding: 10px;
+      border-radius: 8px;
+      align-items: center;
+    }
+    .player-name-box input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .leaderboard-table th, .leaderboard-table td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .leaderboard-table th {
+      color: var(--accent1);
+      font-weight: bold;
+    }
+    .rank-1 { color: #FFD700; font-weight: bold; }
+    .rank-2 { color: #C0C0C0; font-weight: bold; }
+    .rank-3 { color: #CD7F32; font-weight: bold; }
+    
+    @media (min-width: 1150px) {
+        .right, #tabOverlay {
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1148px;
+        }
+        .right {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+    }
+    
+    @media (max-width:960px){.site{grid-template-columns:1fr;}}
+    @media (max-width:520px){#cookieButton{width:160px;height:160px;font-size:2.6rem}}
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">🍪</div>
+        <div>
+          <h1>Cookie Puncher</h1>
+          <p class="lead">Punch cookies, buy upgrades, become a bakery legend.</p>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-weight:600">COOKIEPUNCHERISFUN!!!</div>
+        <div style="color:var(--muted);font-size:.9rem">Get Punching • V11.0</div>
+      </div>
+    </header>
+
+    <main class="left">
+      <div class="stats">
+        <button id="cookieButton" title="Punch cookie">🍪</button>
+        <button id="superCookie" title="Super Cookie">🌟</button>
+        <div id="score" class="big">Cookies: 0</div>
+        <div id="cps" class="cps">Cookies per second: 0</div>
+        <div id="discountTimer" class="discount-timer"></div>
+
+        <div class="controls">
+          <button class="btn" id="saveBtn">Save for real</button>
+          <button class="btn" id="loadBtn">Load</button>
+          <button class="btn" id="syncScoreBtn">🚀 Sync Online</button>
+          <button class="btn" id="resetBtn">Reset</button>
+        </div>
+      </div>
+      
+      <div style="margin-top:14px">
+        <h3 class="section-title">How to play and new skins</h3>
+        <p style="margin:6px 0;color:var(--muted)">Click the cookie to get cookies. Buy items in the shop to increase cookies per second (CPS). Watch out for the Super Cookie — it gives 50% off for 30 seconds, and find the best look for your bakery</p>
+      </div>
+    </main>
+
+    <footer>By Flapy❤️❤️❤️ I UPDATE THIS WEEKLY</footer>
+  </div>
+  
+  <div id="tabOverlay">
+      <div id="shopTab" class="tab-content active" data-tab-content="shop">
+        <h3 class="section-title">🛒 Shop</h3>
+        <div id="shop" class="shop"></div>
+      </div>
+      
+      <div id="skinsTab" class="tab-content" data-tab-content="skins">
+        <div class="skins-container">
+          <h3 class="section-title">🎨 Skins</h3>
+          <p style="color:var(--muted); margin-bottom: 15px;">Change the look of your bakery! (Total: 25 Skins)</p>
+          <div class="skin-selector" id="skinSelector">
+            </div>
+        </div>
+      </div>
+
+      <div id="leaderboardTab" class="tab-content" data-tab-content="leaderboard">
+        <div class="leaderboard-container">
+          <h3 class="section-title">🏆 Global Online Leaderboard</h3>
+          <p style="color:var(--muted); margin-bottom: 10px;">Set your baker name and climb to #1 in the world!</p>
+          
+          <div class="player-name-box">
+            <label for="usernameInput" style="font-weight:600;">Baker Name:</label>
+            <input type="text" id="usernameInput" maxlength="20" placeholder="Enter your name..." />
+            <button class="btn" id="saveNameBtn">Set Name</button>
+          </div>
+
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Baker</th>
+                <th>Cookies</th>
+                <th>CPS</th>
+                <th>Skin</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardList">
+              <tr><td colspan="5" style="text-align:center; color:var(--muted);">Loading leaderboard...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <aside class="right" id="tabBar">
+    <div class="tabs-container">
+        <button class="tab-button active" data-tab="shop">🛒 Shop</button>
+        <button class="tab-button" data-tab="skins">🎨 Skins</button>
+        <button class="tab-button" data-tab="leaderboard">🏆 Board</button>
+        <button class="tab-button" data-tab="close">❌ Close</button>
+    </div>
+  </aside>
+
+  <script>
+    const GAME_VERSION = '1.0';
+    const SAVE_KEY = 'cookiepuncher_save';
+    const SKIN_SAVE_KEY = 'cookiepuncher_skin';
+    const USERNAME_KEY = 'cookiepuncher_username';
+
+    const ITEM_DEFINITIONS = [
+      { name: "Cursor", emoji: "🖱️", baseCost: 10, cps: 1, costGrow: 1.5 },
+      { name: "cookie money", emoji: "💵", baseCost: 50, cps: 2, costGrow: 1.6 },
+      { name: "cookie candy", emoji: "🍭", baseCost: 100, cps: 3, costGrow: 1.65 },
+      { name: "Grandpa", emoji: "👴", baseCost: 200, cps: 5, costGrow: 1.7 },
+      { name: "cookie famaly", emoji: "👨‍👩‍👦", baseCost: 250, cps: 10, costGrow: 1.75 },
+      { name: "cookie monster", emoji: "🍪😈", baseCost: 500, cps: 15, costGrow: 1.755 },
+      { name: "cookie drone", emoji: "🚁", baseCost: 750, cps: 20, costGrow: 1.7555 },
+      { name: "Factory", emoji: "🏭", baseCost: 1000, cps: 25, costGrow: 1.8 },
+      { name: "Cyclops", emoji: "👁️", baseCost: 2500, cps: 50, costGrow: 1.9 },
+      { name: "Wizard", emoji: "🧙", baseCost: 5000, cps: 100, costGrow: 1.95 },
+      { name: "cookie cannon", emoji: "💥", baseCost: 7000, cps: 200, costGrow: 1.955 },
+      { name: "Cookie Town", emoji: "🌆", baseCost: 10000, cps: 250, costGrow: 1.9555 },
+      { name: "Cookie hero", emoji: "👤", baseCost: 15000, cps: 300, costGrow: 1.95555 },
+      { name: "Portal", emoji: "🚀", baseCost: 20000, cps: 500, costGrow: 2.0 },
+      { name: "Time Machine", emoji: "⏳", baseCost: 100000, cps: 2500, costGrow: 2.15 },
+      { name: "cookie earth", emoji: "🌎", baseCost: 500000, cps: 5000, costGrow: 2.20 },
+      { name: "Cookie Galaxy", emoji: "🌌", baseCost: 1000000, cps: 10000, costGrow: 2.3 },
+      { name: "Cookie multiverce", emoji: "🌌🌌🌌", baseCost: 10000000, cps: 100000, costGrow: 2.35 },
+      { name: "10000 Cookie robots", emoji: "🤖🤖", baseCost: 50000000, cps: 250000, costGrow: 2.4},
+      { name: "100m cookie subscribers", emoji: "🍪", baseCost: 100000000, cps: 300000, costGrow: 2.5},
+      { name: "1000000000000000000000000 cookies", emoji: "🍪", baseCost: 1000000000, cps: 400000, costGrow: 2.6 },
+      { name: "turn the world to cookies", emoji: "🌎>🍪", baseCost: 2500000000, cps: 500000, costGrow: 2.65 },
+      { name: "turn the universe to cookies", emoji: "🌌>🍪", baseCost: 5000000000, cps: 1000000, costGrow: 2.7 },
+      { name: "turn the multiverce to cookies", emoji: "🌌🌌🌌>🍪", baseCost: 10000000000, cps: 2500000, costGrow: 2.8 },
+      { name: "grandma!!!", emoji: "👵", baseCost: 20000000000, cps: 5000000, costGrow: 2.85 },
+      { name: "grandma+grandpa", emoji: "👵+👴", baseCost: 25000000000, cps: 7500000, costGrow: 2.95 },
+      { name: "grandma+grandpa+mom+dad", emoji: "👵+👴+👨‍👩‍👦", baseCost: 30000000000, cps: 10000000, costGrow: 3.00 },
+      { name: "cookie dictionary", emoji: "📖", baseCost: 35000000000, cps: 20000000, costGrow: 3.10 },
+      { name: "cookie books", emoji: "📖📖📖", baseCost: 40000000000, cps: 30000000, costGrow: 3.20 },
+      { name: "cookie languige", emoji: "🔤", baseCost: 50000000000, cps: 40000000, costGrow: 3.30 },
+      { name: "cookie money bag", emoji: "💵💰", baseCost: 60000000000, cps: 50000000, costGrow: 3.40 },
+      { name: "cookie million dollars", emoji: "💵💵💵💵💵", baseCost: 70000000000, cps: 60000000, costGrow: 3.50 },
+      { name: "cookie billion dollars", emoji: "💵💵💵💵💵💵💵", baseCost: 80000000000, cps: 70000000, costGrow: 3.55 },
+      { name: "cookie  hundred billion dollars", emoji: "💵💵💵💵💵💵💵💵💵💵💵", baseCost: 90000000000, cps: 80000000, costGrow: 3.555 },
+      { name: "upgraded cursor", emoji: "🖱️⬆️🖱️⬆️", baseCost: 100000000000, cps: 90000000, costGrow: 3.6 },
+      { name: "cosmic cookie", emoji: "🔮", baseCost: 500000000000, cps: 100000000, costGrow: 3.65 },
+      { name: "super upgraded cursor", emoji: "🖱️⬆️🖱️⬆️🖱️⬆️🖱️⬆️", baseCost: 600000000000, cps: 250000000, costGrow: 3.7 },
+      { name: "broken mouse cursor", emoji: "💩", baseCost: 700000000000, cps: 300000000, costGrow: 3.8 },
+      { name: "secret cookie", emoji: "🤫🤫🤫", baseCost: 800000000000, cps: 80000000, costGrow: 3.9 },
+      { name: "unexistant cookie", emoji: "   ", baseCost: 900000000000, cps: 90000000, costGrow: 4.0 },
+      { name: "invisible cookie", emoji: "🕳", baseCost: 900000000000, cps: 100000000, costGrow: 4.1 },
+      { name: "cookie cloaths", emoji: "👕👖", baseCost: 1000000000000, cps: 200000000, costGrow: 4.2 },
+      { name: "nothing", emoji: "                                                      ", baseCost: 1500000000000, cps: 300000000, costGrow: 4.3 },
+      { name: "black hole", emoji: "-o-", baseCost: 2000000000000, cps: 400000000, costGrow: 4.4 },
+      { name: "air", emoji: "🍃", baseCost: 2500000000000, cps: 1000000000, costGrow: 4.5 },
+    ];
+
+    const SKIN_DEFINITIONS = [
+      { name: "Classic", className: "" },
+      { name: "Midnight", className: "skin-Midnight" },
+      { name: "Forest", className: "skin-Forest" }, 
+      { name: "Lava", className: "skin-Lava" },
+      { name: "Ocean", className: "skin-Ocean" },
+      { name: "Gold", className: "skin-Gold" },
+      { name: "Retro", className: "skin-Retro" },
+      { name: "High Contrast", className: "skin-Contrast" },
+      { name: "Candy", className: "skin-Candy" },
+      { name: "Space", className: "skin-Space" },
+      { name: "Autumn", className: "skin-Autumn" },
+      { name: "Vaporwave", className: "skin-Vaporwave" },
+      { name: "Jungle", className: "skin-Jungle" },
+      { name: "Monochrome", className: "skin-Monochrome" },
+      { name: "Valentine", className: "skin-Valentine" },
+      { name: "Ice", className: "skin-Ice" },
+      { name: "Laser Grid", className: "skin-LaserGrid" },
+      { name: "Toxic", className: "skin-Toxic" },
+      { name: "Electric", className: "skin-Electric" },
+      { name: "Hacker", className: "skin-Hacker" },
+      { name: "Firestorm", className: "skin-Firestorm" },
+      { name: "Deep Pink", className: "skin-DeepPink" },
+      { name: "Sub Zero", className: "skin-SubZero" },
+      { name: "Glitch", className: "skin-Glitch" },
+      { name: "Toxic Waste", className: "skin-ToxicWaste" },
+    ];
+
+    function formatNumber(n){
+      if(n >= 1e9) return (n/1e9).toFixed(2)+'B';
+      if(n >= 1e6) return (n/1e6).toFixed(2)+'M';
+      if(n >= 1e3) return (n/1e3).toFixed(2)+'K';
+      return Math.floor(n);
+    }
+
+    class CookiePuncherGame {
+      constructor(){
+        this.cookies = 0;
+        this.discountActive = false;
+        this.discountTimer = 0;
+        this.items = ITEM_DEFINITIONS.map(d => ({...d, owned:0, cost:d.baseCost}));
+        this.activeSkin = SKIN_DEFINITIONS[0];
+        this.activeTab = 'shop';
+        this.username = localStorage.getItem(USERNAME_KEY) || 'Baker_' + Math.floor(1000 + Math.random() * 9000);
+
+        this.dom = {
+          body: document.body,
+          cookieButton: document.getElementById('cookieButton'),
+          superCookie: document.getElementById('superCookie'),
+          scoreEl: document.getElementById('score'),
+          cpsEl: document.getElementById('cps'),
+          shopEl: document.getElementById('shop'),
+          discountTimerEl: document.getElementById('discountTimer'),
+          saveBtn: document.getElementById('saveBtn'),
+          loadBtn: document.getElementById('loadBtn'),
+          syncScoreBtn: document.getElementById('syncScoreBtn'),
+          resetBtn: document.getElementById('resetBtn'),
+          skinSelector: document.getElementById('skinSelector'),
+          tabBar: document.getElementById('tabBar'),
+          tabOverlay: document.getElementById('tabOverlay'),
+          tabButtons: document.querySelectorAll('.tab-button'), 
+          tabContents: document.querySelectorAll('.tab-content'),
+          usernameInput: document.getElementById('usernameInput'),
+          saveNameBtn: document.getElementById('saveNameBtn'),
+          leaderboardList: document.getElementById('leaderboardList')
+        };
+
+        this._loadSkin();
+        this._bindEvents();
+        this.buildShop();
+        this.buildSkinSelector();
+        this.dom.usernameInput.value = this.username;
+        this.updateUI();
+        this.startLoops();
+        
+        this.switchTab('shop'); 
+      }
+
+      _bindEvents(){
+        this.dom.cookieButton.addEventListener('click', ()=>{ this.addCookie(1); });
+        this.dom.superCookie.addEventListener('click', ()=> this.activateDiscount());
+        this.dom.saveBtn.addEventListener('click', ()=> this.saveGame(true));
+        this.dom.loadBtn.addEventListener('click', ()=> this.loadGame(true));
+        this.dom.syncScoreBtn.addEventListener('click', ()=> this.syncOnlineScore(true));
+        this.dom.resetBtn.addEventListener('click', ()=> this.resetGame());
+        
+        this.dom.saveNameBtn.addEventListener('click', () => {
+          const name = this.dom.usernameInput.value.trim();
+          if (name) {
+            this.username = name;
+            localStorage.setItem(USERNAME_KEY, name);
+            this.syncOnlineScore(true);
+          }
+        });
+
+        this.dom.tabButtons.forEach(button => {
+            button.addEventListener('click', (e) => this.handleTabClick(e.target.dataset.tab));
+        });
+      }
+      
+      handleTabClick(tabName) {
+          if (tabName === 'close') {
+              this.closeTab();
+          } else if (this.activeTab === tabName && this.dom.tabOverlay.classList.contains('active')) {
+              this.closeTab();
+          } else {
+              this.switchTab(tabName);
+          }
+      }
+
+      switchTab(tabName) {
+        this.activeTab = tabName;
+        
+        this.dom.tabButtons.forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+        
+        this.dom.tabContents.forEach(content => content.classList.remove('active'));
+        const activeContent = document.querySelector(`.tab-content[data-tab-content="${tabName}"]`);
+        if (activeContent) activeContent.classList.add('active');
+        
+        this.dom.tabOverlay.classList.add('active');
+
+        if (tabName === 'leaderboard') {
+          this.fetchLeaderboard();
+        }
+      }
+      
+      closeTab() {
+        this.activeTab = null;
+        this.dom.tabButtons.forEach(btn => btn.classList.remove('active'));
+        this.dom.tabOverlay.classList.remove('active');
+        this.dom.tabContents.forEach(content => content.classList.remove('active'));
+      }
+
+      get totalCPS(){
+        return this.items.reduce((sum,i)=>sum+i.owned*i.cps,0);
+      }
+
+      addCookie(n){ this.cookies += n; this.updateUI(); }
+
+      buyItem(i){
+        const item = this.items[i];
+        const cost = this.discountActive ? Math.floor(item.cost/2) : item.cost;
+        if(this.cookies >= cost){
+          this.cookies -= cost;
+          item.owned++;
+          item.cost = Math.floor(item.cost * item.costGrow);
+          this.updateUI();
+        }
+      }
+
+      activateDiscount(){
+        this.discountActive = true;
+        this.discountTimer = 30;
+        this.dom.superCookie.style.display='none';
+        const countdown = setInterval(()=>{
+          this.discountTimer--;
+          this.dom.discountTimerEl.textContent = `50% OFF! ${this.discountTimer}s`;
+          if(this.discountTimer<=0){
+            clearInterval(countdown);
+            this.discountActive=false;
+            this.dom.discountTimerEl.textContent='';
+            this.updateUI();
+          }
+        },1000);
+      }
+
+      spawnSuperCookie(){
+        setTimeout(()=>{
+          if(!this.discountActive){
+            this.dom.superCookie.style.display='block';
+            setTimeout(()=> this.dom.superCookie.style.display='none',8000);
+          }
+          this.spawnSuperCookie();
+        }, Math.random()*30000+30000);
+      }
+
+      buildShop(){
+        this.dom.shopEl.innerHTML='';
+        this.items.forEach((item,i)=>{
+          const div=document.createElement('div');
+          div.className='shop-item';
+          div.innerHTML=`<div>${item.emoji} ${item.name} <span style="color:#999">x${item.owned}</span></div>
+          <div><b>${formatNumber(item.cost)}</b> 🍪</div>`;
+          div.addEventListener('click',()=>this.buyItem(i));
+          this.dom.shopEl.appendChild(div);
+        });
+      }
+      
+      buildSkinSelector() {
+        this.dom.skinSelector.innerHTML = '';
+        SKIN_DEFINITIONS.forEach(skin => {
+          const button = document.createElement('button');
+          button.className = 'skin-btn';
+          button.textContent = skin.name;
+          if (this.activeSkin.name === skin.name) {
+            button.classList.add('active');
+          }
+          button.addEventListener('click', () => this.changeSkin(skin));
+          this.dom.skinSelector.appendChild(button);
+        });
+      }
+      
+      changeSkin(skin) {
+        this.dom.body.classList.remove(...SKIN_DEFINITIONS.map(s => s.className).filter(c => c)); 
+        if (skin.className) {
+          this.dom.body.classList.add(skin.className);
+        }
+        
+        this.activeSkin = skin;
+        this.saveSkin();
+        this.dom.skinSelector.querySelectorAll('.skin-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.textContent === skin.name) {
+            btn.classList.add('active');
+          }
+        });
+        
+        this.updateUI();
+      }
+
+      saveSkin() {
+        localStorage.setItem(SKIN_SAVE_KEY, this.activeSkin.name);
+      }
+
+      _loadSkin() {
+        const savedSkinName = localStorage.getItem(SKIN_SAVE_KEY);
+        const skin = SKIN_DEFINITIONS.find(s => s.name === savedSkinName) || SKIN_DEFINITIONS[0];
+        this.activeSkin = skin;
+        if (skin.className) {
+          this.dom.body.classList.add(skin.className);
+        }
+      }
+
+      updateUI(){
+        this.dom.scoreEl.textContent = `Cookies: ${formatNumber(this.cookies)}`;
+        this.dom.cpsEl.textContent = `Cookies per second: ${formatNumber(this.totalCPS)}`;
+        const shopItems = this.dom.shopEl.querySelectorAll('.shop-item');
+        this.items.forEach((item,i)=>{
+          const cost=this.discountActive?Math.floor(item.cost/2):item.cost;
+          const el=shopItems[i];
+          if (el) {
+            el.querySelector('b').textContent=formatNumber(cost);
+            el.querySelector('span').textContent=`x${item.owned}`;
+            if(this.cookies>=cost) el.classList.add('affordable');
+            else el.classList.remove('affordable');
+          }
+        });
+      }
+
+      async fetchLeaderboard() {
+        try {
+          const response = await fetch('/api/leaderboard');
+          if (!response.ok) throw new Error('Failed to fetch leaderboard');
+          const players = await response.json();
+          
+          if (players.length === 0) {
+            this.dom.leaderboardList.innerHTML = '<tr><td colspan="5" style="text-align:center;">No high scores yet! Be the first!</td></tr>';
+            return;
+          }
+
+          this.dom.leaderboardList.innerHTML = players.map((player, index) => {
+            let rankBadge = `#${index + 1}`;
+            let rankClass = '';
+            if (index === 0) { rankBadge = '🥇 #1'; rankClass = 'rank-1'; }
+            else if (index === 1) { rankBadge = '🥈 #2'; rankClass = 'rank-2'; }
+            else if (index === 2) { rankBadge = '🥉 #3'; rankClass = 'rank-3'; }
+
+            const isCurrentPlayer = player.username === this.username ? 'style="background: rgba(255,255,255,0.08); font-weight:bold;"' : '';
+
+            return `<tr ${isCurrentPlayer}>
+              <td class="${rankClass}">${rankBadge}</td>
+              <td>${player.username}</td>
+              <td>${formatNumber(player.cookies)} 🍪</td>
+              <td>${formatNumber(player.cps)}/s</td>
+              <td>${player.skin || 'Classic'}</td>
+            </tr>`;
+          }).join('');
+        } catch (err) {
+          this.dom.leaderboardList.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#ff6666;">Offline or server starting up. Try again in a moment!</td></tr>';
+        }
+      }
+
+      async syncOnlineScore(showNotice = false) {
+        try {
+          const response = await fetch('/api/leaderboard', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: this.username,
+              cookies: this.cookies,
+              cps: this.totalCPS,
+              skin: this.activeSkin.name
+            })
+          });
+
+          if (response.ok) {
+            if (showNotice) alert(`Synced online! Username: ${this.username}`);
+            this.fetchLeaderboard();
+          } else {
+            if (showNotice) alert('Failed to sync score online.');
+          }
+        } catch (err) {
+          if (showNotice) alert('Could not reach online leaderboard server.');
+        }
+      }
+
+      startLoops(){
+        setInterval(()=>{
+          this.cookies += this.totalCPS;
+          this.updateUI();
+        },1000);
+
+        // Auto-sync score to online leaderboard every 60 seconds
+        setInterval(() => {
+          this.syncOnlineScore(false);
+        }, 60000);
+
+        this.spawnSuperCookie();
+      }
+
+      saveGame(show=false){
+        const save={
+          version:GAME_VERSION,
+          cookies:this.cookies,
+          items:this.items.map(i=>({owned:i.owned,cost:i.cost}))
+        };
+        localStorage.setItem(SAVE_KEY,JSON.stringify(save));
+        this.saveSkin();
+        this.syncOnlineScore(false);
+        if(show) alert('Game saved locally and synced online!');
+      }
+
+      loadGame(show=false){
+        const data=localStorage.getItem(SAVE_KEY);
+        if(!data){ if(show) alert('No saved game.'); return; }
+        const s=JSON.parse(data);
+        this.cookies=s.cookies||0;
+        s.items.forEach((d,i)=>{
+          if(this.items[i]){ this.items[i].owned=d.owned; this.items[i].cost=d.cost; }
+        });
+        this._loadSkin();
+        this.buildSkinSelector();
+        this.updateUI();
+        if(show) alert('Game loaded!');
+      }
+
+      resetGame(){
+        if(confirm('Reset everything, including your cookies and upgrades?')){
+          localStorage.removeItem(SAVE_KEY);
+          localStorage.removeItem(SKIN_SAVE_KEY);
+          location.reload();
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded',()=> new CookiePuncherGame());
+  </script>
+</body>
+</html>
