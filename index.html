@@ -912,6 +912,32 @@
     }
 
     document.addEventListener('DOMContentLoaded',()=> new CookiePuncherGame());
+    // --- UPDATED GAME INITIALIZATION WITH AUTOSAVE ---
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Start your game and save it to a window variable so the timer can find it
+    window.myCookiePuncherGame = new CookiePuncherGame(); // Replace with your exact class name if different!
+
+    // 2. Start the background autosave timer
+    setInterval(() => {
+        if (window.myCookiePuncherGame) {
+            console.log("Autosave: Saving game and syncing online...");
+            
+            // Call your internal local save function safely
+            if (typeof window.myCookiePuncherGame.saveGame === 'function') {
+                window.myCookiePuncherGame.saveGame();
+            } else if (typeof window.myCookiePuncherGame.save === 'function') {
+                window.myCookiePuncherGame.save();
+            }
+
+            // Call your internal online leaderboard sync function safely
+            if (typeof window.myCookiePuncherGame.syncOnline === 'function') {
+                window.myCookiePuncherGame.syncOnline();
+            } else if (typeof window.myCookiePuncherGame.sync === 'function') {
+                window.myCookiePuncherGame.sync();
+            }
+        }
+    }, 15000); // Saves quietly every 15 seconds
+});
   </script>
 </body>
 </html>
