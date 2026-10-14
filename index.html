@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cookie Puncher — cookiepuncher.fun</title>
-  <meta name="description" content="Cookie Puncher — click cookies, buy upgrades, and build a cookie empire.">
+  <meta name="description" content="Cookie Puncher — click cookies, buy upgrades, unlock 200 skins, and build a cookie empire.">
+  
   <style>
-    /* --- BASE SKIN DEFINITIONS --- */
-    :root{
+    :root {
       --bg1: #0b1020; --bg2: #151a30;
-      --accent1: #ffc857; --accent2:#ff9e57;
-      --muted:#a0aec0;
+      --accent1: #ffc857; --accent2: #ff9e57;
+      --muted: #a0aec0;
       --glass: rgba(255,255,255,0.04);
       --site-shadow: 0 10px 40px rgba(2,6,23,0.6);
       --cookie-color: linear-gradient(180deg,var(--accent1),var(--accent2));
@@ -18,334 +18,240 @@
       --tab-bg: #151a30;
     }
 
-    body.skin-Midnight { --bg1: #1a1a1a; --bg2: #2d2d2d; --accent1: #95d4d4; --accent2:#66b2b2; --muted:#c0c0c0; --glass: rgba(0,0,0,0.2); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg,#e0e0e0,#b0b0b0); --cookie-shadow: 0 10px 30px rgba(0,0,0,0.7); --tab-bg: #2d2d2d; }
-    body.skin-Forest { --bg1: #1E3A24; --bg2: #2B5433; --accent1: #A4D46C; --accent2:#6CA443; --muted:#C8DBC5; --glass: rgba(0,0,0,0.15); --site-shadow: 0 10px 40px rgba(30,58,36,0.6); --cookie-color: linear-gradient(180deg,#E7CF9C, #C3A675); --cookie-shadow: 0 10px 30px rgba(30,58,36,0.8); --tab-bg: #2B5433; }
-    body.skin-Lava { --bg1: #180505; --bg2: #380808; --accent1: #FF4500; --accent2:#FF8C00; --muted:#ffc0cb; --glass: rgba(255, 69, 0, 0.1); --site-shadow: 0 10px 40px rgba(255,69,0,0.3); --cookie-color: linear-gradient(180deg,#303030,#101010); --cookie-shadow: 0 10px 30px rgba(255,69,0,0.45); --tab-bg: #380808; }
-    body.skin-Ocean { --bg1: #0A3D62; --bg2: #165E87; --accent1: #6EBFB9; --accent2:#4AA49D; --muted:#B0E0E6; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(10,61,98,0.7); --cookie-color: linear-gradient(180deg, #FFD700, #FFA500); --cookie-shadow: 0 10px 30px rgba(0,0,0,0.6); --tab-bg: #165E87; }
-    body.skin-Gold { --bg1: #3D3D3A; --bg2: #5B5B58; --accent1: #FFD700; --accent2:#DAA520; --muted:#EEDD82; --glass: rgba(255,215,0,0.1); --site-shadow: 0 10px 40px rgba(255,215,0,0.3); --cookie-color: linear-gradient(180deg,#DAA520, #B8860B); --cookie-shadow: 0 10px 30px rgba(255,215,0,0.5); --tab-bg: #5B5B58; }
-    body.skin-Retro { --bg1: #1B263B; --bg2: #2B3A5A; --accent1: #FF69B4; --accent2:#FF1493; --muted:#00FFFF; --glass: rgba(255,105,180,0.1); --site-shadow: 0 10px 40px rgba(0,0,0,0.8); --cookie-color: linear-gradient(180deg,#FFD700, #FF6347); --cookie-shadow: 0 10px 30px rgba(255,105,180,0.5); --tab-bg: #2B3A5A; }
-    body.skin-Contrast { --bg1: #000000; --bg2: #111111; --accent1: #39FF14; --accent2:#00CC00; --muted:#FFFFFF; --glass: rgba(57, 255, 20, 0.08); --site-shadow: 0 10px 40px rgba(57, 255, 20, 0.3); --cookie-color: linear-gradient(180deg, #FFFFFF, #E0E0E0); --cookie-shadow: 0 10px 30px rgba(57, 255, 20, 0.5); --tab-bg: #111111; }
-    body.skin-Candy { --bg1: #F08080; --bg2: #FFB6C1; --accent1: #40E0D0; --accent2:#00CED1; --muted:#8A2BE2; --glass: rgba(255, 255, 255, 0.5); --site-shadow: 0 10px 40px rgba(255, 182, 193, 0.8); --cookie-color: linear-gradient(180deg, #FFA07A, #FF7F50); --cookie-shadow: 0 10px 30px rgba(255, 99, 71, 0.6); --tab-bg: #FFB6C1; color: #333; }
-    body.skin-Space { --bg1: #000033; --bg2: #191970; --accent1: #FFCC00; --accent2:#FF9933; --muted:#A9A9A9; --glass: rgba(255, 255, 255, 0.05); --site-shadow: 0 10px 40px rgba(0, 0, 51, 0.9); --cookie-color: radial-gradient(circle, #FFFFFF, #B0C4DE); --cookie-shadow: 0 10px 30px rgba(255, 204, 0, 0.6); --tab-bg: #191970; }
-    body.skin-Autumn { --bg1: #4B0000; --bg2: #800000; --accent1: #FF8C00; --accent2:#FFA500; --muted:#F5DEB3; --glass: rgba(255, 140, 0, 0.1); --site-shadow: 0 10px 40px rgba(75, 0, 0, 0.9); --cookie-color: linear-gradient(180deg, #CD853F, #A0522D); --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.5); --tab-bg: #800000; }
-    body.skin-Vaporwave { --bg1: #2B0E4D; --bg2: #411B65; --accent1: #FF00FF; --accent2:#00FFFF; --muted:#F4B4B4; --glass: rgba(255, 0, 255, 0.1); --site-shadow: 0 10px 40px rgba(255, 0, 255, 0.6); --cookie-color: linear-gradient(180deg, #00FFFF, #00DDDD); --cookie-shadow: 0 10px 30px rgba(0, 255, 255, 0.5); --tab-bg: #411B65; }
-    body.skin-Jungle { --bg1: #004D40; --bg2: #00796B; --accent1: #FFEB3B; --accent2:#FBC02D; --muted:#A5D6A7; --glass: rgba(255, 255, 255, 0.08); --site-shadow: 0 10px 40px rgba(0, 77, 64, 0.8); --cookie-color: linear-gradient(180deg, #4CAF50, #388E3C); --cookie-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); --tab-bg: #00796B; }
-    body.skin-Monochrome { --bg1: #000000; --bg2: #333333; --accent1: #FFFFFF; --accent2:#DDDDDD; --muted:#888888; --glass: rgba(255, 255, 255, 0.05); --site-shadow: 0 10px 40px rgba(255, 255, 255, 0.1); --cookie-color: linear-gradient(180deg, #AAAAAA, #666666); --cookie-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); --tab-bg: #333333; }
-    body.skin-Valentine { --bg1: #880000; --bg2: #CC0000; --accent1: #FFC0CB; --accent2:#FF69B4; --muted:#F0F0F0; --glass: rgba(255, 192, 203, 0.15); --site-shadow: 0 10px 40px rgba(204, 0, 0, 0.8); --cookie-color: radial-gradient(circle, #FFFFFF, #FFC0CB); --cookie-shadow: 0 10px 30px rgba(255, 105, 180, 0.5); --tab-bg: #CC0000; }
-    body.skin-Ice { --bg1: #004466; --bg2: #3377AA; --accent1: #98FBFB; --accent2:#CCFFFF; --muted:#E0FFFF; --glass: rgba(204, 255, 255, 0.2); --site-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); --cookie-color: linear-gradient(180deg, #FFFFFF, #ADD8E6); --cookie-shadow: 0 10px 30px rgba(152, 251, 251, 0.8); --tab-bg: #3377AA; }
-    body.skin-LaserGrid { --bg1: #000000; --bg2: #0A001A; --accent1: #FF33FF; --accent2:#33FFFF; --muted:#39FF14; --glass: rgba(51, 255, 255, 0.1); --site-shadow: 0 10px 40px rgba(255, 51, 255, 0.7); --cookie-color: linear-gradient(45deg, #FF33FF, #33FFFF); --cookie-shadow: 0 10px 30px rgba(255, 51, 255, 0.8); --tab-bg: #0A001A; }
-    body.skin-Toxic { --bg1: #101000; --bg2: #303000; --accent1: #CCFF00; --accent2:#99FF00; --muted:#FF6600; --glass: rgba(204, 255, 0, 0.1); --site-shadow: 0 10px 40px rgba(153, 255, 0, 0.6); --cookie-color: radial-gradient(circle, #00FF00, #00CC00); --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7); --tab-bg: #303000; }
-    body.skin-Electric { --bg1: #00002A; --bg2: #00004F; --accent1: #FFFF33; --accent2:#FFCC00; --muted:#33CCFF; --glass: rgba(255, 255, 51, 0.1); --site-shadow: 0 10px 40px rgba(255, 250, 50, 0.7); --cookie-color: linear-gradient(180deg, #33CCFF, #0099FF); --cookie-shadow: 0 10px 30px rgba(255, 250, 50, 0.6); --tab-bg: #00004F; }
-    body.skin-Hacker { --bg1: #000000; --bg2: #001A00; --accent1: #00FF00; --accent2:#33FF33; --muted:#00AA00; --glass: rgba(0, 255, 0, 0.08); --site-shadow: 0 10px 40px rgba(0, 255, 0, 0.5); --cookie-color: linear-gradient(180deg, #FFFFFF, #DDDDDD); --cookie-shadow: 0 10px 30px rgba(0, 255, 0, 0.7); --tab-bg: #001A00; }
-    body.skin-Firestorm { --bg1: #1A0000; --bg2: #330000; --accent1: #FF4500; --accent2:#FFEA00; --muted:#FF00FF; --glass: rgba(255, 69, 0, 0.15); --site-shadow: 0 10px 40px rgba(255, 69, 0, 0.8); --cookie-color: radial-gradient(circle, #FF8C00, #FF3D00); --cookie-shadow: 0 10px 30px rgba(255, 69, 0, 0.9); --tab-bg: #330000; }
-    body.skin-DeepPink { --bg1: #100020; --bg2: #25004A; --accent1: #FF1493; --accent2:#EA00FF; --muted:#00FFFF; --glass: rgba(255, 20, 147, 0.15); --site-shadow: 0 10px 40px rgba(234, 0, 255, 0.7); --cookie-color: linear-gradient(180deg, #FF1493, #FF44CC); --cookie-shadow: 0 10px 30px rgba(255, 20, 147, 0.8); --tab-bg: #25004A; }
-    body.skin-SubZero { --bg1: #001A33; --bg2: #003366; --accent1: #0FF0FC; --accent2:#7FFFD4; --muted:#FFFFFF; --glass: rgba(127, 255, 212, 0.15); --site-shadow: 0 10px 40px rgba(0, 240, 252, 0.7); --cookie-color: radial-gradient(circle, #FFFFFF, #ADD8E6); --cookie-shadow: 0 10px 30px rgba(0, 240, 252, 0.8); --tab-bg: #003366; }
-    body.skin-Glitch { --bg1: #000000; --bg2: #000000; --accent1: #FF00FF; --accent2:#00FFFF; --muted:#39FF14; --glass: rgba(255, 0, 255, 0.08); --site-shadow: 0 10px 40px rgba(0, 255, 255, 0.6); --cookie-color: linear-gradient(180deg, #FF0000, #00FF00); --cookie-shadow: 0 10px 30px rgba(255, 0, 0, 0.7), -5px -5px 15px rgba(0, 255, 255, 0.7); --tab-bg: #111111; }
-    body.skin-ToxicWaste { --bg1: #000D00; --bg2: #002500; --accent1: #CCFF00; --accent2:#FF8C00; --muted:#FFFFFF; --glass: rgba(204, 255, 0, 0.15); --site-shadow: 0 10px 40px rgba(204, 255, 0, 0.8); --cookie-color: radial-gradient(circle, #39FF14, #00AA00); --cookie-shadow: 0 10px 30px rgba(255, 140, 0, 0.7); --tab-bg: #002500; }
-
-    /* --- SKINS 26 TO 100 --- */
-    body.skin-Cyberpunk { --bg1: #12002b; --bg2: #280048; --accent1: #f30067; --accent2: #00f0ff; --muted: #ffe600; --glass: rgba(243,0,103,0.1); --site-shadow: 0 10px 40px rgba(243,0,103,0.5); --cookie-color: linear-gradient(180deg, #f30067, #ffe600); --cookie-shadow: 0 10px 30px rgba(0,240,255,0.6); --tab-bg: #280048; }
-    body.skin-Sunset { --bg1: #2d0b32; --bg2: #51123c; --accent1: #ff7b54; --accent2: #ffb26b; --muted: #ffd56b; --glass: rgba(255,123,84,0.1); --site-shadow: 0 10px 40px rgba(255,123,84,0.4); --cookie-color: linear-gradient(180deg, #ff7b54, #ffb26b); --cookie-shadow: 0 10px 30px rgba(255,213,107,0.5); --tab-bg: #51123c; }
-    body.skin-Emerald { --bg1: #022c22; --bg2: #064e3b; --accent1: #34d399; --accent2: #10b981; --muted: #a7f3d0; --glass: rgba(52,211,153,0.1); --site-shadow: 0 10px 40px rgba(16,185,129,0.5); --cookie-color: linear-gradient(180deg, #34d399, #059669); --cookie-shadow: 0 10px 30px rgba(52,211,153,0.6); --tab-bg: #064e3b; }
-    body.skin-Ruby { --bg1: #280509; --bg2: #4c0519; --accent1: #fb7185; --accent2: #f43f5e; --muted: #fecdd3; --glass: rgba(251,113,133,0.1); --site-shadow: 0 10px 40px rgba(244,63,94,0.5); --cookie-color: linear-gradient(180deg, #f43f5e, #be123c); --cookie-shadow: 0 10px 30px rgba(251,113,133,0.6); --tab-bg: #4c0519; }
-    body.skin-Sapphire { --bg1: #0b192c; --bg2: #1e3e62; --accent1: #38bdf8; --accent2: #0284c7; --muted: #bae6fd; --glass: rgba(56,189,248,0.1); --site-shadow: 0 10px 40px rgba(2,132,199,0.5); --cookie-color: linear-gradient(180deg, #38bdf8, #1d4ed8); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.6); --tab-bg: #1e3e62; }
-    body.skin-Amethyst { --bg1: #1a0b2e; --bg2: #3b154c; --accent1: #c084fc; --accent2: #9333ea; --muted: #e9d5ff; --glass: rgba(192,132,252,0.1); --site-shadow: 0 10px 40px rgba(147,51,234,0.5); --cookie-color: linear-gradient(180deg, #c084fc, #7e22ce); --cookie-shadow: 0 10px 30px rgba(192,132,252,0.6); --tab-bg: #3b154c; }
-    body.skin-NeonCity { --bg1: #080811; --bg2: #121324; --accent1: #00ffcc; --accent2: #ff007f; --muted: #ffff00; --glass: rgba(0,255,204,0.1); --site-shadow: 0 10px 40px rgba(255,0,127,0.5); --cookie-color: linear-gradient(180deg, #00ffcc, #ff007f); --cookie-shadow: 0 10px 30px rgba(0,255,204,0.7); --tab-bg: #121324; }
-    body.skin-Matrix { --bg1: #020b02; --bg2: #051a05; --accent1: #00ff41; --accent2: #008f11; --muted: #00FF66; --glass: rgba(0,255,65,0.08); --site-shadow: 0 10px 40px rgba(0,255,65,0.4); --cookie-color: linear-gradient(180deg, #00ff41, #003b00); --cookie-shadow: 0 10px 30px rgba(0,255,65,0.6); --tab-bg: #051a05; }
-    body.skin-Sakura { --bg1: #2a1b24; --bg2: #4a2e3d; --accent1: #fbcfe8; --accent2: #f472b6; --muted: #fdf2f8; --glass: rgba(251,207,232,0.15); --site-shadow: 0 10px 40px rgba(244,114,182,0.4); --cookie-color: linear-gradient(180deg, #fbcfe8, #db2777); --cookie-shadow: 0 10px 30px rgba(251,207,232,0.5); --tab-bg: #4a2e3d; }
-    body.skin-Desert { --bg1: #2c1a0e; --bg2: #4a2c17; --accent1: #f59e0b; --accent2: #d97706; --muted: #fef3c7; --glass: rgba(245,158,11,0.1); --site-shadow: 0 10px 40px rgba(217,119,6,0.5); --cookie-color: linear-gradient(180deg, #f59e0b, #b45309); --cookie-shadow: 0 10px 30px rgba(245,158,11,0.5); --tab-bg: #4a2c17; }
-    body.skin-NorthernLights { --bg1: #05131d; --bg2: #0b2b3c; --accent1: #38ef7d; --accent2: #11998e; --muted: #80f9ff; --glass: rgba(56,239,125,0.1); --site-shadow: 0 10px 40px rgba(17,153,142,0.6); --cookie-color: linear-gradient(180deg, #38ef7d, #11998e); --cookie-shadow: 0 10px 30px rgba(128,249,255,0.6); --tab-bg: #0b2b3c; }
-    body.skin-Galaxy { --bg1: #0b001a; --bg2: #1f0038; --accent1: #e0aaff; --accent2: #c77dff; --muted: #7b2cbf; --glass: rgba(224,170,255,0.1); --site-shadow: 0 10px 40px rgba(199,125,255,0.5); --cookie-color: radial-gradient(circle, #e0aaff, #3c096c); --cookie-shadow: 0 10px 30px rgba(224,170,255,0.7); --tab-bg: #1f0038; }
-    body.skin-SolarFlare { --bg1: #330800; --bg2: #5c1100; --accent1: #ff4800; --accent2: #ff7b00; --muted: #ffae00; --glass: rgba(255,72,0,0.15); --site-shadow: 0 10px 40px rgba(255,123,0,0.6); --cookie-color: linear-gradient(180deg, #ffae00, #ff4800); --cookie-shadow: 0 10px 30px rgba(255,72,0,0.8); --tab-bg: #5c1100; }
-    body.skin-Supernova { --bg1: #1a0033; --bg2: #330066; --accent1: #ff00aa; --accent2: #00d4ff; --muted: #ffff00; --glass: rgba(255,0,170,0.15); --site-shadow: 0 10px 40px rgba(0,212,255,0.7); --cookie-color: radial-gradient(circle, #ffff00, #ff00aa); --cookie-shadow: 0 10px 30px rgba(0,212,255,0.8); --tab-bg: #330066; }
-    body.skin-DeepOcean { --bg1: #000c1d; --bg2: #001f3f; --accent1: #00b4d8; --accent2: #0077b6; --muted: #90e0ef; --glass: rgba(0,180,216,0.1); --site-shadow: 0 10px 40px rgba(0,119,182,0.6); --cookie-color: linear-gradient(180deg, #00b4d8, #03045e); --cookie-shadow: 0 10px 30px rgba(144,224,239,0.5); --tab-bg: #001f3f; }
-    body.skin-CoralReef { --bg1: #1a2e3b; --bg2: #264653; --accent1: #2a9d8f; --accent2: #e76f51; --muted: #f4a261; --glass: rgba(231,111,81,0.12); --site-shadow: 0 10px 40px rgba(42,157,143,0.5); --cookie-color: linear-gradient(180deg, #e76f51, #f4a261); --cookie-shadow: 0 10px 30px rgba(42,157,143,0.6); --tab-bg: #264653; }
-    body.skin-MintFresh { --bg1: #0a2e28; --bg2: #134e42; --accent1: #a8fbd3; --accent2: #45dfb1; --muted: #e8fdf5; --glass: rgba(168,251,211,0.15); --site-shadow: 0 10px 40px rgba(69,223,177,0.5); --cookie-color: linear-gradient(180deg, #a8fbd3, #119970); --cookie-shadow: 0 10px 30px rgba(168,251,211,0.6); --tab-bg: #134e42; }
-    body.skin-Bubblegum { --bg1: #381028; --bg2: #5c1d43; --accent1: #ff85a1; --accent2: #ff3377; --muted: #fbb1bd; --glass: rgba(255,133,161,0.15); --site-shadow: 0 10px 40px rgba(255,51,119,0.5); --cookie-color: linear-gradient(180deg, #ff85a1, #f72585); --cookie-shadow: 0 10px 30px rgba(255,133,161,0.7); --tab-bg: #5c1d43; }
-    body.skin-Chocolate { --bg1: #1c0d02; --bg2: #361a05; --accent1: #d4a373; --accent2: #a9714b; --muted: #faedcd; --glass: rgba(212,163,115,0.1); --site-shadow: 0 10px 40px rgba(169,113,75,0.6); --cookie-color: linear-gradient(180deg, #8b5e34, #432818); --cookie-shadow: 0 10px 30px rgba(212,163,115,0.5); --tab-bg: #361a05; }
-    body.skin-Strawberry { --bg1: #2b040a; --bg2: #4a0913; --accent1: #ff4d6d; --accent2: #c9184a; --muted: #ffb3c1; --glass: rgba(255,77,109,0.12); --site-shadow: 0 10px 40px rgba(201,24,74,0.6); --cookie-color: linear-gradient(180deg, #ff4d6d, #800f2f); --cookie-shadow: 0 10px 30px rgba(255,179,193,0.6); --tab-bg: #4a0913; }
-    body.skin-Lemonade { --bg1: #2e2802; --bg2: #4e4405; --accent1: #ffe600; --accent2: #f7b801; --muted: #fff9a6; --glass: rgba(255,230,0,0.12); --site-shadow: 0 10px 40px rgba(247,184,1,0.5); --cookie-color: linear-gradient(180deg, #ffe600, #f7b801); --cookie-shadow: 0 10px 30px rgba(255,230,0,0.6); --tab-bg: #4e4405; }
-    body.skin-PumpkinSpice { --bg1: #2b1102; --bg2: #471d05; --accent1: #f97316; --accent2: #ea580c; --muted: #ffedd5; --glass: rgba(249,115,22,0.12); --site-shadow: 0 10px 40px rgba(234,88,12,0.5); --cookie-color: linear-gradient(180deg, #f97316, #9a3412); --cookie-shadow: 0 10px 30px rgba(249,115,22,0.6); --tab-bg: #471d05; }
-    body.skin-WinterFrost { --bg1: #0f172a; --bg2: #1e293b; --accent1: #38bdf8; --accent2: #e0f2fe; --muted: #94a3b8; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(224,242,254,0.4); --cookie-color: linear-gradient(180deg, #e0f2fe, #7dd3fc); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.7); --tab-bg: #1e293b; }
-    body.skin-SpringBloom { --bg1: #1c2618; --bg2: #2e3e28; --accent1: #86efac; --accent2: #f472b6; --muted: #fef08a; --glass: rgba(134,239,172,0.12); --site-shadow: 0 10px 40px rgba(244,114,182,0.5); --cookie-color: linear-gradient(180deg, #86efac, #22c55e); --cookie-shadow: 0 10px 30px rgba(244,114,182,0.6); --tab-bg: #2e3e28; }
-    body.skin-SummerHeat { --bg1: #360c02; --bg2: #5c1705; --accent1: #ff5400; --accent2: #ff0054; --muted: #ffbd00; --glass: rgba(255,84,0,0.15); --site-shadow: 0 10px 40px rgba(255,0,84,0.6); --cookie-color: linear-gradient(180deg, #ffbd00, #ff0054); --cookie-shadow: 0 10px 30px rgba(255,84,0,0.7); --tab-bg: #5c1705; }
-    body.skin-MidnightRose { --bg1: #170312; --bg2: #2e0825; --accent1: #e63946; --accent2: #ff70a6; --muted: #f8edeb; --glass: rgba(230,57,70,0.12); --site-shadow: 0 10px 40px rgba(255,112,166,0.5); --cookie-color: linear-gradient(180deg, #e63946, #70161e); --cookie-shadow: 0 10px 30px rgba(255,112,166,0.6); --tab-bg: #2e0825; }
-    body.skin-GoldenHour { --bg1: #291800; --bg2: #4a2d00; --accent1: #ffb703; --accent2: #fb8500; --muted: #ffe8a1; --glass: rgba(255,183,3,0.15); --site-shadow: 0 10px 40px rgba(251,133,0,0.6); --cookie-color: linear-gradient(180deg, #ffb703, #d47a00); --cookie-shadow: 0 10px 30px rgba(255,183,3,0.7); --tab-bg: #4a2d00; }
-    body.skin-CosmicDust { --bg1: #120924; --bg2: #21123d; --accent1: #f72585; --accent2: #4cc9f0; --muted: #b5179e; --glass: rgba(76,201,240,0.12); --site-shadow: 0 10px 40px rgba(247,37,133,0.6); --cookie-color: radial-gradient(circle, #4cc9f0, #7209b7); --cookie-shadow: 0 10px 30px rgba(247,37,133,0.7); --tab-bg: #21123d; }
-    body.skin-Starlight { --bg1: #090d16; --bg2: #121a2d; --accent1: #ffffff; --accent2: #cbd5e1; --muted: #94a3b8; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(255,255,255,0.4); --cookie-color: radial-gradient(circle, #ffffff, #64748b); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.8); --tab-bg: #121a2d; }
-    body.skin-Obsidian { --bg1: #050505; --bg2: #141414; --accent1: #a3a3a3; --accent2: #525252; --muted: #e5e5e5; --glass: rgba(255,255,255,0.05); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg, #404040, #171717); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.2); --tab-bg: #141414; }
-    body.skin-Pearl { --bg1: #1e2229; --bg2: #303642; --accent1: #f1f5f9; --accent2: #cbd5e1; --muted: #f8fafc; --glass: rgba(241,245,249,0.15); --site-shadow: 0 10px 40px rgba(241,245,249,0.3); --cookie-color: radial-gradient(circle, #ffffff, #cbd5e1); --cookie-shadow: 0 10px 30px rgba(241,245,249,0.7); --tab-bg: #303642; }
-    body.skin-Copper { --bg1: #241108; --bg2: #3d1f11; --accent1: #d97706; --accent2: #b45309; --muted: #fcd34d; --glass: rgba(217,119,6,0.12); --site-shadow: 0 10px 40px rgba(180,83,9,0.6); --cookie-color: linear-gradient(180deg, #d97706, #78350f); --cookie-shadow: 0 10px 30px rgba(217,119,6,0.6); --tab-bg: #3d1f11; }
-    body.skin-Bronze { --bg1: #1f150a; --bg2: #382715; --accent1: #cd7f32; --accent2: #a0522d; --muted: #f5de33; --glass: rgba(205,127,50,0.12); --site-shadow: 0 10px 40px rgba(160,82,45,0.6); --cookie-color: linear-gradient(180deg, #cd7f32, #6e3b19); --cookie-shadow: 0 10px 30px rgba(205,127,50,0.6); --tab-bg: #382715; }
-    body.skin-Titanium { --bg1: #15191d; --bg2: #262c33; --accent1: #94a3b8; --accent2: #64748b; --muted: #e2e8f0; --glass: rgba(148,163,184,0.12); --site-shadow: 0 10px 40px rgba(100,116,139,0.5); --cookie-color: linear-gradient(180deg, #cbd5e1, #475569); --cookie-shadow: 0 10px 30px rgba(148,163,184,0.5); --tab-bg: #262c33; }
-    body.skin-Plasma { --bg1: #1b002b; --bg2: #360054; --accent1: #ff0055; --accent2: #7700ff; --muted: #00ffff; --glass: rgba(255,0,85,0.15); --site-shadow: 0 10px 40px rgba(119,0,255,0.7); --cookie-color: radial-gradient(circle, #ff0055, #360054); --cookie-shadow: 0 10px 30px rgba(0,255,255,0.8); --tab-bg: #360054; }
-    body.skin-Radioactivity { --bg1: #141c00; --bg2: #273800; --accent1: #a3e635; --accent2: #65a30d; --muted: #facc15; --glass: rgba(163,230,53,0.15); --site-shadow: 0 10px 40px rgba(163,230,53,0.7); --cookie-color: radial-gradient(circle, #a3e635, #3f6212); --cookie-shadow: 0 10px 30px rgba(163,230,53,0.8); --tab-bg: #273800; }
-    body.skin-AcidRain { --bg1: #061f06; --bg2: #0e3b0e; --accent1: #22c55e; --accent2: #84cc16; --muted: #a7f3d0; --glass: rgba(34,197,94,0.12); --site-shadow: 0 10px 40px rgba(132,204,22,0.6); --cookie-color: linear-gradient(180deg, #84cc16, #14532d); --cookie-shadow: 0 10px 30px rgba(34,197,94,0.7); --tab-bg: #0e3b0e; }
-    body.skin-Bioluminescence { --bg1: #02121d; --bg2: #05263b; --accent1: #06b6d4; --accent2: #10b981; --muted: #a5f3fc; --glass: rgba(6,182,212,0.15); --site-shadow: 0 10px 40px rgba(16,185,129,0.7); --cookie-color: radial-gradient(circle, #06b6d4, #047857); --cookie-shadow: 0 10px 30px rgba(6,182,212,0.8); --tab-bg: #05263b; }
-    body.skin-DeepTrench { --bg1: #010811; --bg2: #031326; --accent1: #0284c7; --accent2: #1e3a8a; --muted: #7dd3fc; --glass: rgba(2,132,199,0.1); --site-shadow: 0 10px 40px rgba(30,58,138,0.7); --cookie-color: linear-gradient(180deg, #0284c7, #0f172a); --cookie-shadow: 0 10px 30px rgba(125,211,252,0.5); --tab-bg: #031326; }
-    body.skin-Glacier { --bg1: #0b1f28; --bg2: #153847; --accent1: #67e8f9; --accent2: #a5f3fc; --muted: #cffaff; --glass: rgba(103,232,249,0.15); --site-shadow: 0 10px 40px rgba(165,243,252,0.6); --cookie-color: linear-gradient(180deg, #cffaff, #0891b2); --cookie-shadow: 0 10px 30px rgba(103,232,249,0.8); --tab-bg: #153847; }
-    body.skin-Volcano { --bg1: #1f0502; --bg2: #3d0a04; --accent1: #ef4444; --accent2: #b91c1c; --muted: #fca5a5; --glass: rgba(239,68,68,0.15); --site-shadow: 0 10px 40px rgba(185,28,28,0.7); --cookie-color: linear-gradient(180deg, #ef4444, #450a0a); --cookie-shadow: 0 10px 30px rgba(239,68,68,0.8); --tab-bg: #3d0a04; }
-    body.skin-Overgrowth { --bg1: #0e1f0a; --bg2: #1b3814; --accent1: #4ade80; --accent2: #15803d; --muted: #bbf7d0; --glass: rgba(74,222,128,0.12); --site-shadow: 0 10px 40px rgba(21,128,61,0.6); --cookie-color: linear-gradient(180deg, #4ade80, #14532d); --cookie-shadow: 0 10px 30px rgba(74,222,128,0.6); --tab-bg: #1b3814; }
-    body.skin-Twilight { --bg1: #110d21; --bg2: #221a42; --accent1: #a855f7; --accent2: #ec4899; --muted: #e9d5ff; --glass: rgba(168,85,247,0.12); --site-shadow: 0 10px 40px rgba(236,72,153,0.6); --cookie-color: linear-gradient(180deg, #a855f7, #831843); --cookie-shadow: 0 10px 30px rgba(168,85,247,0.7); --tab-bg: #221a42; }
-    body.skin-Daybreak { --bg1: #1c1917; --bg2: #292524; --accent1: #fdba74; --accent2: #f472b6; --muted: #ffedd5; --glass: rgba(253,186,116,0.12); --site-shadow: 0 10px 40px rgba(244,114,182,0.5); --cookie-color: linear-gradient(180deg, #fdba74, #ea580c); --cookie-shadow: 0 10px 30px rgba(253,186,116,0.6); --tab-bg: #292524; }
-    body.skin-Eclipse { --bg1: #05050a; --bg2: #0f0f1c; --accent1: #fbbf24; --accent2: #475569; --muted: #fef3c7; --glass: rgba(251,191,36,0.1); --site-shadow: 0 10px 40px rgba(251,191,36,0.4); --cookie-color: radial-gradient(circle, #0f0f1c, #fbbf24); --cookie-shadow: 0 10px 30px rgba(251,191,36,0.7); --tab-bg: #0f0f1c; }
-    body.skin-Nebula { --bg1: #18002e; --bg2: #31005c; --accent1: #ff77e9; --accent2: #77e9ff; --muted: #e3aeff; --glass: rgba(255,119,233,0.15); --site-shadow: 0 10px 40px rgba(119,233,255,0.7); --cookie-color: radial-gradient(circle, #ff77e9, #31005c); --cookie-shadow: 0 10px 30px rgba(119,233,255,0.8); --tab-bg: #31005c; }
-    body.skin-BlackHole { --bg1: #000000; --bg2: #080808; --accent1: #a855f7; --accent2: #3b82f6; --muted: #ffffff; --glass: rgba(168,85,247,0.08); --site-shadow: 0 10px 40px rgba(168,85,247,0.5); --cookie-color: radial-gradient(circle, #000000, #a855f7); --cookie-shadow: 0 10px 30px rgba(59,130,246,0.8); --tab-bg: #080808; }
-    body.skin-WarpSpeed { --bg1: #020617; --bg2: #0f172a; --accent1: #38bdf8; --accent2: #818cf8; --muted: #e0f2fe; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(129,140,248,0.6); --cookie-color: linear-gradient(180deg, #38bdf8, #312e81); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.8); --tab-bg: #0f172a; }
-    body.skin-Quantum { --bg1: #0a1128; --bg2: #1c2541; --accent1: #00f5d4; --accent2: #7b2cbf; --muted: #80ffdb; --glass: rgba(0,245,212,0.12); --site-shadow: 0 10px 40px rgba(123,44,191,0.6); --cookie-color: linear-gradient(180deg, #00f5d4, #5a189a); --cookie-shadow: 0 10px 30px rgba(0,245,212,0.7); --tab-bg: #1c2541; }
-    body.skin-Synthwave { --bg1: #1a0022; --bg2: #2e003e; --accent1: #ff007f; --accent2: #240046; --muted: #ff9e00; --glass: rgba(255,0,127,0.15); --site-shadow: 0 10px 40px rgba(255,0,127,0.7); --cookie-color: linear-gradient(180deg, #ff9e00, #ff007f); --cookie-shadow: 0 10px 30px rgba(255,0,127,0.8); --tab-bg: #2e003e; }
-    body.skin-Outrun { --bg1: #0d001a; --bg2: #1a0033; --accent1: #ff0055; --accent2: #00f0ff; --muted: #ffee00; --glass: rgba(255,0,85,0.15); --site-shadow: 0 10px 40px rgba(0,240,255,0.7); --cookie-color: linear-gradient(180deg, #ffee00, #ff0055); --cookie-shadow: 0 10px 30px rgba(0,240,255,0.8); --tab-bg: #1a0033; }
-    body.skin-Arcade { --bg1: #121212; --bg2: #1e1e1e; --accent1: #00ff66; --accent2: #ff0033; --muted: #ffff00; --glass: rgba(0,255,102,0.1); --site-shadow: 0 10px 40px rgba(255,0,51,0.5); --cookie-color: linear-gradient(180deg, #ffff00, #ff0033); --cookie-shadow: 0 10px 30px rgba(0,255,102,0.7); --tab-bg: #1e1e1e; }
-    body.skin-PixelArt { --bg1: #181425; --bg2: #262135; --accent1: #ff0044; --accent2: #00e756; --muted: #29adff; --glass: rgba(255,0,68,0.1); --site-shadow: 0 10px 40px rgba(0,231,86,0.5); --cookie-color: linear-gradient(180deg, #ffcc00, #ff0044); --cookie-shadow: 0 10px 30px rgba(41,173,255,0.7); --tab-bg: #262135; }
-    body.skin-Gameboy { --bg1: #0f380f; --bg2: #306230; --accent1: #9bbc0f; --accent2: #8bac0f; --muted: #e0f8d0; --glass: rgba(155,188,15,0.15); --site-shadow: 0 10px 40px rgba(15,56,15,0.8); --cookie-color: linear-gradient(180deg, #9bbc0f, #306230); --cookie-shadow: 0 10px 30px rgba(139,172,15,0.7); --tab-bg: #306230; }
-    body.skin-Blueprint { --bg1: #002b49; --bg2: #003f6b; --accent1: #ffffff; --accent2: #66b2ff; --muted: #b3d9ff; --glass: rgba(255,255,255,0.1); --site-shadow: 0 10px 40px rgba(0,43,73,0.8); --cookie-color: linear-gradient(180deg, #ffffff, #66b2ff); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.7); --tab-bg: #003f6b; }
-    body.skin-Chalkboard { --bg1: #1a2421; --bg2: #283632; --accent1: #ffffff; --accent2: #a3e635; --muted: #fef08a; --glass: rgba(255,255,255,0.08); --site-shadow: 0 10px 40px rgba(0,0,0,0.8); --cookie-color: linear-gradient(180deg, #ffffff, #d1d5db); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.5); --tab-bg: #283632; }
-    body.skin-Newspaper { --bg1: #121212; --bg2: #242424; --accent1: #e5e5e5; --accent2: #a3a3a3; --muted: #ffffff; --glass: rgba(255,255,255,0.05); --site-shadow: 0 10px 40px rgba(0,0,0,0.9); --cookie-color: linear-gradient(180deg, #ffffff, #737373); --cookie-shadow: 0 10px 30px rgba(255,255,255,0.3); --tab-bg: #242424; }
-    body.skin-Sepia { --bg1: #2b1f17; --bg2: #423125; --accent1: #d4a373; --accent2: #bc8a5f; --muted: #f4a261; --glass: rgba(212,163,115,0.1); --site-shadow: 0 10px 40px rgba(66,49,37,0.8); --cookie-color: linear-gradient(180deg, #d4a373, #8a5a36); --cookie-shadow: 0 10px 30px rgba(212,163,115,0.5); --tab-bg: #423125; }
-    body.skin-Vintage { --bg1: #2b261f; --bg2: #423b30; --accent1: #e9c46a; --accent2: #e76f51; --muted: #2a9d8f; --glass: rgba(233,196,106,0.1); --site-shadow: 0 10px 40px rgba(0,0,0,0.7); --cookie-color: linear-gradient(180deg, #e9c46a, #e76f51); --cookie-shadow: 0 10px 30px rgba(233,196,106,0.6); --tab-bg: #423b30; }
-    body.skin-RoyalPurple { --bg1: #1f0a2e; --bg2: #361250; --accent1: #e0aaff; --accent2: #ffb703; --muted: #c77dff; --glass: rgba(224,170,255,0.12); --site-shadow: 0 10px 40px rgba(255,183,3,0.5); --cookie-color: linear-gradient(180deg, #ffb703, #9d4edd); --cookie-shadow: 0 10px 30px rgba(224,170,255,0.7); --tab-bg: #361250; }
-    body.skin-CrimsonRed { --bg1: #2b0000; --bg2: #4a0000; --accent1: #ff3333; --accent2: #ff6666; --muted: #ff9999; --glass: rgba(255,51,51,0.15); --site-shadow: 0 10px 40px rgba(255,0,0,0.6); --cookie-color: linear-gradient(180deg, #ff3333, #800000); --cookie-shadow: 0 10px 30px rgba(255,102,102,0.7); --tab-bg: #4a0000; }
-    body.skin-MidnightBlue { --bg1: #030a16; --bg2: #08162a; --accent1: #38bdf8; --accent2: #818cf8; --muted: #c7d2fe; --glass: rgba(56,189,248,0.1); --site-shadow: 0 10px 40px rgba(8,22,42,0.8); --cookie-color: linear-gradient(180deg, #38bdf8, #1e3a8a); --cookie-shadow: 0 10px 30px rgba(129,140,248,0.6); --tab-bg: #08162a; }
-    body.skin-ForestPine { --bg1: #0a1c12; --bg2: #143020; --accent1: #4ade80; --accent2: #22c55e; --muted: #a7f3d0; --glass: rgba(74,222,128,0.1); --site-shadow: 0 10px 40px rgba(20,48,32,0.8); --cookie-color: linear-gradient(180deg, #4ade80, #14532d); --cookie-shadow: 0 10px 30px rgba(74,222,128,0.6); --tab-bg: #143020; }
-    body.skin-Sunburst { --bg1: #331a00; --bg2: #572d00; --accent1: #ffaa00; --accent2: #ff5500; --muted: #ffea00; --glass: rgba(255,170,0,0.15); --site-shadow: 0 10px 40px rgba(255,85,0,0.6); --cookie-color: linear-gradient(180deg, #ffea00, #ff5500); --cookie-shadow: 0 10px 30px rgba(255,170,0,0.8); --tab-bg: #572d00; }
-    body.skin-Tropical { --bg1: #032b2b; --bg2: #064747; --accent1: #00fff2; --accent2: #ff00a0; --muted: #ffee00; --glass: rgba(0,255,242,0.12); --site-shadow: 0 10px 40px rgba(255,0,160,0.6); --cookie-color: linear-gradient(180deg, #ffee00, #ff00a0); --cookie-shadow: 0 10px 30px rgba(0,255,242,0.7); --tab-bg: #064747; }
-    body.skin-Safari { --bg1: #2b220d; --bg2: #453716; --accent1: #eab308; --accent2: #ca8a04; --muted: #fef08a; --glass: rgba(234,179,8,0.12); --site-shadow: 0 10px 40px rgba(69,55,22,0.8); --cookie-color: linear-gradient(180deg, #eab308, #854d0e); --cookie-shadow: 0 10px 30px rgba(234,179,8,0.6); --tab-bg: #453716; }
-    body.skin-Tundra { --bg1: #0f1c24; --bg2: #1b2e3c; --accent1: #a5f3fc; --accent2: #38bdf8; --muted: #e0f2fe; --glass: rgba(165,243,252,0.12); --site-shadow: 0 10px 40px rgba(27,46,60,0.8); --cookie-color: linear-gradient(180deg, #e0f2fe, #0284c7); --cookie-shadow: 0 10px 30px rgba(165,243,252,0.7); --tab-bg: #1b2e3c; }
-    body.skin-Steampunk { --bg1: #21150b; --bg2: #382413; --accent1: #f59e0b; --accent2: #b45309; --muted: #d97706; --glass: rgba(245,158,11,0.12); --site-shadow: 0 10px 40px rgba(56,36,19,0.8); --cookie-color: linear-gradient(180deg, #f59e0b, #78350f); --cookie-shadow: 0 10px 30px rgba(245,158,11,0.6); --tab-bg: #382413; }
-    body.skin-NeonLime { --bg1: #0d1a00; --bg2: #1a3300; --accent1: #84cc16; --accent2: #a3e635; --muted: #d9f99d; --glass: rgba(163,230,53,0.15); --site-shadow: 0 10px 40px rgba(132,204,22,0.7); --cookie-color: linear-gradient(180deg, #a3e635, #4d7c0f); --cookie-shadow: 0 10px 30px rgba(163,230,53,0.8); --tab-bg: #1a3300; }
-    body.skin-HotViolet { --bg1: #24002e; --bg2: #420054; --accent1: #d946ef; --accent2: #c026d3; --muted: #f5d0fe; --glass: rgba(217,70,239,0.15); --site-shadow: 0 10px 40px rgba(192,38,211,0.7); --cookie-color: linear-gradient(180deg, #f5d0fe, #a21caf); --cookie-shadow: 0 10px 30px rgba(217,70,239,0.8); --tab-bg: #420054; }
-    body.skin-CyberYellow { --bg1: #1a1800; --bg2: #333000; --accent1: #facc15; --accent2: #eab308; --muted: #fef08a; --glass: rgba(250,204,21,0.15); --site-shadow: 0 10px 40px rgba(234,179,8,0.7); --cookie-color: linear-gradient(180deg, #fef08a, #ca8a04); --cookie-shadow: 0 10px 30px rgba(250,204,21,0.8); --tab-bg: #333000; }
-    body.skin-FrozenBerry { --bg1: #180924; --bg2: #2d1242; --accent1: #38bdf8; --accent2: #f43f5e; --muted: #e0e7ff; --glass: rgba(56,189,248,0.12); --site-shadow: 0 10px 40px rgba(244,63,94,0.6); --cookie-color: linear-gradient(180deg, #38bdf8, #be123c); --cookie-shadow: 0 10px 30px rgba(56,189,248,0.7); --tab-bg: #2d1242; }
-    body.skin-PeachFuzz { --bg1: #2e1713; --bg2: #4a2821; --accent1: #ffabab; --accent2: #ffdaaf; --muted: #fff0f0; --glass: rgba(255,171,171,0.15); --site-shadow: 0 10px 40px rgba(255,218,175,0.5); --cookie-color: linear-gradient(180deg, #ffdaaf, #e07a5f); --cookie-shadow: 0 10px 30px rgba(255,171,171,0.6); --tab-bg: #4a2821; }
-    body.skin-InfiniteVoid { --bg1: #000000; --bg2: #05050a; --accent1: #818cf8; --accent2: #c084fc; --muted: #ffffff; --glass: rgba(129,140,248,0.08); --site-shadow: 0 10px 40px rgba(192,132,252,0.6); --cookie-color: radial-gradient(circle, #ffffff, #1e1b4b); --cookie-shadow: 0 10px 30px rgba(129,140,248,0.9); --tab-bg: #05050a; }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
-    body{
-      background: linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
-      color:#fff; 
-      display:flex; 
-      align-items:center; 
-      justify-content:center; 
-      padding:24px;
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    body {
+      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      color: #fff; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 24px;
       transition: background 0.5s ease, color 0.5s ease;
     }
-    .site{
-      width:100%; 
-      max-width:1100px; 
-      border-radius:14px; 
-      padding:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow:var(--site-shadow);
+
+    .site {
+      width: 100%; 
+      max-width: 1100px; 
+      border-radius: 14px; 
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--site-shadow);
+      display: grid;
       grid-template-columns: 1fr; 
-      gap:18px; 
-      align-items:start;
+      gap: 18px; 
+      align-items: start;
       padding-bottom: 90px;
     }
-    header{grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:12px}
-    .brand{display:flex; gap:12px; align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:28px; color:#000; font-weight:700; box-shadow:0 6px 18px rgba(255,160,40,0.08)}
-    h1{margin:0;font-size:1.35rem;color:var(--accent1)}
-    p.lead{margin:0;color:var(--muted)}
-    .left{padding:14px;background:var(--glass); border-radius:12px; min-height:420px; width: 100%;}
-    #cookieButton{
-      width:220px;height:220px;border-radius:50%;border:none;
-      background:var(--cookie-color);
-      font-size:3.6rem;cursor:pointer;
-      box-shadow:var(--cookie-shadow);
-      display:block;margin:14px auto;transition:transform .08s
-    }
-    #cookieButton:active{transform:scale(.92)}
-    #superCookie{
-      display:none;width:120px;height:120px;border-radius:50%;border:none;
-      background:radial-gradient(circle, #ff00ff, #ff9900);
-      font-size:2.4rem;cursor:pointer;
-      box-shadow:0 0 25px 8px rgba(255,0,255,0.5);
-      margin:10px auto;animation:glow 1s infinite alternate;
-    }
-    @keyframes glow{from{box-shadow:0 0 10px #ff00ff;}to{box-shadow:0 0 25px #ff9900;}}
+
+    header { grid-column: 1/-1; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo { width: 56px; height: 56px; border-radius: 10px; background: linear-gradient(135deg, var(--accent1), var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 28px; color: #000; font-weight: 700; box-shadow: 0 6px 18px rgba(255,160,40,0.08); }
+    h1 { margin: 0; font-size: 1.35rem; color: var(--accent1); }
+    p.lead { margin: 0; color: var(--muted); }
+
+    .left { padding: 14px; background: var(--glass); border-radius: 12px; min-height: 420px; width: 100%; }
     
-    .stats{text-align:center}
-    .stats .big{font-size:1.25rem;margin-top:8px}
-    .cps{color:var(--muted);font-size:.95rem}
-    .discount-timer{color:var(--accent2);font-weight:700;margin-top:6px;font-size:.95rem;}
-    
-    .right{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        max-width: 100vw;
-        height: 70px;
-        padding: 0;
-        background: var(--tab-bg);
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-        border-radius: 0;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        transition: background 0.5s ease;
+    #cookieButton {
+      width: 220px; height: 220px; border-radius: 50%; border: none;
+      background: var(--cookie-color);
+      font-size: 3.6rem; cursor: pointer;
+      box-shadow: var(--cookie-shadow);
+      display: block; margin: 14px auto; transition: transform .08s;
+      user-select: none;
+    }
+    #cookieButton:active { transform: scale(.92); }
+
+    #superCookie {
+      display: none; width: 120px; height: 120px; border-radius: 50%; border: none;
+      background: radial-gradient(circle, #ff00ff, #ff9900);
+      font-size: 2.4rem; cursor: pointer;
+      box-shadow: 0 0 25px 8px rgba(255,0,255,0.5);
+      margin: 10px auto; animation: glow 1s infinite alternate;
+    }
+    @keyframes glow { from { box-shadow: 0 0 10px #ff00ff; } to { box-shadow: 0 0 25px #ff9900; } }
+
+    .stats { text-align: center; }
+    .stats .big { font-size: 1.25rem; margin-top: 8px; font-weight: bold; }
+    .cps { color: var(--muted); font-size: .95rem; }
+    .discount-timer { color: var(--accent2); font-weight: 700; margin-top: 6px; font-size: .95rem; }
+
+    .right {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      max-width: 100vw;
+      height: 70px;
+      padding: 0;
+      background: var(--tab-bg);
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+      border-radius: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.5s ease;
     }
 
     #tabOverlay {
-        position: fixed;
-        bottom: 70px;
-        left: 0;
-        right: 0;
-        background: var(--tab-bg);
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        padding: 15px;
-        max-height: 80vh;
-        overflow-y: auto;
-        display: none;
-        z-index: 999;
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
-        transition: background 0.5s ease;
+      position: fixed;
+      bottom: 70px; left: 0; right: 0;
+      background: var(--tab-bg);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      padding: 15px;
+      max-height: 80vh;
+      overflow-y: auto;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+      transition: background 0.5s ease;
     }
-    #tabOverlay.active {
-        display: block;
-    }
+    #tabOverlay.active { display: block; }
 
-    .tabs-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 70px;
-        width: 100%;
-    }
+    .tabs-container { display: flex; justify-content: space-around; align-items: center; height: 70px; width: 100%; }
     .tab-button {
-        background: transparent;
-        border: none;
-        padding: 8px 15px;
-        color: var(--muted);
-        cursor: pointer;
-        font-weight: 600;
-        transition: color 0.2s, border-bottom 0.2s;
-        border-bottom: 3px solid transparent;
-        line-height: 1.2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2px;
-        font-size: 0.85rem;
+      background: transparent; border: none; padding: 8px 15px; color: var(--muted);
+      cursor: pointer; font-weight: 600; transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 3px solid transparent; line-height: 1.2; display: flex;
+      flex-direction: column; align-items: center; gap: 2px; font-size: 0.85rem;
     }
-    .tab-button.active {
-        color: var(--accent1);
-        border-bottom: 3px solid var(--accent1);
-    }
-    
-    .tab-content {
-        display: none;
-        padding-top: 10px;
-    }
-    .tab-content.active {
-        display: block;
-    }
-    
-    .shop{display:flex;flex-direction:column;gap:10px}
-    .shop-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(0,0,0,0.18);cursor:pointer;transition:transform .15s;}
-    .shop-item:hover{transform:translateY(-3px)}
-    .affordable{outline:2px solid rgba(255,255,255,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
-    
-    footer{grid-column:1/-1;text-align:center;color:var(--muted);font-size:.85rem;margin-top:6px}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-    .btn{background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 10px;cursor:pointer;border:none;color:#fff; transition: background 0.2s}
-    .btn:hover {background:rgba(255,255,255,0.1)}
-    
+    .tab-button.active { color: var(--accent1); border-bottom: 3px solid var(--accent1); }
+
+    .tab-content { display: none; padding-top: 10px; }
+    .tab-content.active { display: block; }
+
+    .shop { display: flex; flex-direction: column; gap: 10px; }
+    .shop-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-radius: 10px; background: rgba(0,0,0,0.18); cursor: pointer; transition: transform .15s; }
+    .shop-item:hover { transform: translateY(-3px); }
+    .affordable { outline: 2px solid rgba(255,255,255,0.06); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+
+    footer { grid-column: 1/-1; text-align: center; color: var(--muted); font-size: .85rem; margin-top: 6px; }
+    .controls { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+    .btn { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); color: #fff; transition: all 0.2s; font-size: 0.85rem; font-weight: 500; }
+    .btn:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); }
+    .btn-danger { background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #fca5a5; }
+    .btn-danger:hover { background: rgba(239, 68, 68, 0.35); }
+
     .skins-container { text-align: center; padding: 10px; }
-    .skin-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 12px; }
+    .skin-search-box {
+      width: 100%; max-width: 400px; padding: 10px 14px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.3);
+      color: #fff; font-size: 0.95rem; margin: 10px auto; display: block;
+    }
+    .skin-badge {
+      display: inline-block; background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
+      padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; color: var(--accent1); margin-bottom: 12px;
+    }
+    .skin-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; max-height: 50vh; overflow-y: auto; padding: 6px; }
     .skin-btn {
-      padding: 8px 15px;
-      border: 2px solid transparent;
-      background: var(--glass);
-      border-radius: 6px;
-      cursor: pointer;
-      color: var(--muted);
-      font-size: 0.9rem;
-      transition: all 0.2s;
+      padding: 6px 12px; border: 2px solid transparent; background: var(--glass);
+      border-radius: 6px; cursor: pointer; color: var(--muted); font-size: 0.85rem; transition: all 0.2s;
     }
-    .skin-btn:hover {
-        border-color: rgba(255,255,255,0.2);
-    }
-    .skin-btn.active {
-      border-color: var(--accent1);
-      color: var(--accent1);
-      font-weight: bold;
-      transform: scale(1.05);
-    }
+    .skin-btn:hover { border-color: rgba(255,255,255,0.2); }
+    .skin-btn.active { border-color: var(--accent1); color: var(--accent1); font-weight: bold; transform: scale(1.05); }
 
-    .section-title{font-size:.95rem;color:var(--accent1);margin:0 0 8px}
+    .section-title { font-size: 1.05rem; color: var(--accent1); margin: 0 0 8px; }
+    .leaderboard-container { padding: 10px; }
+    .player-name-box { display: flex; gap: 8px; margin-bottom: 15px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; align-items: center; }
+    .player-name-box input { flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.3); color: #fff; font-size: 0.9rem; }
+    .leaderboard-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .leaderboard-table th, .leaderboard-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; }
+    .leaderboard-table th { color: var(--accent1); font-weight: bold; }
 
-    .leaderboard-container {
-      padding: 10px;
-    }
-    .player-name-box {
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
       display: flex;
+      flex-direction: column;
       gap: 8px;
-      margin-bottom: 15px;
-      background: rgba(0,0,0,0.2);
-      padding: 10px;
-      border-radius: 8px;
-      align-items: center;
+      pointer-events: none;
     }
-    .player-name-box input {
-      flex: 1;
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(0,0,0,0.3);
+    .toast {
+      background: #1e293b;
       color: #fff;
+      border: 1px solid var(--accent1);
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .leaderboard-table {
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #151a30;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 420px;
       width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      text-align: center;
     }
-    .leaderboard-table th, .leaderboard-table td {
-      padding: 8px 12px;
-      text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.9rem;
-    }
-    .leaderboard-table th {
-      color: var(--accent1);
-      font-weight: bold;
-    }
-    .rank-1 { color: #FFD700; font-weight: bold; }
-    .rank-2 { color: #C0C0C0; font-weight: bold; }
-    .rank-3 { color: #CD7F32; font-weight: bold; }
-    
+    .modal-content h3 { margin-top: 0; color: #ef4444; }
+    .modal-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-actions { display: flex; justify-content: center; gap: 12px; }
+
     @media (min-width: 1150px) {
-        .right, #tabOverlay {
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 1148px;
-        }
-        .right {
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-        }
+      .right, #tabOverlay { left: 50%; transform: translateX(-50%); max-width: 1148px; }
+      .right { border-top-left-radius: 12px; border-top-right-radius: 12px; }
     }
-    
-    @media (max-width:960px){.site{grid-template-columns:1fr;}}
-    @media (max-width:520px){#cookieButton{width:160px;height:160px;font-size:2.6rem}}
+    @media (max-width: 960px) { .site { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { #cookieButton { width: 160px; height: 160px; font-size: 2.6rem; } }
   </style>
 </head>
 <body>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Reset Confirmation Modal -->
+  <div id="resetModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>⚠️ Reset Game Progress?</h3>
+      <p>Are you sure you want to reset all your cookies, purchased upgrades, and skin selections? This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-danger" id="confirmResetBtn">Yes, Reset Progress</button>
+        <button class="btn" id="cancelResetBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <div class="site">
     <header>
       <div class="brand">
         <div class="logo">🍪</div>
         <div>
           <h1>Cookie Puncher</h1>
-          <p class="lead">Punch cookies, buy upgrades, become a bakery legend.</p>
+          <p class="lead">Punch cookies, buy upgrades, collect 200 skins!</p>
         </div>
       </div>
       <div style="text-align:right">
-        <div style="font-weight:600">COOKIEPUNCHERISFUN!!!</div>
-        <div style="color:var(--muted);font-size:.9rem">Get Punching • V11.0</div>
+        <div style="font-weight:600">COOKIEPUNCHERISFUN!</div>
+        <div style="color:var(--muted);font-size:.9rem"> • Cloud Edition</div>
       </div>
     </header>
 
@@ -358,41 +264,50 @@
         <div id="discountTimer" class="discount-timer"></div>
 
         <div class="controls">
-          <button class="btn" id="saveBtn">Save for real</button>
-          <button class="btn" id="loadBtn">Load</button>
+          <button class="btn" id="saveBtn">💾 Save Game</button>
+          <button class="btn" id="loadBtn">📂 Load Game</button>
           <button class="btn" id="syncScoreBtn">🚀 Sync Online</button>
-          <button class="btn" id="resetBtn">Reset</button>
+          <button class="btn btn-danger" id="resetBtn">🔄 Reset</button>
         </div>
       </div>
       
       <div style="margin-top:14px">
-        <h3 class="section-title">How to play and new skins</h3>
-        <p style="margin:6px 0;color:var(--muted)">Click the cookie to get cookies. Buy items in the shop to increase cookies per second (CPS). Watch out for the Super Cookie — it gives 50% off for 30 seconds, and find the best look for your bakery © 2026 Flapy. All rights reserved.</p>
+        <h3 class="section-title">How to play & 200 Skins</h3>
+        <p style="margin:6px 0;color:var(--muted)">Click the cookie to earn cookies. Buy upgrades in the shop to boost your CPS. Watch for the Golden Super Cookie for 50% off sales! Explore and equip all 200 custom themes. Live cloud leaderboard stores real players!</p>
       </div>
     </main>
 
-    <footer>By Flapy❤️❤️❤️ I UPDATE THIS WEEKLY</footer>
+    <footer>By Flapy ❤️ | Live Online Multiplayer Edition</footer>
   </div>
   
   <div id="tabOverlay">
       <div id="shopTab" class="tab-content active" data-tab-content="shop">
-        <h3 class="section-title">🛒 Shop</h3>
+        <h3 class="section-title">🛒 Shop Upgrades</h3>
         <div id="shop" class="shop"></div>
       </div>
       
       <div id="skinsTab" class="tab-content" data-tab-content="skins">
         <div class="skins-container">
-          <h3 class="section-title">🎨 Skins</h3>
-          <p style="color:var(--muted); margin-bottom: 15px;">Change the look of your bakery! (Total: 100 Skins)</p>
-          <div class="skin-selector" id="skinSelector">
+          <h3 class="section-title">🎨 Skin Gallery (200 Total)</h3>
+          <div id="skinCountBadge" class="skin-badge">Total Available: 200 Skins</div>
+          <input type="text" id="skinSearchInput" class="skin-search-box" placeholder="Search among 200 skins..." />
+          <div class="skin-selector" id="skinSelector"></div>
+
+          <div class="color-wheel-section" style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12); text-align:center;">
+            <h4 style="margin:0 0 6px; color:var(--accent1); font-size:1rem;">🎨 Custom Color Wheel Skin</h4>
+            <p style="color:var(--muted); font-size:0.85rem; margin:0 0 12px;">Select any color from the wheel to synthesize a dynamic personalized theme!</p>
+            <div style="display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+              <input type="color" id="customColorPicker" value="#ffc857" style="width:48px; height:48px; border:none; border-radius:50%; cursor:pointer; background:transparent; padding:0;" title="Choose skin color" />
+              <button class="btn" id="applyCustomColorBtn" style="padding:8px 16px; font-weight:600;">Apply Custom Skin</button>
             </div>
+          </div>
         </div>
       </div>
 
       <div id="leaderboardTab" class="tab-content" data-tab-content="leaderboard">
         <div class="leaderboard-container">
           <h3 class="section-title">🏆 Global Online Leaderboard</h3>
-          <p style="color:var(--muted); margin-bottom: 10px;">Set your baker name and climb to #1 in the world!</p>
+          <p style="color:var(--muted); margin-bottom: 10px;">Set your baker name and compete with real players around the world!</p>
           
           <div class="player-name-box">
             <label for="usernameInput" style="font-weight:600;">Baker Name:</label>
@@ -411,7 +326,7 @@
               </tr>
             </thead>
             <tbody id="leaderboardList">
-              <tr><td colspan="5" style="text-align:center; color:var(--muted);">Loading leaderboard...</td></tr>
+              <tr><td colspan="5" style="text-align:center; color:var(--muted);">Connecting to live leaderboard...</td></tr>
             </tbody>
           </table>
         </div>
@@ -421,524 +336,607 @@
   <aside class="right" id="tabBar">
     <div class="tabs-container">
         <button class="tab-button active" data-tab="shop">🛒 Shop</button>
-        <button class="tab-button" data-tab="skins">🎨 Skins</button>
+        <button class="tab-button" data-tab="skins">🎨 Skins (200)</button>
         <button class="tab-button" data-tab="leaderboard">🏆 Board</button>
         <button class="tab-button" data-tab="close">❌ Close</button>
     </div>
   </aside>
 
-  <script>
-    const GAME_VERSION = '1.0';
-    const SAVE_KEY = 'cookiepuncher_save';
-    const SKIN_SAVE_KEY = 'cookiepuncher_skin';
-    const USERNAME_KEY = 'cookiepuncher_username';
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // Firebase environment setup
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'cookie-puncher-v12';
+    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+      apiKey: "demo-api-key",
+      authDomain: "demo-app.firebaseapp.com",
+      projectId: "demo-app",
+      storageBucket: "demo-app.appspot.com",
+      messagingSenderId: "000000000",
+      appId: "1:000000000:web:000000000"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    let currentUser = null;
+    let userId = null;
+    let onlineBakers = [];
+
+    // Toast Notification System
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<span>${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span> <span>${message}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => toast.classList.add('show'), 10);
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    const SAVE_KEY = 'cookiepuncher_save_v12';
+    const SKIN_SAVE_KEY = 'cookiepuncher_skin_v12';
+    const USERNAME_KEY = 'cookiepuncher_username_v12';
+
+    const BASE_SKIN_NAMES = [
+      "Default", "Midnight", "Forest", "Lava", "Ocean", "Gold", "Retro", "Contrast", "Candy", "Space",
+      "Autumn", "Vaporwave", "Jungle", "Monochrome", "Valentine", "Ice", "LaserGrid", "Toxic", "Electric", "Hacker",
+      "Firestorm", "DeepPink", "SubZero", "Glitch", "ToxicWaste", "Cyberpunk", "Sunset", "Emerald", "Ruby", "Sapphire",
+      "Amethyst", "NeonCity", "Matrix", "Sakura", "Desert", "NorthernLights", "Galaxy", "SolarFlare", "Supernova", "DeepOcean",
+      "CoralReef", "MintFresh", "Bubblegum", "Chocolate", "Strawberry", "Lemonade", "PumpkinSpice", "WinterFrost", "SpringBloom", "SummerHeat",
+      "MidnightRose", "GoldenHour", "CosmicDust", "Starlight", "Obsidian", "Pearl", "Copper", "Bronze", "Titanium", "Plasma",
+      "Radioactivity", "AcidRain", "Bioluminescence", "DeepTrench", "Glacier", "Volcano", "Overgrowth", "Twilight", "Daybreak", "Eclipse",
+      "Nebula", "BlackHole", "WarpSpeed", "Quantum", "Synthwave", "Outrun", "Arcade", "PixelArt", "Gameboy", "Blueprint",
+      "Chalkboard", "Newspaper", "Sepia", "Vintage", "RoyalPurple", "CrimsonRed", "MidnightBlue", "ForestPine", "Sunburst", "Tropical",
+      "Safari", "Tundra", "Steampunk", "NeonLime", "HotViolet", "CyberYellow", "FrozenBerry", "PeachFuzz", "InfiniteVoid", "PrismGlow",
+      "CyberMatrix", "DragonScale", "ShadowRealm", "MysticRune", "DiamondSparkle", "VoidWalker", "Hyperdrive", "AuroraBorealis", "NeonSynth", "LavaCore",
+      "GlitchCity", "GalacticCore", "Frostbite", "CyberRed", "CyberGreen", "CyberBlue", "CarbonFiber", "Hologram", "CherryBlossom", "OceanBreeze",
+      "BloodMoon", "SunGod", "ElectricStorm", "PoisonIvy", "GoldenCrown", "TopazGlow", "OpalIridescent", "OnyxShadow", "QuartzCrystal", "AmberGold",
+      "VolcanoMagma", "Thunderstorm", "Blizzard", "Tornado", "DesertMirage", "Oasis", "ForestCanopy", "AutumnLeaves", "WinterWonderland", "SpringBlossom",
+      "SummerSunset", "MidnightSky", "StarlightSparkle", "GalaxyQuest", "SupernovaExplosion", "NebulaCloud", "Singularity", "WarpZone", "QuantumRealm", "Multiverse",
+      "TimeTraveler", "CyberNinja", "RetroWave80s", "DiscoFever", "NeonNights", "PixelHeart", "ArcadeMaster", "ConsoleClassic", "InkWash", "Watercolor",
+      "OilPainting", "NeonPastel", "PlatinumShine", "RhodiumSparkle", "BismuthRainbow", "Chromium", "CelestialGlow", "AstralPlane", "Stardust", "MeteorShower",
+      "CometTail", "SolarEclipse", "LunarGlow", "CosmicRay", "DarkNebula", "WhiteDwarf", "RedGiant", "BlueStraggler", "Pulsar", "Magnetar",
+      "Quasar", "EventHorizon", "DarkMatter", "Antimatter", "Tachyon", "PhotonBeam", "GammaRay", "CyberSurfer", "TechnoGoth", "BioHazard",
+      "Nanotech", "CyberGlow", "VirtualReality", "AugmentedVision", "NeuralLink", "AIOverlord", "QuantumComputer", "Supercomputer", "MatrixArchitect", "UltimateBaker"
+    ];
+
+    function injectSkinStyles() {
+      let css = '';
+      BASE_SKIN_NAMES.forEach((name, idx) => {
+        const hue = (idx * 137.5) % 360;
+        const sat = 60 + (idx % 35);
+        const light1 = 8 + (idx % 12);
+        const light2 = 18 + (idx % 15);
+        
+        css += `
+          body.skin-${name.replace(/\s+/g, '')} {
+            --bg1: hsl(${hue}, ${sat}%, ${light1}%);
+            --bg2: hsl(${(hue + 25) % 360}, ${sat}%, ${light2}%);
+            --accent1: hsl(${hue}, 95%, 65%);
+            --accent2: hsl(${(hue + 40) % 360}, 90%, 55%);
+            --muted: hsl(${hue}, 25%, 80%);
+            --glass: rgba(255, 255, 255, 0.06);
+            --site-shadow: 0 10px 40px hsla(${hue}, 80%, 20%, 0.6);
+            --cookie-color: linear-gradient(180deg, hsl(${hue}, 90%, 65%), hsl(${(hue + 45) % 360}, 85%, 50%));
+            --cookie-shadow: 0 10px 30px hsla(${hue}, 90%, 40%, 0.6);
+            --tab-bg: hsl(${hue}, ${sat}%, ${light2}%);
+          }
+        `;
+      });
+      const styleEl = document.createElement('style');
+      styleEl.innerHTML = css;
+      document.head.appendChild(styleEl);
+    }
+    injectSkinStyles();
 
     const ITEM_DEFINITIONS = [
-      { name: "Cursor", emoji: "🖱️", baseCost: 10, cps: 1, costGrow: 1.5 },
-      { name: "cookie money", emoji: "💵", baseCost: 50, cps: 2, costGrow: 1.6 },
-      { name: "cookie candy", emoji: "🍭", baseCost: 100, cps: 3, costGrow: 1.65 },
-      { name: "Grandpa", emoji: "👴", baseCost: 200, cps: 5, costGrow: 1.7 },
-      { name: "cookie famaly", emoji: "👨‍👩‍👦", baseCost: 250, cps: 10, costGrow: 1.75 },
-      { name: "cookie monster", emoji: "🍪😈", baseCost: 500, cps: 15, costGrow: 1.755 },
-      { name: "cookie drone", emoji: "🚁", baseCost: 750, cps: 20, costGrow: 1.7555 },
-      { name: "Factory", emoji: "🏭", baseCost: 1000, cps: 25, costGrow: 1.8 },
-      { name: "Cyclops", emoji: "👁️", baseCost: 2500, cps: 50, costGrow: 1.9 },
-      { name: "Wizard", emoji: "🧙", baseCost: 5000, cps: 100, costGrow: 1.95 },
-      { name: "cookie cannon", emoji: "💥", baseCost: 7000, cps: 200, costGrow: 1.955 },
-      { name: "Cookie Town", emoji: "🌆", baseCost: 10000, cps: 250, costGrow: 1.9555 },
-      { name: "Cookie hero", emoji: "👤", baseCost: 15000, cps: 300, costGrow: 1.95555 },
-      { name: "Portal", emoji: "🚀", baseCost: 20000, cps: 500, costGrow: 2.0 },
-      { name: "Time Machine", emoji: "⏳", baseCost: 100000, cps: 2500, costGrow: 2.15 },
-      { name: "cookie earth", emoji: "🌎", baseCost: 500000, cps: 5000, costGrow: 2.20 },
-      { name: "Cookie Galaxy", emoji: "🌌", baseCost: 1000000, cps: 10000, costGrow: 2.3 },
-      { name: "Cookie multiverce", emoji: "🌌🌌🌌", baseCost: 10000000, cps: 100000, costGrow: 2.35 },
-      { name: "10000 Cookie robots", emoji: "🤖🤖", baseCost: 50000000, cps: 250000, costGrow: 2.4},
-      { name: "100m cookie subscribers", emoji: "🍪", baseCost: 100000000, cps: 300000, costGrow: 2.5},
-      { name: "1000000000000000000000000 cookies", emoji: "🍪", baseCost: 1000000000, cps: 400000, costGrow: 2.6 },
-      { name: "turn the world to cookies", emoji: "🌎>🍪", baseCost: 2500000000, cps: 500000, costGrow: 2.65 },
-      { name: "turn the universe to cookies", emoji: "🌌>🍪", baseCost: 5000000000, cps: 1000000, costGrow: 2.7 },
-      { name: "turn the multiverce to cookies", emoji: "🌌🌌🌌>🍪", baseCost: 10000000000, cps: 2500000, costGrow: 2.8 },
-      { name: "grandma!!!", emoji: "👵", baseCost: 20000000000, cps: 5000000, costGrow: 2.85 },
-      { name: "grandma+grandpa", emoji: "👵+👴", baseCost: 25000000000, cps: 7500000, costGrow: 2.95 },
-      { name: "grandma+grandpa+mom+dad", emoji: "👵+👴+👨‍👩‍👦", baseCost: 30000000000, cps: 10000000, costGrow: 3.00 },
-      { name: "cookie dictionary", emoji: "📖", baseCost: 35000000000, cps: 20000000, costGrow: 3.10 },
-      { name: "cookie books", emoji: "📖📖📖", baseCost: 40000000000, cps: 30000000, costGrow: 3.20 },
-      { name: "cookie languige", emoji: "🔤", baseCost: 50000000000, cps: 40000000, costGrow: 3.30 },
-      { name: "cookie money bag", emoji: "💵💰", baseCost: 60000000000, cps: 50000000, costGrow: 3.40 },
-      { name: "cookie million dollars", emoji: "💵💵💵💵💵", baseCost: 70000000000, cps: 60000000, costGrow: 3.50 },
-      { name: "cookie billion dollars", emoji: "💵💵💵💵💵💵💵", baseCost: 80000000000, cps: 70000000, costGrow: 3.55 },
-      { name: "cookie  hundred billion dollars", emoji: "💵💵💵💵💵💵💵💵💵💵💵", baseCost: 90000000000, cps: 80000000, costGrow: 3.555 },
-      { name: "upgraded cursor", emoji: "🖱️⬆️🖱️⬆️", baseCost: 100000000000, cps: 90000000, costGrow: 3.6 },
-      { name: "cosmic cookie", emoji: "🔮", baseCost: 500000000000, cps: 100000000, costGrow: 3.65 },
-      { name: "super upgraded cursor", emoji: "🖱️⬆️🖱️⬆️🖱️⬆️🖱️⬆️", baseCost: 600000000000, cps: 250000000, costGrow: 3.7 },
-      { name: "broken mouse cursor", emoji: "💩", baseCost: 700000000000, cps: 300000000, costGrow: 3.8 },
-      { name: "secret cookie", emoji: "🤫🤫🤫", baseCost: 800000000000, cps: 80000000, costGrow: 3.9 },
-      { name: "unexistant cookie", emoji: "   ", baseCost: 900000000000, cps: 90000000, costGrow: 4.0 },
-      { name: "invisible cookie", emoji: "🕳", baseCost: 900000000000, cps: 100000000, costGrow: 4.1 },
-      { name: "cookie cloaths", emoji: "👕👖", baseCost: 1000000000000, cps: 200000000, costGrow: 4.2 },
-      { name: "nothing", emoji: "                                                      ", baseCost: 1500000000000, cps: 300000000, costGrow: 4.3 },
-      { name: "black hole", emoji: "-o-", baseCost: 2000000000000, cps: 400000000, costGrow: 4.4 },
-      { name: "air", emoji: "🍃", baseCost: 2500000000000, cps: 1000000000, costGrow: 4.5 },
-      { name: "cookie game", emoji: "🎮", baseCost: 3000000000000, cps: 100000000000, costGrow: 5.00 },
+      { name: "Cursor", emoji: "🖱️", baseCost: 10, cps: 1, costGrow: 1.15 },
+      { name: "Cookie Money", emoji: "💵", baseCost: 50, cps: 2, costGrow: 1.2 },
+      { name: "Cookie Candy", emoji: "🍭", baseCost: 100, cps: 5, costGrow: 1.22 },
+      { name: "Grandpa", emoji: "👴", baseCost: 200, cps: 10, costGrow: 1.25 },
+      { name: "Cookie Family", emoji: "👨‍👩‍👦", baseCost: 500, cps: 25, costGrow: 1.28 },
+      { name: "Cookie Monster", emoji: "😈", baseCost: 1000, cps: 50, costGrow: 1.3 },
+      { name: "Cookie Drone", emoji: "🚁", baseCost: 2500, cps: 100, costGrow: 1.32 },
+      { name: "Factory", emoji: "🏭", baseCost: 5000, cps: 250, costGrow: 1.35 },
+      { name: "Cyclops", emoji: "👁️", baseCost: 12000, cps: 600, costGrow: 1.38 },
+      { name: "Wizard", emoji: "🧙", baseCost: 30000, cps: 1500, costGrow: 1.4 },
+      { name: "Cookie Cannon", emoji: "💥", baseCost: 75000, cps: 4000, costGrow: 1.42 },
+      { name: "Cookie Town", emoji: "🌆", baseCost: 200000, cps: 10000, costGrow: 1.45 },
+      { name: "Cookie Hero", emoji: "🦸", baseCost: 500000, cps: 25000, costGrow: 1.48 },
+      { name: "Portal", emoji: "🚀", baseCost: 1200000, cps: 65000, costGrow: 1.5 },
+      { name: "Time Machine", emoji: "⏳", baseCost: 3000000, cps: 150000, costGrow: 1.52 },
+      { name: "Cookie Earth", emoji: "🌎", baseCost: 8000000, cps: 400000, costGrow: 1.55 },
+      { name: "Cookie Galaxy", emoji: "🌌", baseCost: 20000000, cps: 1000000, costGrow: 1.58 },
+      { name: "Cookie Multiverse", emoji: "✨", baseCost: 50000000, cps: 2500000, costGrow: 1.6 },
+      { name: "10,000 Cookie Robots", emoji: "🤖", baseCost: 120000000, cps: 6000000, costGrow: 1.62 },
+      { name: "100M Subscribers", emoji: "⭐", baseCost: 300000000, cps: 15000000, costGrow: 1.65 },
+      { name: "Turn World to Cookies", emoji: "🌍", baseCost: 800000000, cps: 40000000, costGrow: 1.68 },
+      { name: "Turn Universe to Cookies", emoji: "💫", baseCost: 2000000000, cps: 100000000, costGrow: 1.7 },
+      { name: "Grandma!!!", emoji: "👵", baseCost: 5000000000, cps: 250000000, costGrow: 1.72 },
+      { name: "Grandma + Grandpa", emoji: "👵👴", baseCost: 15000000000, cps: 750000000, costGrow: 1.75 },
+      { name: "Cookie Language", emoji: "🔤", baseCost: 40000000000, cps: 2000000000, costGrow: 1.78 },
+      { name: "Cookie Billion Dollars", emoji: "💰", baseCost: 100000000000, cps: 5000000000, costGrow: 1.8 },
+      { name: "Cosmic Cookie", emoji: "🔮", baseCost: 300000000000, cps: 15000000000, costGrow: 1.82 },
+      { name: "Super Upgraded Cursor", emoji: "🖱️⚡", baseCost: 800000000000, cps: 40000000000, costGrow: 1.85 },
+      { name: "Unexistent Cookie", emoji: "👻", baseCost: 2000000000000, cps: 100000000000, costGrow: 1.9 }
     ];
 
-    const SKIN_DEFINITIONS = [
-      { name: "Classic", className: "" },
-      { name: "Midnight", className: "skin-Midnight" },
-      { name: "Forest", className: "skin-Forest" }, 
-      { name: "Lava", className: "skin-Lava" },
-      { name: "Ocean", className: "skin-Ocean" },
-      { name: "Gold", className: "skin-Gold" },
-      { name: "Retro", className: "skin-Retro" },
-      { name: "High Contrast", className: "skin-Contrast" },
-      { name: "Candy", className: "skin-Candy" },
-      { name: "Space", className: "skin-Space" },
-      { name: "Autumn", className: "skin-Autumn" },
-      { name: "Vaporwave", className: "skin-Vaporwave" },
-      { name: "Jungle", className: "skin-Jungle" },
-      { name: "Monochrome", className: "skin-Monochrome" },
-      { name: "Valentine", className: "skin-Valentine" },
-      { name: "Ice", className: "skin-Ice" },
-      { name: "Laser Grid", className: "skin-LaserGrid" },
-      { name: "Toxic", className: "skin-Toxic" },
-      { name: "Electric", className: "skin-Electric" },
-      { name: "Hacker", className: "skin-Hacker" },
-      { name: "Firestorm", className: "skin-Firestorm" },
-      { name: "Deep Pink", className: "skin-DeepPink" },
-      { name: "Sub Zero", className: "skin-SubZero" },
-      { name: "Glitch", className: "skin-Glitch" },
-      { name: "Toxic Waste", className: "skin-ToxicWaste" },
-      { name: "Cyberpunk", className: "skin-Cyberpunk" },
-      { name: "Sunset", className: "skin-Sunset" },
-      { name: "Emerald", className: "skin-Emerald" },
-      { name: "Ruby", className: "skin-Ruby" },
-      { name: "Sapphire", className: "skin-Sapphire" },
-      { name: "Amethyst", className: "skin-Amethyst" },
-      { name: "Neon City", className: "skin-NeonCity" },
-      { name: "Matrix", className: "skin-Matrix" },
-      { name: "Sakura", className: "skin-Sakura" },
-      { name: "Desert", className: "skin-Desert" },
-      { name: "Northern Lights", className: "skin-NorthernLights" },
-      { name: "Galaxy", className: "skin-Galaxy" },
-      { name: "Solar Flare", className: "skin-SolarFlare" },
-      { name: "Supernova", className: "skin-Supernova" },
-      { name: "Deep Ocean", className: "skin-DeepOcean" },
-      { name: "Coral Reef", className: "skin-CoralReef" },
-      { name: "Mint Fresh", className: "skin-MintFresh" },
-      { name: "Bubblegum", className: "skin-Bubblegum" },
-      { name: "Chocolate", className: "skin-Chocolate" },
-      { name: "Strawberry", className: "skin-Strawberry" },
-      { name: "Lemonade", className: "skin-Lemonade" },
-      { name: "Pumpkin Spice", className: "skin-PumpkinSpice" },
-      { name: "Winter Frost", className: "skin-WinterFrost" },
-      { name: "Spring Bloom", className: "skin-SpringBloom" },
-      { name: "Summer Heat", className: "skin-SummerHeat" },
-      { name: "Midnight Rose", className: "skin-MidnightRose" },
-      { name: "Golden Hour", className: "skin-GoldenHour" },
-      { name: "Cosmic Dust", className: "skin-CosmicDust" },
-      { name: "Starlight", className: "skin-Starlight" },
-      { name: "Obsidian", className: "skin-Obsidian" },
-      { name: "Pearl", className: "skin-Pearl" },
-      { name: "Copper", className: "skin-Copper" },
-      { name: "Bronze", className: "skin-Bronze" },
-      { name: "Titanium", className: "skin-Titanium" },
-      { name: "Plasma", className: "skin-Plasma" },
-      { name: "Radioactivity", className: "skin-Radioactivity" },
-      { name: "Acid Rain", className: "skin-AcidRain" },
-      { name: "Bioluminescence", className: "skin-Bioluminescence" },
-      { name: "Deep Trench", className: "skin-DeepTrench" },
-      { name: "Glacier", className: "skin-Glacier" },
-      { name: "Volcano", className: "skin-Volcano" },
-      { name: "Overgrowth", className: "skin-Overgrowth" },
-      { name: "Twilight", className: "skin-Twilight" },
-      { name: "Daybreak", className: "skin-Daybreak" },
-      { name: "Eclipse", className: "skin-Eclipse" },
-      { name: "Nebula", className: "skin-Nebula" },
-      { name: "Black Hole", className: "skin-BlackHole" },
-      { name: "Warp Speed", className: "skin-WarpSpeed" },
-      { name: "Quantum", className: "skin-Quantum" },
-      { name: "Synthwave", className: "skin-Synthwave" },
-      { name: "Outrun", className: "skin-Outrun" },
-      { name: "Arcade", className: "skin-Arcade" },
-      { name: "Pixel Art", className: "skin-PixelArt" },
-      { name: "Gameboy", className: "skin-Gameboy" },
-      { name: "Blueprint", className: "skin-Blueprint" },
-      { name: "Chalkboard", className: "skin-Chalkboard" },
-      { name: "Newspaper", className: "skin-Newspaper" },
-      { name: "Sepia", className: "skin-Sepia" },
-      { name: "Vintage", className: "skin-Vintage" },
-      { name: "Royal Purple", className: "skin-RoyalPurple" },
-      { name: "Crimson Red", className: "skin-CrimsonRed" },
-      { name: "Midnight Blue", className: "skin-MidnightBlue" },
-      { name: "Forest Pine", className: "skin-ForestPine" },
-      { name: "Sunburst", className: "skin-Sunburst" },
-      { name: "Tropical", className: "skin-Tropical" },
-      { name: "Safari", className: "skin-Safari" },
-      { name: "Tundra", className: "skin-Tundra" },
-      { name: "Steampunk", className: "skin-Steampunk" },
-      { name: "Neon Lime", className: "skin-NeonLime" },
-      { name: "Hot Violet", className: "skin-HotViolet" },
-      { name: "Cyber Yellow", className: "skin-CyberYellow" },
-      { name: "Frozen Berry", className: "skin-FrozenBerry" },
-      { name: "Peach Fuzz", className: "skin-PeachFuzz" },
-      { name: "Infinite Void", className: "skin-InfiniteVoid" }
-    ];
+    let cookies = 0;
+    let inventory = ITEM_DEFINITIONS.map(() => 0);
+    let activeSkin = 'Default';
+    let playerName = localStorage.getItem(USERNAME_KEY) || 'Baker#' + Math.floor(Math.random()*8999 + 1000);
+    let discountActive = false;
+    let discountEndTime = 0;
 
-    function formatNumber(n){
-      if(n >= 1e9) return (n/1e9).toFixed(2)+'B';
-      if(n >= 1e6) return (n/1e6).toFixed(2)+'M';
-      if(n >= 1e3) return (n/1e3).toFixed(2)+'K';
-      return Math.floor(n);
+    function getCPS() {
+      let total = 0;
+      inventory.forEach((count, i) => {
+        total += count * ITEM_DEFINITIONS[i].cps;
+      });
+      return total;
     }
 
-    class CookiePuncherGame {
-      constructor(){
-        this.cookies = 0;
-        this.discountActive = false;
-        this.discountTimer = 0;
-        this.items = ITEM_DEFINITIONS.map(d => ({...d, owned:0, cost:d.baseCost}));
-        this.activeSkin = SKIN_DEFINITIONS[0];
-        this.activeTab = 'shop';
-        this.username = localStorage.getItem(USERNAME_KEY) || 'Baker_' + Math.floor(1000 + Math.random() * 9000);
+    function getItemCost(index) {
+      const item = ITEM_DEFINITIONS[index];
+      let cost = Math.floor(item.baseCost * Math.pow(item.costGrow, inventory[index]));
+      if (discountActive) cost = Math.floor(cost * 0.5);
+      return cost;
+    }
 
-        this.dom = {
-          body: document.body,
-          cookieButton: document.getElementById('cookieButton'),
-          superCookie: document.getElementById('superCookie'),
-          scoreEl: document.getElementById('score'),
-          cpsEl: document.getElementById('cps'),
-          shopEl: document.getElementById('shop'),
-          discountTimerEl: document.getElementById('discountTimer'),
-          saveBtn: document.getElementById('saveBtn'),
-          loadBtn: document.getElementById('loadBtn'),
-          syncScoreBtn: document.getElementById('syncScoreBtn'),
-          resetBtn: document.getElementById('resetBtn'),
-          skinSelector: document.getElementById('skinSelector'),
-          tabBar: document.getElementById('tabBar'),
-          tabOverlay: document.getElementById('tabOverlay'),
-          tabButtons: document.querySelectorAll('.tab-button'), 
-          tabContents: document.querySelectorAll('.tab-content'),
-          usernameInput: document.getElementById('usernameInput'),
-          saveNameBtn: document.getElementById('saveNameBtn'),
-          leaderboardList: document.getElementById('leaderboardList')
-        };
+    function formatNum(num) {
+      if (num >= 1e12) return (num / 1e12).toFixed(2) + "T";
+      if (num >= 1e9) return (num / 1e9).toFixed(2) + "B";
+      if (num >= 1e6) return (num / 1e6).toFixed(2) + "M";
+      if (num >= 1e3) return (num / 1e3).toFixed(1) + "K";
+      return Math.floor(num).toLocaleString();
+    }
 
-        this._loadSkin();
-        this._bindEvents();
-        this.buildShop();
-        this.buildSkinSelector();
-        this.dom.usernameInput.value = this.username;
-        this.updateUI();
-        this.startLoops();
-        
-        this.switchTab('shop'); 
-      }
-
-      _bindEvents(){
-        this.dom.cookieButton.addEventListener('click', ()=>{ this.addCookie(1); });
-        this.dom.superCookie.addEventListener('click', ()=> this.activateDiscount());
-        this.dom.saveBtn.addEventListener('click', ()=> this.saveGame(true));
-        this.dom.loadBtn.addEventListener('click', ()=> this.loadGame(true));
-        this.dom.syncScoreBtn.addEventListener('click', ()=> this.syncOnlineScore(true));
-        this.dom.resetBtn.addEventListener('click', ()=> this.resetGame());
-        
-        this.dom.saveNameBtn.addEventListener('click', () => {
-          const name = this.dom.usernameInput.value.trim();
-          if (name) {
-            this.username = name;
-            localStorage.setItem(USERNAME_KEY, name);
-            this.syncOnlineScore(true);
-          }
-        });
-
-        this.dom.tabButtons.forEach(button => {
-            button.addEventListener('click', (e) => this.handleTabClick(e.target.dataset.tab));
-        });
-      }
+    function renderShop() {
+      const shopEl = document.getElementById('shop');
+      shopEl.innerHTML = '';
       
-      handleTabClick(tabName) {
-          if (tabName === 'close') {
-              this.closeTab();
-          } else if (this.activeTab === tabName && this.dom.tabOverlay.classList.contains('active')) {
-              this.closeTab();
-          } else {
-              this.switchTab(tabName);
-          }
-      }
+      ITEM_DEFINITIONS.forEach((item, index) => {
+        const cost = getItemCost(index);
+        const canAfford = cookies >= cost;
+        
+        const itemEl = document.createElement('div');
+        itemEl.className = `shop-item ${canAfford ? 'affordable' : ''}`;
+        itemEl.onclick = () => buyItem(index);
+        
+        itemEl.innerHTML = `
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="font-size:1.8rem">${item.emoji}</span>
+            <div>
+              <div style="font-weight:bold">${item.name} (${inventory[index]})</div>
+              <div style="color:var(--muted);font-size:0.8rem">+${formatNum(item.cps)} CPS</div>
+            </div>
+          </div>
+          <div style="font-weight:bold;color:${canAfford ? 'var(--accent1)' : 'var(--muted)'}">
+            ${formatNum(cost)} 🍪
+          </div>
+        `;
+        shopEl.appendChild(itemEl);
+      });
+    }
 
-      switchTab(tabName) {
-        this.activeTab = tabName;
-        
-        this.dom.tabButtons.forEach(btn => btn.classList.remove('active'));
-        const activeBtn = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
-        
-        this.dom.tabContents.forEach(content => content.classList.remove('active'));
-        const activeContent = document.querySelector(`.tab-content[data-tab-content="${tabName}"]`);
-        if (activeContent) activeContent.classList.add('active');
-        
-        this.dom.tabOverlay.classList.add('active');
-
-        if (tabName === 'leaderboard') {
-          this.fetchLeaderboard();
-        }
-      }
+    function renderSkins(filter = '') {
+      const skinSelector = document.getElementById('skinSelector');
+      skinSelector.innerHTML = '';
       
-      closeTab() {
-        this.activeTab = null;
-        this.dom.tabButtons.forEach(btn => btn.classList.remove('active'));
-        this.dom.tabOverlay.classList.remove('active');
-        this.dom.tabContents.forEach(content => content.classList.remove('active'));
+      const query = filter.toLowerCase().trim();
+      const filtered = BASE_SKIN_NAMES.filter(name => name.toLowerCase().includes(query));
+
+      filtered.forEach(name => {
+        const btn = document.createElement('button');
+        const cleanName = name.replace(/\s+/g, '');
+        btn.className = `skin-btn ${activeSkin === cleanName ? 'active' : ''}`;
+        btn.textContent = name;
+        btn.onclick = () => setSkin(cleanName);
+        skinSelector.appendChild(btn);
+      });
+    }
+
+    function setSkin(skinName) {
+      if (skinName.startsWith('Custom:')) {
+        const hex = skinName.split(':')[1];
+        applyCustomColor(hex, false);
+        return;
       }
+      document.body.removeAttribute('style');
+      document.body.className = '';
+      activeSkin = skinName;
+      document.body.classList.add(`skin-${skinName}`);
+      localStorage.setItem(SKIN_SAVE_KEY, activeSkin);
+      renderSkins(document.getElementById('skinSearchInput').value);
+      syncToCloud();
+    }
 
-      get totalCPS(){
-        return this.items.reduce((sum,i)=>sum+i.owned*i.cps,0);
-      }
+    function hexToHSL(hex) {
+      let r = parseInt(hex.substring(1,3), 16) / 255;
+      let g = parseInt(hex.substring(3,5), 16) / 255;
+      let b = parseInt(hex.substring(5,7), 16) / 255;
 
-      addCookie(n){ this.cookies += n; this.updateUI(); }
+      let max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h, s, l = (max + min) / 2;
 
-      buyItem(i){
-        const item = this.items[i];
-        const cost = this.discountActive ? Math.floor(item.cost/2) : item.cost;
-        if(this.cookies >= cost){
-          this.cookies -= cost;
-          item.owned++;
-          item.cost = Math.floor(item.cost * item.costGrow);
-          this.updateUI();
+      if (max === min) {
+        h = s = 0;
+      } else {
+        let d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
         }
+        h /= 6;
       }
+      return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+    }
 
-      activateDiscount(){
-        this.discountActive = true;
-        this.discountTimer = 30;
-        this.dom.superCookie.style.display='none';
-        const countdown = setInterval(()=>{
-          this.discountTimer--;
-          this.dom.discountTimerEl.textContent = `50% OFF! ${this.discountTimer}s`;
-          if(this.discountTimer<=0){
-            clearInterval(countdown);
-            this.discountActive=false;
-            this.dom.discountTimerEl.textContent='';
-            this.updateUI();
-          }
-        },1000);
-      }
-
-      spawnSuperCookie(){
-        setTimeout(()=>{
-          if(!this.discountActive){
-            this.dom.superCookie.style.display='block';
-            setTimeout(()=> this.dom.superCookie.style.display='none',8000);
-          }
-          this.spawnSuperCookie();
-        }, Math.random()*30000+30000);
-      }
-
-      buildShop(){
-        this.dom.shopEl.innerHTML='';
-        this.items.forEach((item,i)=>{
-          const div=document.createElement('div');
-          div.className='shop-item';
-          div.innerHTML=`<div>${item.emoji} ${item.name} <span style="color:#999">x${item.owned}</span></div>
-          <div><b>${formatNumber(item.cost)}</b> 🍪</div>`;
-          div.addEventListener('click',()=>this.buyItem(i));
-          this.dom.shopEl.appendChild(div);
-        });
-      }
+    function applyCustomColor(hex, save = true) {
+      const [h, s, l] = hexToHSL(hex);
+      document.body.className = '';
       
-      buildSkinSelector() {
-        this.dom.skinSelector.innerHTML = '';
-        SKIN_DEFINITIONS.forEach(skin => {
-          const button = document.createElement('button');
-          button.className = 'skin-btn';
-          button.textContent = skin.name;
-          if (this.activeSkin.name === skin.name) {
-            button.classList.add('active');
-          }
-          button.addEventListener('click', () => this.changeSkin(skin));
-          this.dom.skinSelector.appendChild(button);
-        });
+      const bodyStyle = document.body.style;
+      const bgSat = Math.min(s, 60);
+      const bgLight1 = Math.max(8, Math.min(l, 18));
+      const bgLight2 = Math.max(15, Math.min(l + 10, 28));
+
+      bodyStyle.setProperty('--bg1', `hsl(${h}, ${bgSat}%, ${bgLight1}%)`);
+      bodyStyle.setProperty('--bg2', `hsl(${(h + 25) % 360}, ${bgSat}%, ${bgLight2}%)`);
+      bodyStyle.setProperty('--accent1', `hsl(${h}, 95%, ${Math.max(50, Math.min(l + 20, 75))}%)`);
+      bodyStyle.setProperty('--accent2', `hsl(${(h + 40) % 360}, 90%, ${Math.max(45, Math.min(l + 10, 65))}%)`);
+      bodyStyle.setProperty('--muted', `hsl(${h}, 25%, 80%)`);
+      bodyStyle.setProperty('--glass', 'rgba(255, 255, 255, 0.06)');
+      bodyStyle.setProperty('--site-shadow', `0 10px 40px hsla(${h}, 80%, 20%, 0.6)`);
+      bodyStyle.setProperty('--cookie-color', `linear-gradient(180deg, hsl(${h}, 90%, 65%), hsl(${(h + 45) % 360}, 85%, 50%))`);
+      bodyStyle.setProperty('--cookie-shadow', `0 10px 30px hsla(${h}, 90%, 40%, 0.6)`);
+      bodyStyle.setProperty('--tab-bg', `hsl(${h}, ${bgSat}%, ${bgLight2}%)`);
+
+      activeSkin = 'Custom:' + hex;
+      if (save) {
+        localStorage.setItem(SKIN_SAVE_KEY, activeSkin);
       }
-      
-      changeSkin(skin) {
-        this.dom.body.classList.remove(...SKIN_DEFINITIONS.map(s => s.className).filter(c => c)); 
-        if (skin.className) {
-          this.dom.body.classList.add(skin.className);
-        }
-        
-        this.activeSkin = skin;
-        this.saveSkin();
-        this.dom.skinSelector.querySelectorAll('.skin-btn').forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.textContent === skin.name) {
-            btn.classList.add('active');
-          }
-        });
-        
-        this.updateUI();
-      }
+      renderSkins(document.getElementById('skinSearchInput').value);
+      syncToCloud();
+    }
 
-      saveSkin() {
-        localStorage.setItem(SKIN_SAVE_KEY, this.activeSkin.name);
-      }
-
-      _loadSkin() {
-        const savedSkinName = localStorage.getItem(SKIN_SAVE_KEY);
-        const skin = SKIN_DEFINITIONS.find(s => s.name === savedSkinName) || SKIN_DEFINITIONS[0];
-        this.activeSkin = skin;
-        if (skin.className) {
-          this.dom.body.classList.add(skin.className);
-        }
-      }
-
-      updateUI(){
-        this.dom.scoreEl.textContent = `Cookies: ${formatNumber(this.cookies)}`;
-        this.dom.cpsEl.textContent = `Cookies per second: ${formatNumber(this.totalCPS)}`;
-        const shopItems = this.dom.shopEl.querySelectorAll('.shop-item');
-        this.items.forEach((item,i)=>{
-          const cost=this.discountActive?Math.floor(item.cost/2):item.cost;
-          const el=shopItems[i];
-          if (el) {
-            el.querySelector('b').textContent=formatNumber(cost);
-            el.querySelector('span').textContent=`x${item.owned}`;
-            if(this.cookies>=cost) el.classList.add('affordable');
-            else el.classList.remove('affordable');
-          }
-        });
-      }
-
-      async fetchLeaderboard() {
-        try {
-          const response = await fetch('/api/leaderboard');
-          if (!response.ok) throw new Error('Failed to fetch leaderboard');
-          const players = await response.json();
-          
-          if (players.length === 0) {
-            this.dom.leaderboardList.innerHTML = '<tr><td colspan="5" style="text-align:center;">No high scores yet! Be the first!</td></tr>';
-            return;
-          }
-
-          this.dom.leaderboardList.innerHTML = players.map((player, index) => {
-            let rankBadge = `#${index + 1}`;
-            let rankClass = '';
-            if (index === 0) { rankBadge = '🥇 #1'; rankClass = 'rank-1'; }
-            else if (index === 1) { rankBadge = '🥈 #2'; rankClass = 'rank-2'; }
-            else if (index === 2) { rankBadge = '🥉 #3'; rankClass = 'rank-3'; }
-
-            const isCurrentPlayer = player.username === this.username ? 'style="background: rgba(255,255,255,0.08); font-weight:bold;"' : '';
-
-            return `<tr ${isCurrentPlayer}>
-              <td class="${rankClass}">${rankBadge}</td>
-              <td>${player.username}</td>
-              <td>${formatNumber(player.cookies)} 🍪</td>
-              <td>${formatNumber(player.cps)}/s</td>
-              <td>${player.skin || 'Classic'}</td>
-            </tr>`;
-          }).join('');
-        } catch (err) {
-          this.dom.leaderboardList.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#ff6666;">Offline or server starting up. Try again in a moment!</td></tr>';
-        }
-      }
-
-      async syncOnlineScore(showNotice = false) {
-        try {
-          const response = await fetch('/api/leaderboard', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              username: this.username,
-              cookies: this.cookies,
-              cps: this.totalCPS,
-              skin: this.activeSkin.name
-            })
-          });
-
-          if (response.ok) {
-            if (showNotice) alert(`Synced online! Username: ${this.username}`);
-            this.fetchLeaderboard();
-          } else {
-            if (showNotice) alert('Failed to sync score online.');
-          }
-        } catch (err) {
-          if (showNotice) alert('Could not reach online leaderboard server.');
-        }
-      }
-
-      startLoops(){
-        setInterval(()=>{
-          this.cookies += this.totalCPS;
-          this.updateUI();
-        },1000);
-
-        setInterval(() => {
-          this.syncOnlineScore(false);
-        }, 60000);
-
-        this.spawnSuperCookie();
-      }
-
-      saveGame(show=false){
-        const save={
-          version:GAME_VERSION,
-          cookies:this.cookies,
-          items:this.items.map(i=>({owned:i.owned,cost:i.cost}))
-        };
-        localStorage.setItem(SAVE_KEY,JSON.stringify(save));
-        this.saveSkin();
-        this.syncOnlineScore(false);
-        if(show) alert('Game saved locally and synced online!');
-      }
-
-      loadGame(show=false){
-        const data=localStorage.getItem(SAVE_KEY);
-        if(!data){ if(show) alert('No saved game.'); return; }
-        const s=JSON.parse(data);
-        this.cookies=s.cookies||0;
-        s.items.forEach((d,i)=>{
-          if(this.items[i]){ this.items[i].owned=d.owned; this.items[i].cost=d.cost; }
-        });
-        this._loadSkin();
-        this.buildSkinSelector();
-        this.updateUI();
-        if(show) alert('Game loaded!');
-      }
-
-      resetGame(){
-        if(confirm('Reset everything, including your cookies and upgrades?')){
-          localStorage.removeItem(SAVE_KEY);
-          localStorage.removeItem(SKIN_SAVE_KEY);
-          location.reload();
-        }
+    function buyItem(index) {
+      const cost = getItemCost(index);
+      if (cookies >= cost) {
+        cookies -= cost;
+        inventory[index]++;
+        updateUI();
+        saveGame(false);
       }
     }
 
-    document.addEventListener('DOMContentLoaded',()=> new CookiePuncherGame());
-    // --- UPDATED GAME INITIALIZATION WITH AUTOSAVE ---
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Start your game and save it to a window variable so the timer can find it
-    window.myCookiePuncherGame = new CookiePuncherGame(); // Replace with your exact class name if different!
+    function spawnSuperCookie() {
+      const sc = document.getElementById('superCookie');
+      if (Math.random() < 0.25 && !discountActive) {
+        sc.style.display = 'block';
+        setTimeout(() => {
+          if (sc.style.display === 'block') sc.style.display = 'none';
+        }, 8000);
+      }
+    }
 
-    // 2. Start the background autosave timer
+    document.getElementById('superCookie').onclick = function() {
+      this.style.display = 'none';
+      discountActive = true;
+      discountEndTime = Date.now() + 30000;
+      showToast("🌟 Super Cookie! 50% OFF active for 30s!", "success");
+      updateUI();
+    };
+
+    function updateUI() {
+      document.getElementById('score').textContent = `Cookies: ${formatNum(cookies)}`;
+      document.getElementById('cps').textContent = `Cookies per second: ${formatNum(getCPS())}`;
+
+      if (discountActive) {
+        const remaining = Math.max(0, Math.ceil((discountEndTime - Date.now()) / 1000));
+        if (remaining > 0) {
+          document.getElementById('discountTimer').textContent = `🌟 SUPER COOKIE 50% OFF: ${remaining}s`;
+        } else {
+          discountActive = false;
+          document.getElementById('discountTimer').textContent = '';
+        }
+      } else {
+        document.getElementById('discountTimer').textContent = '';
+      }
+
+      renderShop();
+    }
+
+    function saveGame(notify = true) {
+      const data = { cookies, inventory, activeSkin, playerName, timestamp: Date.now() };
+      localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+      if (notify) showToast("Game saved locally!", "success");
+      syncToCloud();
+    }
+
+    function loadGame(notify = true) {
+      const raw = localStorage.getItem(SAVE_KEY);
+      if (raw) {
+        try {
+          const data = JSON.parse(raw);
+          cookies = data.cookies || 0;
+          if (Array.isArray(data.inventory)) inventory = data.inventory;
+          if (data.activeSkin) setSkin(data.activeSkin);
+          if (data.playerName) {
+            playerName = data.playerName;
+            document.getElementById('usernameInput').value = playerName;
+          }
+          if (notify) showToast("Local save loaded successfully!", "success");
+        } catch(e) {
+          console.error(e);
+          if (notify) showToast("Failed to parse saved data.", "error");
+        }
+      } else {
+        if (notify) showToast("No saved game found.", "info");
+      }
+      const savedSkin = localStorage.getItem(SKIN_SAVE_KEY);
+      if (savedSkin) setSkin(savedSkin);
+      updateUI();
+    }
+
+    // Firebase Auth & Live Cloud Synchronization
+    async function initFirebase() {
+      try {
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+          await signInWithCustomToken(auth, __initial_auth_token);
+        } else {
+          await signInAnonymously(auth);
+        }
+      } catch (err) {
+        console.warn("Auth initialization fallback:", err);
+      }
+
+      onAuthStateChanged(auth, async (user) => {
+        currentUser = user;
+        if (user) {
+          userId = user.uid;
+          listenToLeaderboard();
+          await syncFromCloud();
+        }
+      });
+    }
+
+    async function syncToCloud() {
+      if (!currentUser || !userId) return;
+      try {
+        const playerData = {
+          userId: userId,
+          name: playerName,
+          cookies: cookies,
+          cps: getCPS(),
+          skin: activeSkin,
+          inventory: inventory,
+          lastUpdated: Date.now()
+        };
+
+        // Strict RULE 1: Public leaderboard document path
+        const publicDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'leaderboard', userId);
+        await setDoc(publicDocRef, playerData, { merge: true });
+
+        // Private save document path
+        const privateDocRef = doc(db, 'artifacts', appId, 'users', userId, 'saves', 'current');
+        await setDoc(privateDocRef, playerData, { merge: true });
+      } catch (e) {
+        console.error("Cloud sync error:", e);
+      }
+    }
+
+    async function syncFromCloud() {
+      if (!currentUser || !userId) return;
+      try {
+        const privateDocRef = doc(db, 'artifacts', appId, 'users', userId, 'saves', 'current');
+        const docSnap = await getDoc(privateDocRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data.cookies > cookies) {
+            cookies = data.cookies || cookies;
+            if (Array.isArray(data.inventory)) inventory = data.inventory;
+            if (data.skin) setSkin(data.skin);
+            if (data.name) {
+              playerName = data.name;
+              document.getElementById('usernameInput').value = playerName;
+            }
+            updateUI();
+          }
+        }
+      } catch (e) {
+        console.error("Cloud load error:", e);
+      }
+    }
+
+    function listenToLeaderboard() {
+      if (!currentUser) return;
+      
+      // Strict RULE 1 & 2: Simple query to public leaderboard collection
+      const leaderboardCol = collection(db, 'artifacts', appId, 'public', 'data', 'leaderboard');
+      
+      onSnapshot(leaderboardCol, (snapshot) => {
+        const bakers = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data && data.name) {
+            bakers.push(data);
+          }
+        });
+
+        // Sort in JS memory (RULE 2 - No complex queries)
+        bakers.sort((a, b) => (b.cookies || 0) - (a.cookies || 0));
+        onlineBakers = bakers;
+        renderLeaderboard();
+      }, (error) => {
+        console.error("Leaderboard snapshot error:", error);
+      });
+    }
+
+    function renderLeaderboard() {
+      const list = document.getElementById('leaderboardList');
+      if (!list) return;
+
+      // Ensure current user is included if snapshot isn't loaded yet
+      let displayData = [...onlineBakers];
+      const hasSelf = displayData.some(b => b.userId === userId || b.name === playerName);
+      if (!hasSelf && playerName) {
+        displayData.push({
+          userId: userId || 'local-id',
+          name: playerName,
+          cookies: cookies,
+          cps: getCPS(),
+          skin: activeSkin
+        });
+        displayData.sort((a, b) => (b.cookies || 0) - (a.cookies || 0));
+      }
+
+      if (displayData.length === 0) {
+        list.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--muted); padding:16px;">No real players online yet. Be the first!</td></tr>`;
+        return;
+      }
+
+      list.innerHTML = displayData.map((player, idx) => {
+        const isSelf = (userId && player.userId === userId) || player.name === playerName;
+        return `
+          <tr style="${isSelf ? 'background: rgba(255,200,87,0.1); font-weight:600;' : ''}">
+            <td>#${idx + 1}</td>
+            <td>${player.name || 'Anonymous Baker'} ${isSelf ? '👤' : ''}</td>
+            <td>${formatNum(player.cookies || 0)}</td>
+            <td>${formatNum(player.cps || 0)}</td>
+            <td>${player.skin || 'Default'}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Event Handlers & Buttons
+    document.getElementById('cookieButton').onclick = () => {
+      cookies += 1 + Math.floor(getCPS() * 0.05);
+      updateUI();
+    };
+
+    document.getElementById('saveBtn').onclick = () => saveGame(true);
+    document.getElementById('loadBtn').onclick = () => loadGame(true);
+
+    document.getElementById('syncScoreBtn').onclick = async () => {
+      saveGame(false);
+      await syncToCloud();
+      showToast("Synced progress with live cloud server!", "success");
+      renderLeaderboard();
+    };
+
+    const resetModal = document.getElementById('resetModal');
+    const confirmResetBtn = document.getElementById('confirmResetBtn');
+    const cancelResetBtn = document.getElementById('cancelResetBtn');
+
+    document.getElementById('resetBtn').onclick = () => {
+      resetModal.classList.add('active');
+    };
+
+    cancelResetBtn.onclick = () => {
+      resetModal.classList.remove('active');
+    };
+
+    confirmResetBtn.onclick = async () => {
+      resetModal.classList.remove('active');
+      cookies = 0;
+      inventory = ITEM_DEFINITIONS.map(() => 0);
+      localStorage.removeItem(SAVE_KEY);
+      saveGame(false);
+      await syncToCloud();
+      updateUI();
+      showToast("Game progress reset successfully.", "info");
+    };
+
+    document.getElementById('saveNameBtn').onclick = async () => {
+      const val = document.getElementById('usernameInput').value.trim();
+      if (val) {
+        playerName = val;
+        localStorage.setItem(USERNAME_KEY, playerName);
+        saveGame(false);
+        await syncToCloud();
+        showToast("Baker name updated to: " + playerName, "success");
+        renderLeaderboard();
+      } else {
+        showToast("Please enter a valid baker name.", "error");
+      }
+    };
+
+    // Tab Navigation
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabOverlay = document.getElementById('tabOverlay');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.onclick = () => {
+        const targetTab = btn.getAttribute('data-tab');
+        if (targetTab === 'close') {
+          tabOverlay.classList.remove('active');
+          tabButtons.forEach(b => b.classList.remove('active'));
+          return;
+        }
+
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        tabContents.forEach(tc => {
+          tc.classList.toggle('active', tc.getAttribute('data-tab-content') === targetTab);
+        });
+
+        tabOverlay.classList.add('active');
+        if (targetTab === 'leaderboard') renderLeaderboard();
+      };
+    });
+
+    document.getElementById('skinSearchInput').oninput = (e) => {
+      renderSkins(e.target.value);
+    };
+
+    const customColorPicker = document.getElementById('customColorPicker');
+    const applyCustomColorBtn = document.getElementById('applyCustomColorBtn');
+
+    if (customColorPicker) {
+      customColorPicker.oninput = (e) => {
+        applyCustomColor(e.target.value);
+      };
+    }
+    if (applyCustomColorBtn && customColorPicker) {
+      applyCustomColorBtn.onclick = () => {
+        applyCustomColor(customColorPicker.value);
+        showToast("Custom color skin applied!", "success");
+      };
+    }
+
+    // Game Loops & Autosave
     setInterval(() => {
-        if (window.myCookiePuncherGame) {
-            console.log("Autosave: Saving game and syncing online...");
-            
-            // Call your internal local save function safely
-            if (typeof window.myCookiePuncherGame.saveGame === 'function') {
-                window.myCookiePuncherGame.saveGame();
-            } else if (typeof window.myCookiePuncherGame.save === 'function') {
-                window.myCookiePuncherGame.save();
-            }
+      cookies += getCPS() / 10;
+      updateUI();
+    }, 100);
 
-            // Call your internal online leaderboard sync function safely
-            if (typeof window.myCookiePuncherGame.syncOnline === 'function') {
-                window.myCookiePuncherGame.syncOnline();
-            } else if (typeof window.myCookiePuncherGame.sync === 'function') {
-                window.myCookiePuncherGame.sync();
-            }
-        }
-    }, 15000); // Saves quietly every 15 seconds
-});
+    setInterval(spawnSuperCookie, 15000);
+
+    // Auto-save & cloud sync every 10 seconds
+    setInterval(() => {
+      saveGame(false);
+    }, 10000);
+
+    // Initial setup
+    document.getElementById('usernameInput').value = playerName;
+    loadGame(false);
+    renderSkins();
+    updateUI();
+    initFirebase();
   </script>
 </body>
 </html>
